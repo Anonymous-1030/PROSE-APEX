@@ -1,0 +1,11 @@
+{
+  "trace_path": "analysis\\rpe_events_burstgpt_cap2048_t80_qd1024.jsonl",
+  "capacity": 2048,
+  "total_descriptors": 29766,
+  "total_rpe_events": 22611,
+  "rpe_in_burst_count": 10731,
+  "rpe_in_burst_pct": 47.46,
+  "burst_threshold": 8192,
+  "max_concurrency": 9787,
+  "mean_concurrency": 6442.866545181691
+}

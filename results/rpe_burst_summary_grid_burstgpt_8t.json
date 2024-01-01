@@ -1,0 +1,50 @@
+{
+  "128": {
+    "trace_path": "D:\\PROSE--------APEX\\results\\rpe_events_burstgpt_8t_cap128_qd512.jsonl",
+    "capacity": 128,
+    "total_descriptors": 21015,
+    "total_rpe_events": 18459,
+    "rpe_at_capacity_count": 18459,
+    "rpe_at_capacity_pct": 100.0,
+    "max_occupancy": 128,
+    "mean_occupancy": 127.97,
+    "mean_occupancy_during_rpe": 128.0,
+    "peak_rpe_window_multiple_vs_256": 0.5
+  },
+  "256": {
+    "trace_path": "D:\\PROSE--------APEX\\results\\rpe_events_burstgpt_8t_cap256_qd512.jsonl",
+    "capacity": 256,
+    "total_descriptors": 21015,
+    "total_rpe_events": 16130,
+    "rpe_at_capacity_count": 16130,
+    "rpe_at_capacity_pct": 100.0,
+    "max_occupancy": 256,
+    "mean_occupancy": 255.82,
+    "mean_occupancy_during_rpe": 256.0,
+    "peak_rpe_window_multiple_vs_256": 1.0
+  },
+  "512": {
+    "trace_path": "D:\\PROSE--------APEX\\results\\rpe_events_burstgpt_8t_cap512_qd512.jsonl",
+    "capacity": 512,
+    "total_descriptors": 21015,
+    "total_rpe_events": 12457,
+    "rpe_at_capacity_count": 12457,
+    "rpe_at_capacity_pct": 100.0,
+    "max_occupancy": 512,
+    "mean_occupancy": 510.68,
+    "mean_occupancy_during_rpe": 512.0,
+    "peak_rpe_window_multiple_vs_256": 2.0
+  },
+  "1024": {
+    "trace_path": "D:\\PROSE--------APEX\\results\\rpe_events_burstgpt_8t_cap1024_qd512.jsonl",
+    "capacity": 1024,
+    "total_descriptors": 21015,
+    "total_rpe_events": 7419,
+    "rpe_at_capacity_count": 7419,
+    "rpe_at_capacity_pct": 100.0,
+    "max_occupancy": 1024,
+    "mean_occupancy": 1015.32,
+    "mean_occupancy_during_rpe": 1024.0,
+    "peak_rpe_window_multiple_vs_256": 4.0
+  }
+}

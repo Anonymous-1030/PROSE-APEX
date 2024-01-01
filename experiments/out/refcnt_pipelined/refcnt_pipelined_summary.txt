@@ -1,0 +1,4 @@
+REFCNT pipelined-atomic sensitivity (16 tenants, capacity=512)
+ Oversub      PROSE     REFCNT  REFCNT-PIPE   PIPE/PROSE       P99 ns   Peak pin
+      32      2.097      1.049        1.049         0.50          9.0        512
+      64      2.097      1.049        1.049         0.50          9.0        512

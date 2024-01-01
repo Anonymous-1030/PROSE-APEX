@@ -1,0 +1,17 @@
+{
+  "run_id": "smoke",
+  "master_bin": "$MOONCAKE_BUILD/mooncake-store/src/mooncake_master",
+  "rpc_port": 50051,
+  "metrics_port": 9003,
+  "master_server_addr": "127.0.0.1:50051",
+  "local_hostname": "localhost",
+  "global_segment_size": 2147483648,
+  "local_buffer_size": 16777216,
+  "ttl_ms": 5000,
+  "eviction_high_watermark_ratio": 0.5,
+  "eviction_ratio": 0.1,
+  "allow_evict_soft_pinned": true,
+  "object_size": 3670016,
+  "seed": 42,
+  "notes": "Phase 1 smoke: 1 master + 1 client, put/get 100, force eviction, probe evicted key"
+}

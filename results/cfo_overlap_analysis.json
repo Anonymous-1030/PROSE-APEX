@@ -1,0 +1,110 @@
+{
+  "overlap_by_workload": {
+    "Agentic-Coding": {
+      "total_turns": 165711,
+      "mean_overlap": 0.393228709457458,
+      "mean_session_overlap": 0.499042699048278,
+      "cdf": {
+        "p10": 0.15570799581600137,
+        "p25": 0.220129467667516,
+        "p50": 0.3313383600377003,
+        "p75": 0.5032597421840272,
+        "p90": 0.7755102040816326,
+        "p95": 0.93529760142138
+      },
+      "above_045": 0.30893543578881305,
+      "above_050": 0.25311536349427616,
+      "above_060": 0.16788867365473625,
+      "mean_cross_tenant_overlap": 0.9808641975308642,
+      "windows_evaluated": 162
+    },
+    "Code-QA": {
+      "total_turns": 102117,
+      "mean_overlap": 0.1893037336021442,
+      "mean_session_overlap": 0.24650396916322473,
+      "cdf": {
+        "p10": 0.034070243859687564,
+        "p25": 0.051657964800663876,
+        "p50": 0.09489500585011393,
+        "p75": 0.21893663510560815,
+        "p90": 0.5608133086876155,
+        "p95": 0.7463126843657817
+      },
+      "above_045": 0.129234113810629,
+      "above_050": 0.11564186178599058,
+      "above_060": 0.0906607127118893,
+      "mean_cross_tenant_overlap": 1.0,
+      "windows_evaluated": 162
+    },
+    "Office-Work": {
+      "total_turns": 333792,
+      "mean_overlap": 0.36187767309314856,
+      "mean_session_overlap": 0.3912753962440707,
+      "cdf": {
+        "p10": 0.14617823765020027,
+        "p25": 0.19475812689222338,
+        "p50": 0.28820305363434684,
+        "p75": 0.4730384242815628,
+        "p90": 0.7076543994912964,
+        "p95": 0.8478386723272867
+      },
+      "above_045": 0.2709292014188477,
+      "above_050": 0.22769269485188381,
+      "above_060": 0.16030641836832518,
+      "mean_cross_tenant_overlap": 0.9969135802469136,
+      "windows_evaluated": 162
+    }
+  },
+  "cfo_ablation": {
+    "cfo_on": {
+      "throughput_tok_s": 83.0,
+      "speedup_vs_fts": 3.1,
+      "eta_bw": 0.82
+    },
+    "cfo_off": {
+      "throughput_tok_s": 68.5,
+      "speedup_vs_fts": 2.58,
+      "eta_bw": 0.72,
+      "explanation": "Gate + fairness only, no cross-tenant coalescing"
+    },
+    "cfo_off_no_overlap": {
+      "throughput_tok_s": 72.1,
+      "speedup_vs_fts": 2.71,
+      "eta_bw": 0.75,
+      "explanation": "Independent corpora (overlap<0.1), CFO auto-gated anyway"
+    },
+    "gate_only": {
+      "throughput_tok_s": 62.3,
+      "speedup_vs_fts": 2.34,
+      "eta_bw": 0.68,
+      "explanation": "Endpoint gate alone, no fairness, no CFO"
+    }
+  },
+  "hybrid_baseline": {
+    "full_endpoint": {
+      "throughput_tok_s": 83.0,
+      "rpe": 0.0,
+      "recovery_at_k": 0.904,
+      "host_cost": "0 cores",
+      "cfo_saving_pct": 18.0,
+      "jain_fairness": 1.0
+    },
+    "hybrid_host_scorer_ep_validator": {
+      "throughput_tok_s": 78.2,
+      "rpe": 0.0,
+      "recovery_at_k": 0.904,
+      "host_cost": "1 core (4.3 us/step)",
+      "cfo_saving_pct": 18.0,
+      "jain_fairness": 1.0,
+      "submission_waste_pct": 2.8
+    },
+    "host_prescore_no_ep": {
+      "throughput_tok_s": 71.5,
+      "rpe_at_16_hosts": 0.027,
+      "recovery_at_k": 0.904,
+      "host_cost": "1 core",
+      "cfo_saving_pct": 0.0,
+      "jain_fairness": 0.964
+    }
+  }
+}

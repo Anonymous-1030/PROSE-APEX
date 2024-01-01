@@ -1,0 +1,141 @@
+{
+  "source_parameters": {
+    "rtl/cefe_addr_mapper.sv": {
+      "LOGICAL_ID_W": 12,
+      "HOT_ENTRIES": 512,
+      "BACKING_ENTRIES": 2048,
+      "PTR_W": 20,
+      "derived_HOT_IDX_W": 9,
+      "derived_BK_IDX_W": 11,
+      "derived_TAG_W": 3
+    },
+    "rtl/cefe_pin_table.sv": {
+      "NUM_ENTRIES": 400,
+      "TENANT_W": 4,
+      "CHUNK_W": 9,
+      "GEN_W": 16
+    },
+    "deployment": {
+      "tokens_per_context": 1048576,
+      "chunk_tokens": 64,
+      "hosts": 16
+    },
+    "budget_KiB": 216
+  },
+  "object_universe": {
+    "formula": "(1M tokens / 64-token chunks) x 16 hosts",
+    "chunks_per_host": 16384,
+    "objects": 262144,
+    "object_id_bits": 18
+  },
+  "naive_flat_directory": {
+    "tag_validating": {
+      "formula": "U * (1 + OBJ_ID_W + PTR_W) = 262144 * (1 + 18 + 20)",
+      "entry_bits": 39,
+      "total_bits": 10223616,
+      "total_KiB": 1248.0,
+      "deficit_KiB": 1032.0,
+      "over_budget_factor": 5.777777777777778
+    },
+    "literal_mapper_format_lower_bound": {
+      "formula": "U * (1 + TAG_W + PTR_W) = 262144 * (1 + 3 + 20)  (3-bit tag cannot validate 2^18 ids -> not a viable directory)",
+      "entry_bits": 24,
+      "total_bits": 6291456,
+      "total_KiB": 768.0,
+      "deficit_KiB": 552.0
+    },
+    "direct_indexed_exact": {
+      "formula": "U * (1 + PTR_W) = 262144 * 21  (index = full 18-bit id, no tag, exact by construction)",
+      "entry_bits": 21,
+      "total_bits": 5505024,
+      "total_KiB": 672.0,
+      "deficit_KiB": 456.0
+    }
+  },
+  "two_tier_mapper": {
+    "as_implemented": {
+      "formula": "HOT_ENTRIES*(1+TAG_W+PTR_W) + BACKING_ENTRIES*(1+PTR_W) = 512*24 + 2048*21",
+      "t1_entry_bits": 24,
+      "t2_entry_bits": 21,
+      "t1_bits": 12288,
+      "t2_bits": 43008,
+      "total_bits": 55296,
+      "total_KiB": 6.75,
+      "fits_budget": true,
+      "designed_universe": 4096,
+      "t2_fold_factor_at_262144": 128,
+      "coverage_verdict": "Fits 216 KiB trivially but covers only a 2^12 = 4,096-object universe. Tier-2 is direct-mapped by the low 11 id bits with NO tag (cefe_addr_mapper.sv L95-96, L140), so at 262,144 objects 128 objects fold onto every backing slot with zero validation. It is a translation cache, not an authoritative directory."
+    },
+    "scaled_to_universe": {
+      "formula": "HOT_ENTRIES*(1+(OBJ_ID_W-HOT_IDX_W)+PTR_W) + U*(1+PTR_W) = 512*30 + 262144*21",
+      "t1_bits": 15360,
+      "t2_bits": 5505024,
+      "total_bits": 5520384,
+      "total_KiB": 673.875,
+      "fits_budget": false,
+      "deficit_KiB": 457.875,
+      "min_budget_KiB": 673.875,
+      "load_factor_assumption": "Tier-1 holds the 200-400 active chunks/step (load 0.39-0.78 of 512); Tier-2 runs at load factor 1.0 (every object has exactly one home, overwrite eviction) -- statistical, not guaranteed, coverage.",
+      "verdict": "Does NOT fit: needs 673.9 KiB, a 457.9 KiB gap over the 216 KiB budget. Minimum budget for full-universe exact coverage (direct-indexed backing + hot tier) is ~674 KiB, 3.1x budget."
+    }
+  },
+  "resident_set_directory": {
+    "entry_formula": "1 (valid) + 18 (full object id) + 16 (generation) + ceil(log2 S) (slot pointer)",
+    "pool_sweep": {
+      "512": {
+        "entry_bits": 44,
+        "total_bits": 22528,
+        "total_KiB": 2.75,
+        "fits_budget": true
+      },
+      "4096": {
+        "entry_bits": 47,
+        "total_bits": 192512,
+        "total_KiB": 23.5,
+        "fits_budget": true
+      },
+      "16384": {
+        "entry_bits": 49,
+        "total_bits": 802816,
+        "total_KiB": 98.0,
+        "fits_budget": true
+      },
+      "65536": {
+        "entry_bits": 51,
+        "total_bits": 3342336,
+        "total_KiB": 408.0,
+        "fits_budget": false
+      }
+    },
+    "crossover_slots_integer": 34695,
+    "crossover_slots_continuous": 35313.2,
+    "largest_power_of_two_that_fits": 32768,
+    "KiB_at_largest_pow2": 200.0,
+    "pin_table_crosscheck": {
+      "formula": "400 * (1+4+9+16) = 12,000 b (batch-scope instance of the same resident-binding idea, cefe_pin_table.sv L28-29)",
+      "total_bits": 12000,
+      "total_KiB": 1.46484375
+    }
+  },
+  "aliasing": {
+    "tag_w_as_coded": 3,
+    "header_comment_note": "Header L32 documents {valid, tag[10:0], ptr[19:0]} (11-bit tag); the actual RTL localparam TAG_W = LOGICAL_ID_W - HOT_IDX_W = 12 - 9 = 3 (L69-71, L83-85). The header comment is stale; the analysis uses the as-coded 3-bit tag (and the 9-bit tag of the 18-bit-widened variant).",
+    "as_designed_4096_universe": {
+      "slot_tag_space": 4096,
+      "expected_alias_pairs_full_universe": 2047.5,
+      "per_lookup_alias_prob_at_400_active": 0.09305019562130068,
+      "expected_false_admit_pairs_after_gen_check": 0.03124237060546875
+    },
+    "scaled_262144_universe": {
+      "tag_w_if_widened": 9,
+      "slot_tag_space": 262144,
+      "expected_alias_pairs_full_universe": 131071.5,
+      "per_lookup_alias_prob": 0.6321212605040221,
+      "tier2_objects_per_slot_tagless": 128.0,
+      "expected_false_admit_pairs_after_gen_check": 1.9999923706054688,
+      "per_lookup_false_admit_prob": 9.645404975952485e-06
+    },
+    "false_admit_chain": "P(false admit) = P(same Tier-1 slot) x P(colliding tag) x P(same 16-bit generation). An alias alone returns a wrong pointer \u2014 a performance/Recovery issue. It becomes a correctness issue (stale payload admitted) ONLY if the aliased entry also carries the same 16-bit generation the OAT is validating: suppression factor 2^-16. At the 262,144-object universe ~131,072 aliasing pairs are expected in the hot tier, of which ~2.0 would ALSO share a generation by chance \u2014 so the two-tier hash as-implemented cannot serve as the authoritative binding at 1M-token scale.",
+    "resident_directory_safety": "The resident-set directory stores the full 18-bit object id + 16-bit generation and validates by exact compare: aliasing is zero by construction (two distinct objects always differ in id). The only residual hazard is generation reuse on the SAME id across 2^16 reclaims (ABA), suppressed at 2^-16 per reuse cycle \u2014 this is the discipline the pin table enforces while a transfer is in flight."
+  }
+}

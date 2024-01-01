@@ -1,0 +1,115 @@
+{
+  "break_even": 0.45,
+  "trace_overlap": 0.52,
+  "domains": 16,
+  "rows": [
+    {
+      "overlap": 0.0,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 1.6777216,
+      "tput_scale_nocfo": 0.5732781737091713,
+      "tput_scale_cfo": 0.5732842016102966,
+      "p99_ms_nocfo": 1.7273575122403897,
+      "p99_ms_cfo": 1.7273531809991112
+    },
+    {
+      "overlap": 0.1,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 1.5263296,
+      "tput_scale_nocfo": 0.5732816821063431,
+      "tput_scale_cfo": 0.6300240145814688,
+      "p99_ms_nocfo": 1.7273564197601572,
+      "p99_ms_cfo": 1.6414060451738879
+    },
+    {
+      "overlap": 0.2,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 1.3724416,
+      "tput_scale_nocfo": 0.5732814051592616,
+      "tput_scale_cfo": 0.7004738283532586,
+      "p99_ms_nocfo": 1.7273535547652767,
+      "p99_ms_cfo": 1.527962597442726
+    },
+    {
+      "overlap": 0.3,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 1.1919616,
+      "tput_scale_nocfo": 0.5732814051592616,
+      "tput_scale_cfo": 0.8060686091077174,
+      "p99_ms_nocfo": 1.7273535547652767,
+      "p99_ms_cfo": 1.3739381227289567
+    },
+    {
+      "overlap": 0.4,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 1.0429696000000002,
+      "tput_scale_nocfo": 0.5732814051592616,
+      "tput_scale_cfo": 0.919276004791914,
+      "p99_ms_nocfo": 1.7273535547652767,
+      "p99_ms_cfo": 1.2606250717980148
+    },
+    {
+      "overlap": 0.45,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 0.9424576,
+      "tput_scale_nocfo": 0.5732814051592616,
+      "tput_scale_cfo": 1.0,
+      "p99_ms_nocfo": 1.7273535547652767,
+      "p99_ms_cfo": 1.185651737073084
+    },
+    {
+      "overlap": 0.5,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 0.9089536,
+      "tput_scale_nocfo": 0.5732814051592616,
+      "tput_scale_cfo": 1.0,
+      "p99_ms_nocfo": 1.7273535547652767,
+      "p99_ms_cfo": 1.1609229628786382
+    },
+    {
+      "overlap": 0.6,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 0.7166656,
+      "tput_scale_nocfo": 0.5732814051592616,
+      "tput_scale_cfo": 1.0,
+      "p99_ms_nocfo": 1.7273535547652767,
+      "p99_ms_cfo": 0.9628780974344977
+    },
+    {
+      "overlap": 0.7,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 0.5841856000000001,
+      "tput_scale_nocfo": 0.5732814051592616,
+      "tput_scale_cfo": 1.0,
+      "p99_ms_nocfo": 1.7273535547652767,
+      "p99_ms_cfo": 0.8510090746624511
+    },
+    {
+      "overlap": 0.8,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 0.4200256,
+      "tput_scale_nocfo": 0.5732814651147775,
+      "tput_scale_cfo": 1.0,
+      "p99_ms_nocfo": 1.7273535547652767,
+      "p99_ms_cfo": 0.6828982200555784
+    },
+    {
+      "overlap": 0.9,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 0.2683456,
+      "tput_scale_nocfo": 0.5732814651147775,
+      "tput_scale_cfo": 1.0,
+      "p99_ms_nocfo": 1.7273535547652767,
+      "p99_ms_cfo": 0.5721737024910736
+    },
+    {
+      "overlap": 1.0,
+      "read_util_nocfo": 1.6777216,
+      "read_util_cfo": 0.1048576,
+      "tput_scale_nocfo": 0.5732781737091713,
+      "tput_scale_cfo": 1.0,
+      "p99_ms_nocfo": 1.7273575122403897,
+      "p99_ms_cfo": 0.5680531182880728
+    }
+  ]
+}

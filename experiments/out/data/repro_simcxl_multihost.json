@@ -1,0 +1,186 @@
+{
+  "config": {
+    "scorer_clock_mhz": 1500.0,
+    "fast_path_cycles": 8,
+    "reject_path_cycles": 4,
+    "descs_per_host": 128,
+    "n_trials": 10,
+    "host_counts": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      16,
+      32
+    ]
+  },
+  "latency_distribution": {
+    "hosts_1": {
+      "n_hosts": 1,
+      "mean_ns": 9.75,
+      "p50_ns": 8.0,
+      "p95_ns": 18.666666666666664,
+      "p99_ns": 18.666666666666664,
+      "p999_ns": 18.666666666666664,
+      "max_ns": 18.666666666666664
+    },
+    "hosts_2": {
+      "n_hosts": 2,
+      "mean_ns": 157.69739583333333,
+      "p50_ns": 174.0,
+      "p95_ns": 280.0,
+      "p99_ns": 296.0,
+      "p999_ns": 302.66666666666663,
+      "max_ns": 302.66666666666663
+    },
+    "hosts_3": {
+      "n_hosts": 3,
+      "mean_ns": 184.68333333333334,
+      "p50_ns": 204.0,
+      "p95_ns": 282.66666666666663,
+      "p99_ns": 297.3333333333333,
+      "p999_ns": 304.0,
+      "max_ns": 304.0
+    },
+    "hosts_4": {
+      "n_hosts": 4,
+      "mean_ns": 196.08515625,
+      "p50_ns": 209.33333333333331,
+      "p95_ns": 286.66666666666663,
+      "p99_ns": 297.3333333333333,
+      "p999_ns": 304.0,
+      "max_ns": 304.0
+    },
+    "hosts_6": {
+      "n_hosts": 6,
+      "mean_ns": 208.17916666666667,
+      "p50_ns": 220.0,
+      "p95_ns": 285.3333333333333,
+      "p99_ns": 293.3333333333333,
+      "p999_ns": 302.66666666666663,
+      "max_ns": 304.0
+    },
+    "hosts_8": {
+      "n_hosts": 8,
+      "mean_ns": 213.28984375,
+      "p50_ns": 222.66666666666666,
+      "p95_ns": 284.0,
+      "p99_ns": 290.66666666666663,
+      "p999_ns": 299.6813333333339,
+      "max_ns": 304.0
+    },
+    "hosts_16": {
+      "n_hosts": 16,
+      "mean_ns": 222.04954427083334,
+      "p50_ns": 226.66666666666666,
+      "p95_ns": 285.3333333333333,
+      "p99_ns": 292.0,
+      "p999_ns": 302.0280000000008,
+      "max_ns": 304.0
+    },
+    "hosts_32": {
+      "n_hosts": 32,
+      "mean_ns": 227.043359375,
+      "p50_ns": 229.33333333333331,
+      "p95_ns": 285.3333333333333,
+      "p99_ns": 292.0,
+      "p999_ns": 301.3333333333333,
+      "max_ns": 304.0
+    }
+  },
+  "bottleneck_analysis": {
+    "hosts_1": {
+      "n_hosts": 1,
+      "per_step_p99_us": 0.4666666666666666,
+      "frac_of_decode_p99": 0.0004666666666666666,
+      "is_bottleneck_p99": false
+    },
+    "hosts_2": {
+      "n_hosts": 2,
+      "per_step_p99_us": 7.4,
+      "frac_of_decode_p99": 0.0074,
+      "is_bottleneck_p99": false
+    },
+    "hosts_3": {
+      "n_hosts": 3,
+      "per_step_p99_us": 7.433333333333333,
+      "frac_of_decode_p99": 0.007433333333333333,
+      "is_bottleneck_p99": false
+    },
+    "hosts_4": {
+      "n_hosts": 4,
+      "per_step_p99_us": 7.433333333333333,
+      "frac_of_decode_p99": 0.007433333333333333,
+      "is_bottleneck_p99": false
+    },
+    "hosts_6": {
+      "n_hosts": 6,
+      "per_step_p99_us": 7.333333333333333,
+      "frac_of_decode_p99": 0.007333333333333333,
+      "is_bottleneck_p99": false
+    },
+    "hosts_8": {
+      "n_hosts": 8,
+      "per_step_p99_us": 7.266666666666666,
+      "frac_of_decode_p99": 0.007266666666666666,
+      "is_bottleneck_p99": false
+    },
+    "hosts_16": {
+      "n_hosts": 16,
+      "per_step_p99_us": 7.3,
+      "frac_of_decode_p99": 0.0073,
+      "is_bottleneck_p99": false
+    },
+    "hosts_32": {
+      "n_hosts": 32,
+      "per_step_p99_us": 7.3,
+      "frac_of_decode_p99": 0.0073,
+      "is_bottleneck_p99": false
+    }
+  },
+  "jain_fairness_across_hostcounts": 0.8760810165459744,
+  "host_fairness": {
+    "hosts_1": {
+      "n_hosts": 1,
+      "jain": 1.0,
+      "n_steps": 1280
+    },
+    "hosts_2": {
+      "n_hosts": 2,
+      "jain": 0.996276651411933,
+      "n_steps": 2560
+    },
+    "hosts_3": {
+      "n_hosts": 3,
+      "jain": 0.9944945600133248,
+      "n_steps": 3840
+    },
+    "hosts_4": {
+      "n_hosts": 4,
+      "jain": 0.9956231324151388,
+      "n_steps": 5120
+    },
+    "hosts_6": {
+      "n_hosts": 6,
+      "jain": 0.9925638069833636,
+      "n_steps": 7680
+    },
+    "hosts_8": {
+      "n_hosts": 8,
+      "jain": 0.9875607054785489,
+      "n_steps": 10240
+    },
+    "hosts_16": {
+      "n_hosts": 16,
+      "jain": 0.9792469805041236,
+      "n_steps": 20480
+    },
+    "hosts_32": {
+      "n_hosts": 32,
+      "jain": 0.9811356268359684,
+      "n_steps": 40960
+    }
+  }
+}

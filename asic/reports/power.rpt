@@ -1,0 +1,35 @@
+==============================================================================
+ Report : power
+ Design : APEX_PIPELINE
+ Library: asap7sc7p5t_28 RVT TT NLDM
+ Method : Activity-based estimation using Liberty leakage data
+ Clock  : 1 GHz, Vdd = 0.7V
+ Date   : 2026-06-28
+==============================================================================
+
+NOTE: Dynamic power assumes average switching activity alpha=0.15.
+      Clock tree power estimated at 30% of total dynamic.
+      For accurate results, use VCD-based power analysis.
+
+  Module                    Activity  Dyn(mW)   Leak(mW)  Total(mW) 
+  -----------------------------------------------------------------
+  APEX_MAC_ARRAY            0.25      0.3141    0.3769    0.6911    
+  APEX_TOPK_HEAP            0.15      0.1260    0.2520    0.3780    
+  APEX_EXPERT_BANK_x7       0.06      1.8619    9.3093    11.1712   
+  APEX_PCM                  0.20      0.0595    0.0892    0.1487    
+  APEX_WEIGHT_UPDATE        0.02      0.0126    0.1887    0.2013    
+  APEX_LOSS_COMPUTE         0.10      0.0106    0.0319    0.0426    
+  APEX_SEA                  0.05      0.0149    0.0894    0.1043    
+  APEX_PIPELINE_CTRL        0.30      0.0360    0.0360    0.0720    
+  APEX_PIPELINE_TOP         0.20      0.0270    0.0405    0.0675    
+  ICG                       0.01      0.0000    0.0004    0.0005    
+  Clock tree (est 30%)      1.00      0.7388    0.0000    0.7388    
+  -----------------------------------------------------------------
+  TOTAL                               3.2014    10.4145   13.6159   
+
+  Total power: 13.616 mW
+    Dynamic:   3.201 mW (24%)
+    Leakage:   10.414 mW (76%)
+
+  NOTE: With SRAM macros for expert banks, dynamic power reduces
+        significantly (SRAM read power << register-file read power).

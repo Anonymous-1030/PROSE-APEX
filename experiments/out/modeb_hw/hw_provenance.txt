@@ -1,0 +1,18 @@
+# PROSE-APEX Mode B — hardware provenance
+# captured: 2026-07-03T07:39:20Z
+host: MINGW64_NT-10.0-26200 WBX 3.6.6-1cdd4371.x86_64 2026-01-15 22:20 UTC x86_64 Msys
+
+## devdax devices (/dev/dax*)
+  (none)
+
+## cxl devices (cxl list)
+  (cxl CLI not installed)
+
+## daxctl regions (daxctl list)
+  (daxctl not installed)
+
+## NUMA topology (numactl -H)
+  (numactl not installed)
+
+## kernel CXL messages (dmesg | grep -i cxl)
+  (no dmesg access or no CXL lines)

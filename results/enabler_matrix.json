@@ -1,0 +1,132 @@
+{
+  "config": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "n_steps": 200,
+    "oversubscription": 32,
+    "n_tenants": 16,
+    "admit_budget": 32,
+    "capacity": 512,
+    "lifetime_mean_steps": 8.0,
+    "cells": {
+      "gateON_autoON": {
+        "gate_on": true,
+        "autonomy_on": true
+      },
+      "gateON_autoOFF": {
+        "gate_on": true,
+        "autonomy_on": false
+      },
+      "gateOFF_autoON": {
+        "gate_on": false,
+        "autonomy_on": true
+      },
+      "gateOFF_autoOFF": {
+        "gate_on": false,
+        "autonomy_on": false
+      }
+    }
+  },
+  "aggregate": {
+    "gateON_autoON": {
+      "sustained_throughput_norm": 1.0,
+      "sustained_throughput_norm_ci95": 0.0,
+      "sustained_valid_Bpstep": 2097152.0,
+      "rpe_payload_frac": 0.0,
+      "rpe_payload_frac_ci95": 0.0,
+      "reclaimable_frac_mean": 0.9375,
+      "reclaimable_frac_mean_ci95": 0.0,
+      "exhaustion_step_mean": null,
+      "exhaustion_step_ci95": 0.0,
+      "exhausted_in_seeds": "0/10",
+      "n_admitted_mean": 6400.0,
+      "n_failed_admissions_mean": 0.0,
+      "rpe_events_mean": 0.0,
+      "evict_blocked_mean": 2251.0
+    },
+    "gateON_autoOFF": {
+      "sustained_throughput_norm": 0.00025,
+      "sustained_throughput_norm_ci95": 0.0005654999999999999,
+      "sustained_valid_Bpstep": 524.288,
+      "rpe_payload_frac": 0.0,
+      "rpe_payload_frac_ci95": 0.0,
+      "reclaimable_frac_mean": 0.07193359375,
+      "reclaimable_frac_mean_ci95": 0.0015655624285531202,
+      "exhaustion_step_mean": 30.2,
+      "exhaustion_step_ci95": 0.5642419339255104,
+      "exhausted_in_seeds": "10/10",
+      "n_admitted_mean": 1738.3,
+      "n_failed_admissions_mean": 161530.2,
+      "rpe_events_mean": 0.0,
+      "evict_blocked_mean": 0.0
+    },
+    "gateOFF_autoON": {
+      "sustained_throughput_norm": 0.82259375,
+      "sustained_throughput_norm_ci95": 0.003022160456398496,
+      "sustained_valid_Bpstep": 1725104.128,
+      "rpe_payload_frac": 0.175859375,
+      "rpe_payload_frac_ci95": 0.0017890440064546316,
+      "reclaimable_frac_mean": 0.9375,
+      "reclaimable_frac_mean_ci95": 0.0,
+      "exhaustion_step_mean": null,
+      "exhaustion_step_ci95": 0.0,
+      "exhausted_in_seeds": "0/10",
+      "n_admitted_mean": 6400.0,
+      "n_failed_admissions_mean": 0.0,
+      "rpe_events_mean": 2251.0,
+      "evict_blocked_mean": 0.0
+    },
+    "gateOFF_autoOFF": {
+      "sustained_throughput_norm": 0.00025,
+      "sustained_throughput_norm_ci95": 0.0005654999999999999,
+      "sustained_valid_Bpstep": 524.288,
+      "rpe_payload_frac": 0.0,
+      "rpe_payload_frac_ci95": 0.0,
+      "reclaimable_frac_mean": 0.07193359375,
+      "reclaimable_frac_mean_ci95": 0.0015655624285531202,
+      "exhaustion_step_mean": 30.2,
+      "exhaustion_step_ci95": 0.5642419339255104,
+      "exhausted_in_seeds": "10/10",
+      "n_admitted_mean": 1738.3,
+      "n_failed_admissions_mean": 161530.2,
+      "rpe_events_mean": 0.0,
+      "evict_blocked_mean": 0.0
+    }
+  },
+  "acceptance_checks": {
+    "A1_gateOFF_autoON_rpe_positive": {
+      "pass": true,
+      "actual_rpe_payload_frac": 0.175859375,
+      "target": "~0.17 (GENONLY-class at 32x)"
+    },
+    "A2_exactly_one_deployable_cell": {
+      "pass": true,
+      "actual_deployable_cells": [
+        "gateON_autoON"
+      ],
+      "criterion": "RPE == 0 AND sustained throughput >= 0.99x"
+    },
+    "A3_autonomyOFF_throughput_collapse": {
+      "pass": true,
+      "actual_sustained_norm": {
+        "gateON_autoOFF": 0.00025,
+        "gateOFF_autoOFF": 0.00025
+      },
+      "actual_exhaustion_step": {
+        "gateON_autoOFF": 30.2,
+        "gateOFF_autoOFF": 30.2
+      },
+      "criterion": ">= 50% sustained-throughput loss after exhaustion"
+    }
+  }
+}

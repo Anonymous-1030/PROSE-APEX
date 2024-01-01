@@ -1,0 +1,59 @@
+{
+  "operating_point": {
+    "cxl_bw_gbs": 2.0,
+    "n_hosts": 16,
+    "n_candidates": 1024,
+    "budget_per_step": 64
+  },
+  "n_steps": 256,
+  "seed": 0,
+  "measured_cfo_dedup": 0.75406875,
+  "stages": [
+    {
+      "label": "Fetch-then-score",
+      "boundary": "fts_none",
+      "scorer": "none",
+      "cfo_dedup_frac": 0.0,
+      "tok_per_s": 26.628015569507223,
+      "recovery_at_k": 0.0,
+      "wasted_bytes_mean": 62914560.0,
+      "relative_throughput": 1.0
+    },
+    {
+      "label": "+ host pre-score",
+      "boundary": "host_prescore",
+      "scorer": "odus_x",
+      "cfo_dedup_frac": 0.0,
+      "tok_per_s": 83.02337938363442,
+      "recovery_at_k": 0.3812255859375,
+      "wasted_bytes_mean": 0.0,
+      "relative_throughput": 3.1178958554729
+    },
+    {
+      "label": "+ endpoint score / validate",
+      "boundary": "cefe",
+      "scorer": "odus_x",
+      "cfo_dedup_frac": 0.0,
+      "tok_per_s": 83.33333333333333,
+      "recovery_at_k": 0.3812255859375,
+      "wasted_bytes_mean": 0.0,
+      "relative_throughput": 3.129535999999999
+    },
+    {
+      "label": "+ CFO",
+      "boundary": "cefe",
+      "scorer": "odus_x",
+      "cfo_dedup_frac": 0.75406875,
+      "tok_per_s": 83.33333333333333,
+      "recovery_at_k": 0.3812255859375,
+      "wasted_bytes_mean": 0.0,
+      "relative_throughput": 3.129535999999999
+    }
+  ],
+  "validation_only_capacity_gain": 1.8902710573011492,
+  "validation_only_source": "D:\\PROSE--------APEX\\experiments\\out\\runtime_staleness\\runtime_staleness.json",
+  "interpretation": {
+    "validation_only": "Runtime-observed stale-payload removal at fixed offered load; not an additive component of the headline waterfall.",
+    "headline": "At this 16x candidate-oversubscribed point, pre-transfer filtering supplies almost all of the 3.13x throughput gain; endpoint validation supplies atomicity and tail protection."
+  }
+}

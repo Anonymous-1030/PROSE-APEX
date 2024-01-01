@@ -1,0 +1,41 @@
+Design-space study (16 tenants, pool=512, budget=32, mean of 10 seeds, bound=capacity)
+--- 2x ---
+ oversub     mechanism valid_thr stale_adm%   RPE%  pin_pk  reclaim%    P99_ns retr/d
+      2x         PROSE     1.00x       0.0%   0.0%      32     93.8%       9.0   0.00
+      2x        REFCNT     1.00x       0.0%   0.0%      64     87.5%     294.7   0.00
+      2x      REFCNT_S     0.83x      17.3%  17.3%      32     93.8%     525.7   0.17
+      2x        2PHASE     1.00x       0.0%   0.0%      64     87.5%    4009.0   0.00
+      2x       GENONLY     0.82x       0.0%  17.5%      32     93.8%       9.0   0.00
+      2x RECLAIM_DEFER     0.82x       0.0%  17.5%      64     87.5%       9.0   0.00
+      2x PROSE_HOSTSEL     1.00x       0.0%   0.0%      32     93.8%       9.0   0.00
+
+--- 8x ---
+ oversub     mechanism valid_thr stale_adm%   RPE%  pin_pk  reclaim%    P99_ns retr/d
+      8x         PROSE     1.00x       0.0%   0.0%      32     93.8%       9.0   0.00
+      8x        REFCNT     1.00x       0.0%   0.0%     256     50.0%     509.0   0.00
+      8x      REFCNT_S     0.83x      17.4%  17.4%      32     93.8%     525.7   0.18
+      8x        2PHASE     1.00x       0.0%   0.0%     256     50.0%    7009.0   0.00
+      8x       GENONLY     0.83x       0.0%  17.4%      32     93.8%       9.0   0.00
+      8x RECLAIM_DEFER     0.83x       0.0%  17.4%     256     50.0%       9.0   0.00
+      8x PROSE_HOSTSEL     1.00x       0.0%   0.0%      32     93.8%       9.0   0.00
+
+--- 32x ---
+ oversub     mechanism valid_thr stale_adm%   RPE%  pin_pk  reclaim%    P99_ns retr/d
+     32x         PROSE     1.00x       0.0%   0.0%      32     93.8%       9.0   0.00
+     32x        REFCNT     0.50x       0.0%   0.0%     512      0.0%   12509.0   0.00
+     32x      REFCNT_S     0.82x      17.5%  17.5%      32     93.8%     275.7   0.17
+     32x        2PHASE     0.50x       0.0%   0.0%     512      0.0%  175009.0   0.00
+     32x       GENONLY     0.82x       0.0%  17.6%      32     93.8%       9.0   0.00
+     32x RECLAIM_DEFER     0.41x       0.0%  17.5%     512      0.0%       9.0   0.00
+     32x PROSE_HOSTSEL     1.00x       0.0%   0.0%      32     93.8%       9.0   0.00
+
+--- 64x ---
+ oversub     mechanism valid_thr stale_adm%   RPE%  pin_pk  reclaim%    P99_ns retr/d
+     64x         PROSE     1.00x       0.0%   0.0%      32     93.8%       9.0   0.00
+     64x        REFCNT     0.50x       0.0%   0.0%     512      0.0%   12509.0   0.00
+     64x      REFCNT_S     0.82x      17.6%  17.6%      32     93.8%     275.7   0.17
+     64x        2PHASE     0.50x       0.0%   0.0%     512      0.0%  175009.0   0.00
+     64x       GENONLY     0.82x       0.0%  17.7%      32     93.8%       9.0   0.00
+     64x RECLAIM_DEFER     0.41x       0.0%  17.8%     512      0.0%       9.0   0.00
+     64x PROSE_HOSTSEL     1.00x       0.0%   0.0%      32     93.8%       9.0   0.00
+

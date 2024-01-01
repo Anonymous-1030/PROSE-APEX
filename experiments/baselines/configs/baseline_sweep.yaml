@@ -1,0 +1,82 @@
+# Baseline-comparison sweep configuration.
+#
+# Every parameter that affects the measured numbers lives HERE (not in the
+# plotting script). Provenance for each value is given inline. All seven
+# mechanisms replay the SAME trajectory generated from these parameters, so the
+# comparison is paired and fair. See ../README.md for the per-mechanism state
+# machine.
+
+# ── seeds ── paired: each seed generates one shared trajectory replayed by all
+# mechanisms. >=5 required by the spec; 10 used here for tighter bootstrap CIs.
+seeds: [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009]
+
+# ── shared hardware / byte constants (paper CXL defaults) ──
+# These mirror simcxl_ext.cxl_admission_sim / cxl_queue_simulator constants that
+# every other SimCXL-extension experiment inherits from calibrated SimCXL.
+defaults:
+  object_bytes: 65536            # 64 KiB KV chunk (CHUNK_PAYLOAD_B, cxl_admission_sim.py)
+  endpoint_capacity: 256         # resident-slot table (allocator capacity, run_runtime_staleness.py)
+  n_objects: 1024               # logical object universe (n_candidates, SimConfig)
+  n_requests: 1200               # promotion descriptors per run
+  link_bw_gbps: 4.0             # per-endpoint effective CXL bandwidth (BW_GBS mid, run_runtime_staleness.py)
+  eviction_interval_ns: 500.0    # allocator reuse cadence (transition_us default, run_runtime_staleness.py)
+
+  # control / header byte costs
+  descriptor_bytes: 64           # BDB descriptor == 64 B metadata summary (META_B)
+  completion_bytes: 64           # completion/doorbell writeback (COMPLETION_B, run_runtime_staleness.py)
+
+  # shared-refcount metadata atomic on a NON-coherent path. One cacheline RMW
+  # plus flush+atomic+visibility latency. 250 ns matches the dequeue-to-DMA
+  # linearization window scale used elsewhere (atomic_commit_ns family) and is a
+  # reasonable, not-inflated, non-coherent shared-metadata round trip.
+  refcount_op_bytes: 64          # one L3 cacheline (l3_cacheline_bytes, simcxl_core)
+  refcount_op_latency_ns: 250.0
+
+  # two-phase reservation exchange (TwoPhaseConfig, two_phase_baseline.py)
+  reserve_req_bytes: 64          # RESERVE(object_id, epoch) == reserve_meta_bytes
+  reserve_rsp_bytes: 32          # capability token == token_bytes (HMAC-trunc)
+  reserve_release_bytes: 32      # explicit release message
+  reserve_rtt_ns: 3500.0         # token-exchange RTT (reserve_rtt_us=3.5, mid of paper's 2-5 us)
+
+  # endpoint epoch/key compare and PROSE fused admit. 9 ns == the SimCXL
+  # fast-path admit the synthesizable APEX RTL is cross-checked against
+  # (fast_path_cycles=8 @1.5GHz + dequeue; endpoint_reserve_service_ns=9.0).
+  gen_check_latency_ns: 9.0
+  prose_admit_latency_ns: 9.0
+
+  # segmented / cancelable DMA. Header + sub-descriptor per segment, and a
+  # generation re-check before each new segment commit. The 4 ns re-check ==
+  # the reject-path validation the RTL is cross-checked against
+  # (reject_path_cycles=4; REJECT_VALIDATION_NS, run_runtime_staleness.py).
+  per_segment_header_bytes: 16
+  per_segment_descriptor_bytes: 8
+  segment_check_latency_ns: 4.0
+  max_inflight_segments: 1       # payload-commit pipeline depth (single in-flight
+  payload_commit_depth: 1        #   segment => waste <= 1*segment_bytes, Test 5)
+
+# ── workloads ── all seven mechanisms run every workload; the paper workload set
+# plus an explicitly named race-stress configuration.
+workloads:
+  # Nominal paper operating point: modest background eviction pressure.
+  - name: nominal
+    target_occupancy: 0.70
+    hot_fraction: 0.25
+    target_link_load: 0.85
+
+  # Larger objects at moderate load (long-transfer regime; a mid-transfer race
+  # spans many segments, exercising the segmented in-flight bound).
+  - name: large_object
+    object_bytes: 262144         # 256 KiB
+    target_occupancy: 0.70
+    hot_fraction: 0.25
+    target_link_load: 0.80
+
+  # RACE-STRESS (explicitly named). endpoint occupancy >= 90%, multiple queued
+  # promotions, eviction/reuse interval on the order of a large-object transfer,
+  # guaranteeing admission/check -> eviction/reuse -> transfer-completion
+  # windows. Identical across all methods.
+  - name: race_stress
+    target_occupancy: 0.92
+    hot_fraction: 0.12           # tighter hot set -> more collisions/eviction
+    target_link_load: 0.97       # near-saturation queueing
+    eviction_interval_ns: 250.0  # reuse cadence ~ large-transfer time scale

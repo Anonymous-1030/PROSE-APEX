@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.benchmarks/
+
+# Experiment / simulation intermediates (checked-in outputs stay tracked)
+*.json.tmp
+
+# Scratch and agent tooling (never ship)
+tmp/
+_build*/
+_baseline_tmp/
+.claude/
+.agents/
+
+# RTL simulation byproducts
+*.vvp
+*.vcd
+apex_pipeline_sim
+rtl/results/
+rtl/apex_xcheck_sim
+rtl/topk_heap_sim
+rtl/cefe_sim
+
+# Host-side compiled benchmarks
+host_sw/bench_modeb_e2e
+host_sw/bench_modeb_e2e.exe
+host_sw/prose_apex_test
+host_sw/prose_apex_test.exe
+
+# FPGA build output
+fpga/out/
+
+# LaTeX byproducts and local paper copies
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+PROSE-X.tex
+PROSE-X.pdf
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local tool / PDK installs (see README for how to obtain)
+/asap7_lib
+/yosys
+
+# Misc scratch
+*.orig.py
+*.bak
+page8-08.png
+*.zip

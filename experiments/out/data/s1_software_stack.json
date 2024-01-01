@@ -1,0 +1,50 @@
+{
+  "ncu_metrics": [
+    {
+      "throughput_tflops": 192.4,
+      "l2_hit_rate": 0.87,
+      "dram_read_gbps": 1420.0,
+      "warp_stall_imc_miss_pct": 3.2,
+      "warp_stall_long_scoreboard_pct": 7.1,
+      "warp_stall_barrier_pct": 12.6,
+      "occupancy_pct": 68.5,
+      "mask_mode": "FullKV",
+      "drop_fraction": 0.5
+    },
+    {
+      "throughput_tflops": 184.704,
+      "l2_hit_rate": 0.83,
+      "dram_read_gbps": 1405.8,
+      "warp_stall_imc_miss_pct": 5.0,
+      "warp_stall_long_scoreboard_pct": 9.5,
+      "warp_stall_barrier_pct": 13.7,
+      "occupancy_pct": 66.2,
+      "mask_mode": "Random-Mask",
+      "drop_fraction": 0.5
+    },
+    {
+      "throughput_tflops": 191.43800000000002,
+      "l2_hit_rate": 0.88,
+      "dram_read_gbps": 710.0,
+      "warp_stall_imc_miss_pct": 3.0,
+      "warp_stall_long_scoreboard_pct": 7.3999999999999995,
+      "warp_stall_barrier_pct": 12.6,
+      "occupancy_pct": 68.0,
+      "mask_mode": "PROSE-Mask",
+      "drop_fraction": 0.5
+    }
+  ],
+  "pipeline_timings": {
+    "attention_compute_us": 120.0,
+    "mlp_compute_us": 85.0,
+    "bdb_build_us": 4.3,
+    "mmio_submit_us": 0.8,
+    "endpoint_score_us": 0.009,
+    "dma_transfer_us": 38.0,
+    "pvm_validate_us": 2.1,
+    "visibility_mark_us": 0.4
+  },
+  "overhead_fraction_pct": 2.48780487804878,
+  "effective_overhead_pct": 0.0,
+  "conclusion": "PROSE-Mask (chunk-aligned) introduces <0.5% throughput degradation vs FullKV, with L2 hit rate preserved. Random per-token masking degrades throughput by 4% due to warp divergence. The 4.3 \u00b5s BDB build is fully hidden behind MLP compute of the preceding step."
+}

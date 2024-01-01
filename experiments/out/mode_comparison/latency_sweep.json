@@ -1,0 +1,96 @@
+[
+  {
+    "host_rtt_ns": 50,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 23.649999999999995,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 100,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 23.699999999999996,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 150,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 23.75,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 200,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 23.800000000000008,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 300,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 23.899999999999995,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 500,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 24.100000000000005,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 750,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 24.350000000000005,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 1000,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 24.600000000000005,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 2000,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 25.600000000000005,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 5000,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 28.60000000000001,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 150,
+    "host_bounce": true,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 28.75,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 500,
+    "host_bounce": true,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 29.10000000000001,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "host_rtt_ns": 1000,
+    "host_bounce": true,
+    "throughput_tok_s": 2000.0,
+    "rpe_bytes_mean": 0.0,
+    "admission_latency_us": 29.60000000000001,
+    "recovery_at_k": 0.3775634765625
+  }
+]

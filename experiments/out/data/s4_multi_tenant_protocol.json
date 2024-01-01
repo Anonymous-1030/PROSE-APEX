@@ -1,0 +1,65 @@
+{
+  "adversarial_sweep": [
+    {
+      "adversarial_rate": 5,
+      "normal_p99_ns_mean": 9.0,
+      "normal_p99_ns_std": 0.0,
+      "jain_fairness_mean": 0.999307680199637,
+      "adversarial_backpressure_mean": 0.0,
+      "normal_p50_ns_mean": 9.0
+    },
+    {
+      "adversarial_rate": 10,
+      "normal_p99_ns_mean": 9.0,
+      "normal_p99_ns_std": 0.0,
+      "jain_fairness_mean": 0.9992886206118026,
+      "adversarial_backpressure_mean": 0.0,
+      "normal_p50_ns_mean": 9.0
+    },
+    {
+      "adversarial_rate": 25,
+      "normal_p99_ns_mean": 9.0,
+      "normal_p99_ns_std": 0.0,
+      "jain_fairness_mean": 0.9993045605760458,
+      "adversarial_backpressure_mean": 0.0,
+      "normal_p50_ns_mean": 9.0
+    },
+    {
+      "adversarial_rate": 50,
+      "normal_p99_ns_mean": 9.0,
+      "normal_p99_ns_std": 0.0,
+      "jain_fairness_mean": 0.9991458674780077,
+      "adversarial_backpressure_mean": 11280.0,
+      "normal_p50_ns_mean": 9.0
+    },
+    {
+      "adversarial_rate": 100,
+      "normal_p99_ns_mean": 9.0,
+      "normal_p99_ns_std": 0.0,
+      "jain_fairness_mean": 0.9993890981495579,
+      "adversarial_backpressure_mean": 36481.0,
+      "normal_p50_ns_mean": 9.0
+    }
+  ],
+  "dcm_preemption": {
+    "preempt_at_cycle": 50,
+    "reclaim_region": [
+      100,
+      200
+    ],
+    "affected_vc": 3,
+    "in_flight_affected": 1,
+    "rejected_in_1_cycle": 1,
+    "data_exposed_bytes": 0,
+    "other_vcs_stalled": false,
+    "deadlock": false,
+    "response_latency_cycles": 1
+  },
+  "dcm_timeline_summary": {
+    "response_latency_cycles": 1,
+    "data_exposed": false,
+    "deadlock_free": true,
+    "other_vcs_unaffected": true
+  },
+  "conclusion": "VC-WRR maintains Jain fairness > 0.98 even when one tenant floods at 100\u00d7 normal rate. P99 latency for normal tenants stays below 1 \u00b5s budget. DCM Region Reclaim is handled in 1 cycle via combinational region-match \u2192 null-complete, with zero data exposure and zero stall to other VCs."
+}

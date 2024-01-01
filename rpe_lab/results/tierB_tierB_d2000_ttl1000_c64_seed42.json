@@ -1,0 +1,19 @@
+{
+  "run_id": "tierB_d2000_ttl1000_c64_seed42",
+  "tier": "B",
+  "constructed": true,
+  "iterations": 7200,
+  "gets_ok": 0,
+  "guard_fires": 75,
+  "not_found": 7117,
+  "other_err": 8,
+  "rpe_events": 5,
+  "rpe_payload_bytes": 18350080,
+  "torn_events": 0,
+  "torn_payload_bytes": 0,
+  "gen_skew_events": 0,
+  "no_magic_discards": 0,
+  "success_mismatch": 0,
+  "mismatch_detail": [],
+  "payload_bytes_total": 0
+}

@@ -1,0 +1,48 @@
+{
+  "run_id": "dod6_er0.5_bsoftpin_maxput_tc400m_ttl1000_c64_seed42",
+  "tier": "A",
+  "constructed": false,
+  "concurrency": 64,
+  "seed": 42,
+  "tc": "400mbit",
+  "trace": {
+    "path": "$RPE_LAB/trace/BurstGPT_1.csv",
+    "start": 1154000,
+    "start_b": 90000,
+    "speedup": 10.0
+  },
+  "commit": "f20b7061097e4e2fda825f4106f215c71f13274a",
+  "master_flags": {
+    "eviction_high_watermark_ratio": 0.5,
+    "eviction_ratio": 0.5,
+    "default_kv_lease_ttl": 1000,
+    "allow_evict_soft_pinned_objects": true
+  },
+  "duration_s": 600,
+  "gets_total": 15798,
+  "gets_ok": 3493,
+  "guard_fires": 3589,
+  "guard_fires_events": 3589,
+  "rpe_events": 1,
+  "rpe_payload_bytes": 3670016,
+  "torn_events": 1,
+  "torn_payload_bytes": 3670016,
+  "gen_skew_events": 2,
+  "gen_skew_payload_bytes": 7340032,
+  "payload_bytes_total": 12819365888,
+  "rpe_payload_rate_pct": 0.028629,
+  "misbw_bytes": 13171687424,
+  "success_mismatch": 0,
+  "no_magic_discards": 0,
+  "not_found": 8692,
+  "burst_share_pct": null,
+  "throughput_mbps": 21.33,
+  "put_failures_pool_full": 0,
+  "reclaimable_pct": null,
+  "master_metrics": {
+    "start": {},
+    "end": {},
+    "evictions_delta": {}
+  },
+  "notes": "DoD run 6: pressure at max rate (8 putters, no pacing) so every B put forces an eviction sweep of the whole candidate queue; tc 400mbit; B soft-pin; er=0.5; payload v2."
+}

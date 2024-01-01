@@ -1,0 +1,49 @@
+{
+  "config": {
+    "n_hosts": 16,
+    "per_tenant_bw_gbps": 2.0,
+    "alpha": 32,
+    "budget": 32,
+    "n_steps": 256,
+    "seed": 42,
+    "rtt_sweep_us": [
+      2.0,
+      3.5,
+      5.0
+    ],
+    "token_table_capacity": 256
+  },
+  "prose_apex": {
+    "mean_us": 1088.2771200000004,
+    "p50_us": 1088.2771200000002,
+    "p99_us": 1088.2771200000002,
+    "throughput_tok_s": 14702.137632003138,
+    "n_samples": 4096
+  },
+  "two_phase": {
+    "2.0": {
+      "mean_us": 1353.9544199999787,
+      "p50_us": 1353.9544199999934,
+      "p99_us": 1617.6317199999974,
+      "throughput_tok_s": 11817.23680181217,
+      "n_samples": 4096,
+      "peak_outstanding": 1024
+    },
+    "3.5": {
+      "mean_us": 1366.7044199999787,
+      "p50_us": 1366.7044199999934,
+      "p99_us": 1641.6317199999974,
+      "throughput_tok_s": 11706.993674609064,
+      "n_samples": 4096,
+      "peak_outstanding": 1024
+    },
+    "5.0": {
+      "mean_us": 1379.4544199999787,
+      "p50_us": 1379.4544199999934,
+      "p99_us": 1665.6317199999974,
+      "throughput_tok_s": 11598.788454351574,
+      "n_samples": 4096,
+      "peak_outstanding": 1024
+    }
+  }
+}

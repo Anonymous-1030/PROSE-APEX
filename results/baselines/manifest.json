@@ -1,0 +1,69 @@
+{
+  "config_file": "D:\\PROSE--------APEX\\experiments\\baselines\\configs\\baseline_sweep.yaml",
+  "seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009
+  ],
+  "workloads": [
+    "nominal",
+    "large_object",
+    "race_stress"
+  ],
+  "methods": [
+    "NoCheck",
+    "SharedRef",
+    "TwoPhase",
+    "GenOnly",
+    "RDMAKey",
+    "Segmented-64",
+    "Segmented-256",
+    "Segmented-4096",
+    "Segmented-16384",
+    "PROSE"
+  ],
+  "segment_sizes": [
+    64,
+    256,
+    4096,
+    16384
+  ],
+  "n_runs": 300,
+  "n_paired_samples_per_method": 30,
+  "paired_sample_axes": "workload x seed",
+  "failed_runs": [],
+  "defaults": {
+    "object_bytes": 65536,
+    "endpoint_capacity": 256,
+    "n_objects": 1024,
+    "n_requests": 1200,
+    "link_bw_gbps": 4.0,
+    "eviction_interval_ns": 500.0,
+    "descriptor_bytes": 64,
+    "completion_bytes": 64,
+    "refcount_op_bytes": 64,
+    "refcount_op_latency_ns": 250.0,
+    "reserve_req_bytes": 64,
+    "reserve_rsp_bytes": 32,
+    "reserve_release_bytes": 32,
+    "reserve_rtt_ns": 3500.0,
+    "gen_check_latency_ns": 9.0,
+    "prose_admit_latency_ns": 9.0,
+    "per_segment_header_bytes": 16,
+    "per_segment_descriptor_bytes": 8,
+    "segment_check_latency_ns": 4.0,
+    "max_inflight_segments": 1,
+    "payload_commit_depth": 1
+  },
+  "n_requests_override": null,
+  "raw_dir": "D:\\PROSE--------APEX\\results\\baselines\\raw",
+  "summary_by_run_csv": "D:\\PROSE--------APEX\\results\\baselines\\summary_by_run.csv",
+  "fairness": "one EventTrace per (workload,seed) generated once with all RNG; every mechanism replays the identical trace"
+}

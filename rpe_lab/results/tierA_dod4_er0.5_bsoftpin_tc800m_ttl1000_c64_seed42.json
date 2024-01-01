@@ -1,0 +1,56 @@
+{
+  "run_id": "dod4_er0.5_bsoftpin_tc800m_ttl1000_c64_seed42",
+  "tier": "A",
+  "constructed": false,
+  "concurrency": 64,
+  "seed": 42,
+  "tc": "800mbit",
+  "trace": {
+    "path": "$RPE_LAB/trace/BurstGPT_1.csv",
+    "start": 1154000,
+    "start_b": 90000,
+    "speedup": 10.0
+  },
+  "commit": "f20b7061097e4e2fda825f4106f215c71f13274a",
+  "master_flags": {
+    "eviction_high_watermark_ratio": 0.5,
+    "eviction_ratio": 0.5,
+    "default_kv_lease_ttl": 1000,
+    "allow_evict_soft_pinned_objects": true
+  },
+  "duration_s": 601,
+  "gets_total": 15798,
+  "gets_ok": 5698,
+  "guard_fires": 6702,
+  "guard_fires_events": 6702,
+  "rpe_events": 0,
+  "rpe_payload_bytes": 0,
+  "payload_bytes_total": 20911751168,
+  "rpe_payload_rate_pct": 0.0,
+  "misbw_bytes": 24596447232,
+  "success_mismatch": 0,
+  "no_magic_discards": 0,
+  "not_found": 3387,
+  "burst_share_pct": null,
+  "throughput_mbps": 34.79,
+  "put_failures_pool_full": 0,
+  "reclaimable_pct": null,
+  "master_metrics": {
+    "start": {
+      "master_put_start_alloc_failures_total": 0.0,
+      "master_successful_evictions_total": 0.0,
+      "master_attempted_evictions_total": 0.0
+    },
+    "end": {
+      "master_put_start_alloc_failures_total": 0.0,
+      "master_successful_evictions_total": 87.0,
+      "master_attempted_evictions_total": 87.0
+    },
+    "evictions_delta": {
+      "master_put_start_alloc_failures_total": 0.0,
+      "master_successful_evictions_total": 87.0,
+      "master_attempted_evictions_total": 87.0
+    }
+  },
+  "notes": "DoD run 4: tenant B puts with_soft_pin=True (workload-side) so pass-1/2 eviction victims are A-expired objects; er=0.5 for appetite; tc 800mbit. Target: first RPE events."
+}

@@ -1,0 +1,226 @@
+{
+  "runs": [
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 0,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 1,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 2,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 3,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 4,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 5,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 6,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 7,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 8,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "seed": 9,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 0,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 1,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 2,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 3,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 4,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 5,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 6,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 7,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 8,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "seed": 9,
+      "prose_tput_Bpns": 2.097152,
+      "refcnt_tput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_tput_Bpns": 1.048576,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    }
+  ],
+  "summary": [
+    {
+      "oversubscription": 32,
+      "n_tenants": 16,
+      "prose_throughput_Bpns": 2.097152,
+      "refcnt_throughput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_throughput_Bpns": 1.048576,
+      "refcnt_pipe_ratio_to_prose": 0.5,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    },
+    {
+      "oversubscription": 64,
+      "n_tenants": 16,
+      "prose_throughput_Bpns": 2.097152,
+      "refcnt_throughput_Bpns": 1.0485746892816383,
+      "refcnt_pipe_throughput_Bpns": 1.048576,
+      "refcnt_pipe_ratio_to_prose": 0.5,
+      "refcnt_pipe_p99_ns": 9.0,
+      "refcnt_pipe_pinned_peak": 512
+    }
+  ]
+}

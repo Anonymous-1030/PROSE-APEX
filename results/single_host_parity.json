@@ -1,0 +1,162 @@
+{
+  "config": {
+    "n_hosts": 1,
+    "oversubscription": 1.0,
+    "n_candidates": 64,
+    "budget_per_step": 64,
+    "n_steps": 256,
+    "seeds": [
+      42,
+      123,
+      2024,
+      7,
+      9001
+    ],
+    "bandwidths_gbs": [
+      2.0,
+      4.0,
+      8.0
+    ],
+    "primary_bandwidth_gbs": 4.0,
+    "operating_point_from": "experiments/run_host_prescore.py:STARVED",
+    "decode_compute_us": 2000.0,
+    "decode_slack_us": 400.0,
+    "useful_fraction": 0.04,
+    "top_k_useful": 32,
+    "cfo_dedup_frac": 0.0,
+    "endpoint_boundary": "cefe",
+    "host_sw_boundary": "host_prescore",
+    "scorer_both_paths": "odus_x",
+    "generator": "simcxl_ext/cxl_admission_sim.py:simulate_step/run_closed_loop (same functions as experiments/run_host_prescore.py)"
+  },
+  "endpoint_toks_mean": 377.4154589371982,
+  "endpoint_toks_ci95": 0.0,
+  "host_sw_toks_mean": 377.017041170261,
+  "host_sw_toks_ci95": 0.0,
+  "gap_pct": 0.10567632850242295,
+  "direction": "endpoint_higher",
+  "per_bandwidth": [
+    {
+      "cxl_bw_gbs": 2.0,
+      "endpoint_toks_mean": 270.3287197231834,
+      "endpoint_toks_ci95": 0.0,
+      "host_sw_toks_mean": 270.1242571582929,
+      "host_sw_toks_ci95": 0.0,
+      "gap_pct": 0.07569204152245983,
+      "direction": "endpoint_higher",
+      "endpoint_toks_per_seed": {
+        "42": 270.3287197231834,
+        "123": 270.3287197231834,
+        "2024": 270.3287197231834,
+        "7": 270.3287197231834,
+        "9001": 270.3287197231834
+      },
+      "host_sw_toks_per_seed": {
+        "42": 270.1242571582929,
+        "123": 270.1242571582929,
+        "2024": 270.1242571582929,
+        "7": 270.1242571582929,
+        "9001": 270.1242571582929
+      },
+      "admission_us_mean": {
+        "endpoint": 5.400000000000001,
+        "host_sw": 8.0
+      },
+      "transport_us_mean": {
+        "endpoint": 2099.2000000000003,
+        "host_sw": 2099.2000000000003
+      },
+      "secondary_variants": {
+        "host_sw_gpu": {
+          "toks_mean": 270.1446894956939,
+          "toks_ci95": 0.0,
+          "gap_pct_vs_endpoint": 0.06812283737023302,
+          "direction": "endpoint_higher"
+        }
+      }
+    },
+    {
+      "cxl_bw_gbs": 4.0,
+      "endpoint_toks_mean": 377.4154589371982,
+      "endpoint_toks_ci95": 0.0,
+      "host_sw_toks_mean": 377.017041170261,
+      "host_sw_toks_ci95": 0.0,
+      "gap_pct": 0.10567632850242295,
+      "direction": "endpoint_higher",
+      "endpoint_toks_per_seed": {
+        "42": 377.4154589371982,
+        "123": 377.4154589371982,
+        "2024": 377.4154589371982,
+        "7": 377.4154589371982,
+        "9001": 377.4154589371982
+      },
+      "host_sw_toks_per_seed": {
+        "42": 377.017041170261,
+        "123": 377.017041170261,
+        "2024": 377.017041170261,
+        "7": 377.017041170261,
+        "9001": 377.017041170261
+      },
+      "admission_us_mean": {
+        "endpoint": 5.400000000000001,
+        "host_sw": 8.0
+      },
+      "transport_us_mean": {
+        "endpoint": 1049.6000000000001,
+        "host_sw": 1049.6000000000001
+      },
+      "secondary_variants": {
+        "host_sw_gpu": {
+          "toks_mean": 377.05684508996575,
+          "toks_ci95": 0.0,
+          "gap_pct_vs_endpoint": 0.09510869565221196,
+          "direction": "endpoint_higher"
+        }
+      }
+    },
+    {
+      "cxl_bw_gbs": 8.0,
+      "endpoint_toks_mean": 470.6325301204817,
+      "endpoint_toks_ci95": 7.889866537880152e-14,
+      "host_sw_toks_mean": 470.0131603684903,
+      "host_sw_toks_ci95": 7.889866537880152e-14,
+      "gap_pct": 0.13177710843369625,
+      "direction": "endpoint_higher",
+      "endpoint_toks_per_seed": {
+        "42": 470.63253012048176,
+        "123": 470.63253012048176,
+        "2024": 470.63253012048176,
+        "7": 470.63253012048176,
+        "9001": 470.63253012048176
+      },
+      "host_sw_toks_per_seed": {
+        "42": 470.01316036849033,
+        "123": 470.01316036849033,
+        "2024": 470.01316036849033,
+        "7": 470.01316036849033,
+        "9001": 470.01316036849033
+      },
+      "admission_us_mean": {
+        "endpoint": 5.400000000000001,
+        "host_sw": 8.0
+      },
+      "transport_us_mean": {
+        "endpoint": 524.8000000000001,
+        "host_sw": 524.8000000000001
+      },
+      "secondary_variants": {
+        "host_sw_gpu": {
+          "toks_mean": 470.0750239738262,
+          "toks_ci95": 7.889866537880152e-14,
+          "gap_pct_vs_endpoint": 0.11859939759031751,
+          "direction": "endpoint_higher"
+        }
+      }
+    }
+  ],
+  "notes": [
+    "CIs collapse toward 0 because at 1x oversubscription the closed-form model is byte-deterministic: every step admits all 64 candidates on both paths, so the seed only perturbs scorer inputs (Recovery@K), not admitted byte counts or wall time.",
+    "The paper's quoted absolute level (128 vs. 130 tok/s) is NOT reproduced by this operating point: with decode_compute_us=2000 the compute ceiling is 500 tok/s and the 4 GB/s link caps both paths near 377 tok/s. The claim's ~1% RELATIVE gap is what this experiment tests.",
+    "No shim required: SimConfig expresses n_hosts=1 and n_candidates==budget directly; n_hosts does not enter the cefe/host_prescore throughput path (only two_phase/cefe_passive)."
+  ]
+}

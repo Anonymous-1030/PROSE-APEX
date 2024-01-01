@@ -1,0 +1,4034 @@
+[
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019682886823400764,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.061964643703298704,
+    "evict": 0.06141789684709313,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.15345361764169857,
+    "evict": 0.1529676204361825,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3247068829354231,
+    "evict": 0.3243423850312861,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019682886823400764,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.06178239475123018,
+    "evict": 0.0612356478950246,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15211712532652938,
+    "evict": 0.15169187777170282,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.3217301500516372,
+    "evict": 0.3213656521475001,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.0199258854261588,
+    "evict": 0.019318388919263713,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.06135714719640362,
+    "evict": 0.060810400340198044,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1501123868537756,
+    "evict": 0.14968713929894903,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3165056800923395,
+    "evict": 0.3161411821882024,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.019196889617884696,
+    "evict": 0.018589393110989613,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.05898791081951279,
+    "evict": 0.05844116396330721,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.14500941619585686,
+    "evict": 0.14458416864103033,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.305935240872365,
+    "evict": 0.3056314926189174,
+    "epoch": 0.0003037482534475427
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019682886823400764,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.061964643703298704,
+    "evict": 0.06141789684709313,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.15345361764169857,
+    "evict": 0.1529676204361825,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3247068829354231,
+    "evict": 0.3243423850312861,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019682886823400764,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.06178239475123018,
+    "evict": 0.0612356478950246,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15211712532652938,
+    "evict": 0.15169187777170282,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.3217301500516372,
+    "evict": 0.3213656521475001,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.0199258854261588,
+    "evict": 0.019318388919263713,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.06135714719640362,
+    "evict": 0.060810400340198044,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1501123868537756,
+    "evict": 0.14968713929894903,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3165056800923395,
+    "evict": 0.3161411821882024,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.019196889617884696,
+    "evict": 0.018589393110989613,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.05898791081951279,
+    "evict": 0.05844116396330721,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.14500941619585686,
+    "evict": 0.14458416864103033,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.305935240872365,
+    "evict": 0.3056314926189174,
+    "epoch": 0.0003037482534475427
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019682886823400764,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.061964643703298704,
+    "evict": 0.06141789684709313,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.15345361764169857,
+    "evict": 0.1529676204361825,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3247068829354231,
+    "evict": 0.3243423850312861,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019682886823400764,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.06178239475123018,
+    "evict": 0.0612356478950246,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15211712532652938,
+    "evict": 0.15169187777170282,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.3217301500516372,
+    "evict": 0.3213656521475001,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.0199258854261588,
+    "evict": 0.019318388919263713,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.06135714719640362,
+    "evict": 0.060810400340198044,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1501123868537756,
+    "evict": 0.14968713929894903,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3165056800923395,
+    "evict": 0.3161411821882024,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.019196889617884696,
+    "evict": 0.018589393110989613,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.05898791081951279,
+    "evict": 0.05844116396330721,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.14500941619585686,
+    "evict": 0.14458416864103033,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.305935240872365,
+    "evict": 0.3056314926189174,
+    "epoch": 0.0003037482534475427
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019622137172711256,
+    "epoch": 0.0006682461575845939
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.06202539335398821,
+    "evict": 0.06141789684709313,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.15351436729238807,
+    "evict": 0.153028370086872,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.32482838223680216,
+    "evict": 0.32440313468197557,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019622137172711256,
+    "epoch": 0.0006682461575845939
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.06178239475123018,
+    "evict": 0.0612356478950246,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15217787497721888,
+    "evict": 0.15175262742239232,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.32185164935301624,
+    "evict": 0.3214871514488792,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.0199258854261588,
+    "evict": 0.019257639268574205,
+    "epoch": 0.0006682461575845939
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.06135714719640362,
+    "evict": 0.060810400340198044,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1501123868537756,
+    "evict": 0.14968713929894903,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3165056800923395,
+    "evict": 0.3161411821882024,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.019196889617884696,
+    "evict": 0.018589393110989613,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.05898791081951279,
+    "evict": 0.05844116396330721,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.14500941619585686,
+    "evict": 0.14458416864103033,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.3059959905230545,
+    "evict": 0.3056314926189174,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.02648684770062572,
+    "evict": 0.025879351193730638,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.08055403681428831,
+    "evict": 0.08006803960877225,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.1970718668367657,
+    "evict": 0.19658586963124963,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3404410424640058,
+    "evict": 0.34013729421055827,
+    "epoch": 0.0003037482534475427
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.023510114816839803,
+    "evict": 0.02290261830994472,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.07071259340258794,
+    "evict": 0.07016584654638236,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.17301500516372031,
+    "evict": 0.17252900795820425,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.33624931656642976,
+    "evict": 0.3359455683129822,
+    "epoch": 0.0003037482534475427
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.02162687564546504,
+    "evict": 0.021019379138569952,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.06603487029949578,
+    "evict": 0.0654881234432902,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.16050057712168156,
+    "evict": 0.1600145799161655,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.32999210254541034,
+    "evict": 0.3296883542919628,
+    "epoch": 0.0003037482534475427
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.019804386124779784,
+    "evict": 0.019196889617884696,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.061600145799161656,
+    "evict": 0.061053398942956076,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.1501731365044651,
+    "evict": 0.14974788894963853,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.31632343114027095,
+    "evict": 0.3160196828868234,
+    "epoch": 0.0003037482534475427
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.01956138752202175,
+    "epoch": 0.0007289958082741025
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.062450640908814775,
+    "evict": 0.061964643703298704,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.15424336310066217,
+    "evict": 0.15363586659376707,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3267723710588664,
+    "evict": 0.3263471235040398,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019682886823400764,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.06178239475123018,
+    "evict": 0.0612356478950246,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15211712532652938,
+    "evict": 0.15169187777170282,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.3217301500516372,
+    "evict": 0.3213656521475001,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.0199258854261588,
+    "evict": 0.019318388919263713,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.06135714719640362,
+    "evict": 0.060810400340198044,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1501123868537756,
+    "evict": 0.14968713929894903,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3165056800923395,
+    "evict": 0.3161411821882024,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.019196889617884696,
+    "evict": 0.018589393110989613,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.05898791081951279,
+    "evict": 0.05844116396330721,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.14500941619585686,
+    "evict": 0.14458416864103033,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.305935240872365,
+    "evict": 0.3056314926189174,
+    "epoch": 0.0003037482534475427
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019682886823400764,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.061964643703298704,
+    "evict": 0.06141789684709313,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.15345361764169857,
+    "evict": 0.1529676204361825,
+    "epoch": 0.0004859972055160683
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3247068829354231,
+    "evict": 0.3243423850312861,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.020290383330295852,
+    "evict": 0.019682886823400764,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.06178239475123018,
+    "evict": 0.0612356478950246,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15211712532652938,
+    "evict": 0.15169187777170282,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.3217301500516372,
+    "evict": 0.3213656521475001,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.0199258854261588,
+    "evict": 0.019318388919263713,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.06135714719640362,
+    "evict": 0.060810400340198044,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1501123868537756,
+    "evict": 0.14968713929894903,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3165056800923395,
+    "evict": 0.3161411821882024,
+    "epoch": 0.00036449790413705123
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.019196889617884696,
+    "evict": 0.018589393110989613,
+    "epoch": 0.0006074965068950854
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.05898791081951279,
+    "evict": 0.05844116396330721,
+    "epoch": 0.0005467468562055768
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.14500941619585686,
+    "evict": 0.14458416864103033,
+    "epoch": 0.00042524755482655977
+  },
+  {
+    "trace": "BurstGPT",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.305935240872365,
+    "evict": 0.3056314926189174,
+    "epoch": 0.0003037482534475427
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0221624442927691,
+    "evict": 0.02168065202553499,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.06528285221022202,
+    "evict": 0.06484120929859076,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.1564620387842775,
+    "evict": 0.1561809932950576,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3307102421006143,
+    "evict": 0.33038904725579155,
+    "epoch": 0.0003211948448227406
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.02212229493716626,
+    "evict": 0.021640502669932147,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0651624041434135,
+    "evict": 0.06472076123178223,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15553860360541213,
+    "evict": 0.15525755811619224,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.32886337174288355,
+    "evict": 0.3284618781868551,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.021881398803549203,
+    "evict": 0.021439755891917933,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0648813586541936,
+    "evict": 0.06443971574256233,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1540129280925041,
+    "evict": 0.15373188260328421,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3254105271610391,
+    "evict": 0.32500903360501066,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.021319307825109407,
+    "evict": 0.020877664913478138,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.06335568314128558,
+    "evict": 0.06291404022965431,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.1506002328662625,
+    "evict": 0.15031918737704258,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.31830409121933595,
+    "evict": 0.31790259766330753,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0221624442927691,
+    "evict": 0.02168065202553499,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.06528285221022202,
+    "evict": 0.06484120929859076,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.1564620387842775,
+    "evict": 0.1561809932950576,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3307102421006143,
+    "evict": 0.33038904725579155,
+    "epoch": 0.0003211948448227406
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.02212229493716626,
+    "evict": 0.021640502669932147,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0651624041434135,
+    "evict": 0.06472076123178223,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15553860360541213,
+    "evict": 0.15525755811619224,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.32886337174288355,
+    "evict": 0.3284618781868551,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.021881398803549203,
+    "evict": 0.021439755891917933,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0648813586541936,
+    "evict": 0.06443971574256233,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1540129280925041,
+    "evict": 0.15373188260328421,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3254105271610391,
+    "evict": 0.32500903360501066,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.021319307825109407,
+    "evict": 0.020877664913478138,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.06335568314128558,
+    "evict": 0.06291404022965431,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.1506002328662625,
+    "evict": 0.15031918737704258,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.31830409121933595,
+    "evict": 0.31790259766330753,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0221624442927691,
+    "evict": 0.02168065202553499,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.06528285221022202,
+    "evict": 0.06484120929859076,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.1564620387842775,
+    "evict": 0.1561809932950576,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3307102421006143,
+    "evict": 0.33038904725579155,
+    "epoch": 0.0003211948448227406
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.02212229493716626,
+    "evict": 0.021640502669932147,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0651624041434135,
+    "evict": 0.06472076123178223,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15553860360541213,
+    "evict": 0.15525755811619224,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.32886337174288355,
+    "evict": 0.3284618781868551,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.021881398803549203,
+    "evict": 0.021439755891917933,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0648813586541936,
+    "evict": 0.06443971574256233,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1540129280925041,
+    "evict": 0.15373188260328421,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3254105271610391,
+    "evict": 0.32500903360501066,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.021319307825109407,
+    "evict": 0.020877664913478138,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.06335568314128558,
+    "evict": 0.06291404022965431,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.1506002328662625,
+    "evict": 0.15031918737704258,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.31830409121933595,
+    "evict": 0.31790259766330753,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0221624442927691,
+    "evict": 0.02168065202553499,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.06528285221022202,
+    "evict": 0.06484120929859076,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.1564620387842775,
+    "evict": 0.1561809932950576,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3307102421006143,
+    "evict": 0.33038904725579155,
+    "epoch": 0.0003211948448227406
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.02212229493716626,
+    "evict": 0.021640502669932147,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0651624041434135,
+    "evict": 0.06472076123178223,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15553860360541213,
+    "evict": 0.15525755811619224,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.32886337174288355,
+    "evict": 0.3284618781868551,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.021881398803549203,
+    "evict": 0.021439755891917933,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0648813586541936,
+    "evict": 0.06443971574256233,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1540129280925041,
+    "evict": 0.15373188260328421,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3254105271610391,
+    "evict": 0.32500903360501066,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.021319307825109407,
+    "evict": 0.020877664913478138,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.06335568314128558,
+    "evict": 0.06291404022965431,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.1506002328662625,
+    "evict": 0.15031918737704258,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.31830409121933595,
+    "evict": 0.31790259766330753,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0221624442927691,
+    "evict": 0.02168065202553499,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.06528285221022202,
+    "evict": 0.06484120929859076,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.1564620387842775,
+    "evict": 0.1561809932950576,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3307102421006143,
+    "evict": 0.33038904725579155,
+    "epoch": 0.0003211948448227406
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.02212229493716626,
+    "evict": 0.021640502669932147,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0651624041434135,
+    "evict": 0.06472076123178223,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15553860360541213,
+    "evict": 0.15525755811619224,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.32886337174288355,
+    "evict": 0.3284618781868551,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.021881398803549203,
+    "evict": 0.021439755891917933,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0648813586541936,
+    "evict": 0.06443971574256233,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1540129280925041,
+    "evict": 0.15373188260328421,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3254105271610391,
+    "evict": 0.32500903360501066,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.021319307825109407,
+    "evict": 0.020877664913478138,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.06335568314128558,
+    "evict": 0.06291404022965431,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.1506002328662625,
+    "evict": 0.15031918737704258,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.31830409121933595,
+    "evict": 0.31790259766330753,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0221624442927691,
+    "evict": 0.02168065202553499,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.06528285221022202,
+    "evict": 0.06484120929859076,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.1564620387842775,
+    "evict": 0.1561809932950576,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3307102421006143,
+    "evict": 0.33038904725579155,
+    "epoch": 0.0003211948448227406
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.02212229493716626,
+    "evict": 0.021640502669932147,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0651624041434135,
+    "evict": 0.06472076123178223,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15553860360541213,
+    "evict": 0.15525755811619224,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.32886337174288355,
+    "evict": 0.3284618781868551,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.021881398803549203,
+    "evict": 0.021439755891917933,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0648813586541936,
+    "evict": 0.06443971574256233,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1540129280925041,
+    "evict": 0.15373188260328421,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3254105271610391,
+    "evict": 0.32500903360501066,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.021319307825109407,
+    "evict": 0.020877664913478138,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.06335568314128558,
+    "evict": 0.06291404022965431,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.1506002328662625,
+    "evict": 0.15031918737704258,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.31830409121933595,
+    "evict": 0.31790259766330753,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0221624442927691,
+    "evict": 0.02168065202553499,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.06528285221022202,
+    "evict": 0.06484120929859076,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.1564620387842775,
+    "evict": 0.1561809932950576,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.3307102421006143,
+    "evict": 0.33038904725579155,
+    "epoch": 0.0003211948448227406
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.02212229493716626,
+    "evict": 0.021640502669932147,
+    "epoch": 0.0004817922672341109
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0651624041434135,
+    "evict": 0.06472076123178223,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.15553860360541213,
+    "evict": 0.15525755811619224,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.32886337174288355,
+    "evict": 0.3284618781868551,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.021881398803549203,
+    "evict": 0.021439755891917933,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0648813586541936,
+    "evict": 0.06443971574256233,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.1540129280925041,
+    "evict": 0.15373188260328421,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.3254105271610391,
+    "evict": 0.32500903360501066,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.021319307825109407,
+    "evict": 0.020877664913478138,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.06335568314128558,
+    "evict": 0.06291404022965431,
+    "epoch": 0.0004416429116312683
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.1506002328662625,
+    "evict": 0.15031918737704258,
+    "epoch": 0.000281045489219898
+  },
+  {
+    "trace": "Azure-Conv",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.31830409121933595,
+    "evict": 0.31790259766330753,
+    "epoch": 0.0004014935560284257
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.00109375,
+    "evict": 0.001,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.003375,
+    "evict": 0.00328125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.0086875,
+    "evict": 0.00859375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.018625,
+    "evict": 0.01853125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.0010625,
+    "evict": 0.00096875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.00328125,
+    "evict": 0.0031875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.00796875,
+    "evict": 0.007875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.017125,
+    "evict": 0.01703125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.000875,
+    "evict": 0.00078125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.00303125,
+    "evict": 0.0029375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.0068125,
+    "evict": 0.00671875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.0139375,
+    "evict": 0.01384375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.0004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00165625,
+    "evict": 0.0015625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.00421875,
+    "evict": 0.004125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.00853125,
+    "evict": 0.0084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.01809375,
+    "evict": 0.017875,
+    "epoch": 0.00021875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.053875,
+    "evict": 0.0536875,
+    "epoch": 0.0001875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.130375,
+    "evict": 0.13015625,
+    "epoch": 0.00021875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.276375,
+    "evict": 0.2761875,
+    "epoch": 0.0001875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.01525,
+    "evict": 0.01515625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.045875,
+    "evict": 0.04575,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.11034375,
+    "evict": 0.1101875,
+    "epoch": 0.00015625
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.233,
+    "evict": 0.23290625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.0100625,
+    "evict": 0.00990625,
+    "epoch": 0.00015625
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.03115625,
+    "evict": 0.03103125,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.07684375,
+    "evict": 0.0766875,
+    "epoch": 0.00015625
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.16190625,
+    "evict": 0.16171875,
+    "epoch": 0.0001875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.0004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00165625,
+    "evict": 0.0015625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.00421875,
+    "evict": 0.004125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.00853125,
+    "evict": 0.0084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.00109375,
+    "evict": 0.001,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.003375,
+    "evict": 0.00328125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.0086875,
+    "evict": 0.00859375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.018625,
+    "evict": 0.01853125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.0010625,
+    "evict": 0.00096875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.00328125,
+    "evict": 0.0031875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.00796875,
+    "evict": 0.007875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.017125,
+    "evict": 0.01703125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.000875,
+    "evict": 0.00078125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.00303125,
+    "evict": 0.0029375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.0068125,
+    "evict": 0.00671875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.0139375,
+    "evict": 0.01384375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.0004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00165625,
+    "evict": 0.0015625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.00421875,
+    "evict": 0.004125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.00853125,
+    "evict": 0.0084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0010625,
+    "evict": 0.00096875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.00340625,
+    "evict": 0.0033125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.0088125,
+    "evict": 0.00871875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.0190625,
+    "evict": 0.01896875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.0010625,
+    "evict": 0.00096875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0033125,
+    "evict": 0.00321875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.0080625,
+    "evict": 0.00796875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.01728125,
+    "evict": 0.0171875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.000875,
+    "evict": 0.00078125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0030625,
+    "evict": 0.00296875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.0068125,
+    "evict": 0.00671875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.0140625,
+    "evict": 0.01396875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.0004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00165625,
+    "evict": 0.0015625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.00421875,
+    "evict": 0.004125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.00853125,
+    "evict": 0.0084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0009375,
+    "evict": 0.00084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.00290625,
+    "evict": 0.0028125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.00775,
+    "evict": 0.00765625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.016375,
+    "evict": 0.01628125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.0009375,
+    "evict": 0.00084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0028125,
+    "evict": 0.00271875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.0070625,
+    "evict": 0.00696875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.0149375,
+    "evict": 0.01484375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.00084375,
+    "evict": 0.00075,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0026875,
+    "evict": 0.00259375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.006125,
+    "evict": 0.00603125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.012625,
+    "evict": 0.01253125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.0004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00165625,
+    "evict": 0.0015625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.00425,
+    "evict": 0.00415625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.008625,
+    "evict": 0.0085,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.00125,
+    "evict": 0.001,
+    "epoch": 0.00025
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.0036875,
+    "evict": 0.0033125,
+    "epoch": 0.000375
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.0091875,
+    "evict": 0.00890625,
+    "epoch": 0.00028125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.0196875,
+    "evict": 0.01940625,
+    "epoch": 0.00028125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.0011875,
+    "evict": 0.00096875,
+    "epoch": 0.00021875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.00346875,
+    "evict": 0.00321875,
+    "epoch": 0.00025
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.00821875,
+    "evict": 0.008,
+    "epoch": 0.00021875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.017625,
+    "evict": 0.0175,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.00103125,
+    "evict": 0.00078125,
+    "epoch": 0.00025
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.003125,
+    "evict": 0.002875,
+    "epoch": 0.00025
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.00696875,
+    "evict": 0.0068125,
+    "epoch": 0.00015625
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.014375,
+    "evict": 0.01415625,
+    "epoch": 0.00021875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.0004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00165625,
+    "evict": 0.0015625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.00421875,
+    "evict": 0.004125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.00853125,
+    "evict": 0.0084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.01878125,
+    "evict": 0.0181875,
+    "epoch": 0.00059375
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.05540625,
+    "evict": 0.0548125,
+    "epoch": 0.00059375
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.13371875,
+    "evict": 0.13325,
+    "epoch": 0.00046875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.28278125,
+    "evict": 0.28246875,
+    "epoch": 0.0003125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.01678125,
+    "evict": 0.0164375,
+    "epoch": 0.00034375
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0494375,
+    "evict": 0.049125,
+    "epoch": 0.0003125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.118375,
+    "evict": 0.11809375,
+    "epoch": 0.00028125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.2489375,
+    "evict": 0.24875,
+    "epoch": 0.0001875
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.0123125,
+    "evict": 0.011875,
+    "epoch": 0.0004375
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.0371875,
+    "evict": 0.036875,
+    "epoch": 0.0003125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.09028125,
+    "evict": 0.0899375,
+    "epoch": 0.00034375
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.19034375,
+    "evict": 0.19003125,
+    "epoch": 0.0003125
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.0004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.001875,
+    "evict": 0.00178125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.00446875,
+    "evict": 0.004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Agentic",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.00925,
+    "evict": 0.009125,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.0004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.00121875,
+    "evict": 0.001125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.00334375,
+    "evict": 0.00325,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.0079375,
+    "evict": 0.00784375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.00046875,
+    "evict": 0.000375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.001125,
+    "evict": 0.00103125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.00259375,
+    "evict": 0.0025,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.00628125,
+    "evict": 0.0061875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.000375,
+    "evict": 0.00028125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.00090625,
+    "evict": 0.0008125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.00153125,
+    "evict": 0.0014375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.00328125,
+    "evict": 0.0031875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00021875,
+    "evict": 0.000125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00040625,
+    "evict": 0.0003125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.0009375,
+    "evict": 0.00084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LRU",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.0015625,
+    "evict": 0.00146875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.01459375,
+    "evict": 0.01446875,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.0435,
+    "evict": 0.043375,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.1053125,
+    "evict": 0.10521875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.222875,
+    "evict": 0.22278125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.00740625,
+    "evict": 0.00725,
+    "epoch": 0.00015625
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0221875,
+    "evict": 0.02203125,
+    "epoch": 0.00015625
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.0559375,
+    "evict": 0.0558125,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.119,
+    "evict": 0.11890625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.000375,
+    "evict": 0.00028125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.00090625,
+    "evict": 0.0008125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.00153125,
+    "evict": 0.0014375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.00328125,
+    "evict": 0.0031875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00021875,
+    "evict": 0.000125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00040625,
+    "evict": 0.0003125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.0009375,
+    "evict": 0.00084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LFU",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.0015625,
+    "evict": 0.00146875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.0004375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.00121875,
+    "evict": 0.001125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.00334375,
+    "evict": 0.00325,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.0079375,
+    "evict": 0.00784375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.00046875,
+    "evict": 0.000375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.001125,
+    "evict": 0.00103125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.00259375,
+    "evict": 0.0025,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.00628125,
+    "evict": 0.0061875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.000375,
+    "evict": 0.00028125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.00090625,
+    "evict": 0.0008125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.00153125,
+    "evict": 0.0014375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.00328125,
+    "evict": 0.0031875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00021875,
+    "evict": 0.000125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00040625,
+    "evict": 0.0003125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.0009375,
+    "evict": 0.00084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "FIFO",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.0015625,
+    "evict": 0.00146875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0005625,
+    "evict": 0.00046875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.00125,
+    "evict": 0.00115625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.00346875,
+    "evict": 0.003375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.00809375,
+    "evict": 0.008,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.00046875,
+    "evict": 0.000375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.001125,
+    "evict": 0.00103125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.00265625,
+    "evict": 0.0025625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.00634375,
+    "evict": 0.00625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.000375,
+    "evict": 0.00028125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.00090625,
+    "evict": 0.0008125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.00153125,
+    "evict": 0.0014375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.00328125,
+    "evict": 0.0031875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00021875,
+    "evict": 0.000125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00040625,
+    "evict": 0.0003125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.0009375,
+    "evict": 0.00084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "Random",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.0015625,
+    "evict": 0.00146875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.0005,
+    "evict": 0.00040625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.00125,
+    "evict": 0.00115625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.00321875,
+    "evict": 0.003125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.00728125,
+    "evict": 0.0071875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.0005,
+    "evict": 0.00040625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.0011875,
+    "evict": 0.00109375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.0025625,
+    "evict": 0.00246875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.0060625,
+    "evict": 0.00596875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.00040625,
+    "evict": 0.0003125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.000875,
+    "evict": 0.00078125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.00165625,
+    "evict": 0.0015625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.00340625,
+    "evict": 0.0033125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00021875,
+    "evict": 0.000125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00046875,
+    "evict": 0.000375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.001,
+    "evict": 0.00090625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "ARC",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.0016875,
+    "evict": 0.00159375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.00075,
+    "evict": 0.0005,
+    "epoch": 0.00025
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.00153125,
+    "evict": 0.0013125,
+    "epoch": 0.00021875
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.0039375,
+    "evict": 0.0036875,
+    "epoch": 0.00025
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.0088125,
+    "evict": 0.0085,
+    "epoch": 0.0003125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.00053125,
+    "evict": 0.00040625,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.00125,
+    "evict": 0.001125,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.002875,
+    "evict": 0.00275,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.00659375,
+    "evict": 0.00646875,
+    "epoch": 0.000125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.000375,
+    "evict": 0.00028125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.00090625,
+    "evict": 0.0008125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.00153125,
+    "evict": 0.0014375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.00328125,
+    "evict": 0.0031875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00021875,
+    "evict": 0.000125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.00040625,
+    "evict": 0.0003125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.0009375,
+    "evict": 0.00084375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "LIRS",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.0015625,
+    "evict": 0.00146875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 2,
+    "rpe": 0.01609375,
+    "evict": 0.01578125,
+    "epoch": 0.0003125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 4,
+    "rpe": 0.0478125,
+    "evict": 0.0473125,
+    "epoch": 0.0005
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 8,
+    "rpe": 0.11521875,
+    "evict": 0.11496875,
+    "epoch": 0.00025
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 50,
+    "tenants": 16,
+    "rpe": 0.2428125,
+    "evict": 0.24265625,
+    "epoch": 0.00015625
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 2,
+    "rpe": 0.00953125,
+    "evict": 0.00921875,
+    "epoch": 0.0003125
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 4,
+    "rpe": 0.02821875,
+    "evict": 0.02803125,
+    "epoch": 0.0001875
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 8,
+    "rpe": 0.070375,
+    "evict": 0.0701875,
+    "epoch": 0.0001875
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 100,
+    "tenants": 16,
+    "rpe": 0.14903125,
+    "evict": 0.14884375,
+    "epoch": 0.0001875
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 2,
+    "rpe": 0.00040625,
+    "evict": 0.0003125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 4,
+    "rpe": 0.001,
+    "evict": 0.00090625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 8,
+    "rpe": 0.00171875,
+    "evict": 0.001625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 200,
+    "tenants": 16,
+    "rpe": 0.0039375,
+    "evict": 0.00384375,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 2,
+    "rpe": 0.00021875,
+    "evict": 0.000125,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 4,
+    "rpe": 0.0005,
+    "evict": 0.00040625,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 8,
+    "rpe": 0.0010625,
+    "evict": 0.00096875,
+    "epoch": 9.375e-05
+  },
+  {
+    "trace": "trie-Office",
+    "policy": "SIEVE",
+    "buf": 400,
+    "tenants": 16,
+    "rpe": 0.0018125,
+    "evict": 0.00171875,
+    "epoch": 9.375e-05
+  }
+]

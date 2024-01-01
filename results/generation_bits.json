@@ -1,0 +1,52 @@
+{
+  "provenance": "computed by experiments/run_generation_bits.py; calibrated inputs: 64 KiB chunk, 32 GB/s copy engine (docs/SIMCXL_EXTENSION.md), 512-slot evaluated pool, 350 ns commit window, GEN_W=16 RTL",
+  "inputs": {
+    "chunk_bytes": 65536,
+    "copy_engine_Bps": 32000000000.0,
+    "pool_slots": 512,
+    "t_issue_max_ns": 350.0,
+    "rtl_gen_bits": 16,
+    "obt_entry_bits": 30,
+    "t_evict_median_ms": 249.0,
+    "t_queue_resid_median_ms": 113.0,
+    "lifetime_margin_x": 10.0
+  },
+  "derived": {
+    "chunk_write_us": 2.048,
+    "per_slot_reuse_min_ms": 1.0485760000000002,
+    "per_slot_reuse_formula": "pool_slots * chunk_bytes / copy_engine_Bps"
+  },
+  "issue_window_form": {
+    "formula": "g_bits >= ceil(log2(T_slot_reuse_min / T_issue_max)) + 1",
+    "t_slot_reuse_min_ms": 1.0485760000000002,
+    "t_issue_max_ns": 350.0,
+    "ratio": 2995.9314285714286,
+    "g_bits_required": 13,
+    "rtl_gen_bits": 16,
+    "sufficient": true
+  },
+  "lifetime_form": {
+    "formula": "2**g_bits * T_slot_reuse_min > T_desc_max",
+    "t_desc_max_s": 1.1300000000000001,
+    "t_desc_max_basis": "113 ms median post-eviction queue residence x10 margin",
+    "g_bits_required": 11,
+    "rtl_gen_bits": 16,
+    "rtl_wrap_horizon_s": 68.719476736,
+    "rtl_margin_x": 60.81369622654867,
+    "sufficient": true
+  },
+  "naive_form_caveat": {
+    "formula": "g_bits >= ceil(log2(T_reuse_min / T_issue_max)) + 1 with T_reuse_min = 249 ms per-OBJECT median time-to-eviction",
+    "g_bits_required": 21,
+    "note": "the 249 ms median is a per-object residency across the whole pool, not the lemma's per-slot reuse interval; using it overstates the requirement. The per-slot interval (bandwidth-bounded) is the quantity the ABA argument needs."
+  },
+  "obt_entry_allocation": {
+    "valid": 1,
+    "tenant": 4,
+    "chunk": 9,
+    "generation": 16,
+    "total_bits": 30,
+    "chunk_id_capacity_per_tenant": 512,
+    "note": "9-bit chunk id covers the evaluated 512-chunk per-tenant namespace; wider namespaces index through the directory, not the OBT (see run_directory_sizing.py)."
+  }
+}

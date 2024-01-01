@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the associated paper."
+title: "PROSE-APEX artifact: a commit-time object contract for reusable CXL memory pools"
+abstract: "SimCXL simulator extension, synthesizable PROSE-APEX endpoint RTL, and the Mooncake Store rpe_lab measurement harness for PROSE, a commit-time object contract that eliminates Reclaimed-Payload Exposure in reusable CXL memory pools."
+authors:
+  - name: "Anonymous (under double-blind review)"
+license: MIT
+version: "1.0.0"

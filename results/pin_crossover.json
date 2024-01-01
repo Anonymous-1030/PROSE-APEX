@@ -1,0 +1,22 @@
+[
+  {
+    "pin_entries": 512,
+    "crossover_oversub_capacity": 16,
+    "crossover_oversub_token_table": 16
+  },
+  {
+    "pin_entries": 1024,
+    "crossover_oversub_capacity": 32,
+    "crossover_oversub_token_table": 32
+  },
+  {
+    "pin_entries": 2048,
+    "crossover_oversub_capacity": 64,
+    "crossover_oversub_token_table": 64
+  },
+  {
+    "pin_entries": 4096,
+    "crossover_oversub_capacity": 128,
+    "crossover_oversub_token_table": 128
+  }
+]

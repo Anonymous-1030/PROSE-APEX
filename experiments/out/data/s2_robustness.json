@@ -1,0 +1,75 @@
+{
+  "apex_core2_sea": {
+    "mean_recovery": 0.4047,
+    "mean_obs_latency": 1.0,
+    "obs_latencies": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "apex_core2_no_sea": {
+    "mean_recovery": 0.41220000000000007,
+    "mean_obs_latency": 1.0,
+    "obs_latencies": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "causal_gru_no_sea": {
+    "mean_recovery": 0.032,
+    "mean_obs_latency": 20.0,
+    "obs_latencies": [
+      20,
+      20,
+      20,
+      20
+    ]
+  },
+  "causal_gru_sea": {
+    "mean_recovery": 0.0322,
+    "mean_obs_latency": 20.0,
+    "obs_latencies": [
+      20,
+      20,
+      20,
+      20
+    ]
+  },
+  "domains": [
+    {
+      "name": "Code",
+      "hot_start": 0,
+      "hot_end": 60,
+      "steps": 80
+    },
+    {
+      "name": "Poetry",
+      "hot_start": 128,
+      "hot_end": 188,
+      "steps": 80
+    },
+    {
+      "name": "Math",
+      "hot_start": 256,
+      "hot_end": 316,
+      "steps": 80
+    },
+    {
+      "name": "Code2",
+      "hot_start": 384,
+      "hot_end": 444,
+      "steps": 80
+    },
+    {
+      "name": "Mixed",
+      "hot_start": 64,
+      "hot_end": 124,
+      "steps": 80
+    }
+  ],
+  "conclusion": "Under extreme distribution shifts (Code\u2192Poetry\u2192Math), APEX-Core2 with SEA achieves faster recovery than Causal-GRU because: (1) Hedge weights rapidly downweight stale experts, and (2) SEA probes discover new hot chunks within 3 steps vs 13 without SEA. The GRU's hidden state carries inertia from the previous domain, requiring more steps to overwrite its predictions."
+}

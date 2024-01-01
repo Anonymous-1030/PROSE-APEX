@@ -1,0 +1,150 @@
+{
+  "policies": {
+    "LRU": {
+      "unmitigated": {
+        "policy": "LRU",
+        "gated": false,
+        "issued_reads": 40000,
+        "stale_reads": 5586,
+        "rejected_reads": 0,
+        "rpe_payload_frac": 0.13965,
+        "bandwidth_efficiency": 0.86035,
+        "evictions": 36971
+      },
+      "gated": {
+        "policy": "LRU",
+        "gated": true,
+        "issued_reads": 34499,
+        "stale_reads": 0,
+        "rejected_reads": 5501,
+        "rpe_payload_frac": 0.0,
+        "bandwidth_efficiency": 1.0,
+        "evictions": 36971
+      }
+    },
+    "ARC": {
+      "unmitigated": {
+        "policy": "ARC",
+        "gated": false,
+        "issued_reads": 40000,
+        "stale_reads": 5586,
+        "rejected_reads": 0,
+        "rpe_payload_frac": 0.13965,
+        "bandwidth_efficiency": 0.86035,
+        "evictions": 36971
+      },
+      "gated": {
+        "policy": "ARC",
+        "gated": true,
+        "issued_reads": 34499,
+        "stale_reads": 0,
+        "rejected_reads": 5501,
+        "rpe_payload_frac": 0.0,
+        "bandwidth_efficiency": 1.0,
+        "evictions": 36971
+      }
+    },
+    "SIEVE": {
+      "unmitigated": {
+        "policy": "SIEVE",
+        "gated": false,
+        "issued_reads": 40000,
+        "stale_reads": 5807,
+        "rejected_reads": 0,
+        "rpe_payload_frac": 0.145175,
+        "bandwidth_efficiency": 0.854825,
+        "evictions": 36923
+      },
+      "gated": {
+        "policy": "SIEVE",
+        "gated": true,
+        "issued_reads": 34308,
+        "stale_reads": 0,
+        "rejected_reads": 5692,
+        "rpe_payload_frac": 0.0,
+        "bandwidth_efficiency": 1.0,
+        "evictions": 36923
+      }
+    },
+    "FIFO": {
+      "unmitigated": {
+        "policy": "FIFO",
+        "gated": false,
+        "issued_reads": 40000,
+        "stale_reads": 5586,
+        "rejected_reads": 0,
+        "rpe_payload_frac": 0.13965,
+        "bandwidth_efficiency": 0.86035,
+        "evictions": 36971
+      },
+      "gated": {
+        "policy": "FIFO",
+        "gated": true,
+        "issued_reads": 34499,
+        "stale_reads": 0,
+        "rejected_reads": 5501,
+        "rpe_payload_frac": 0.0,
+        "bandwidth_efficiency": 1.0,
+        "evictions": 36971
+      }
+    }
+  },
+  "protection_duration": {
+    "prose_span_ratio": 1.0,
+    "refcnt_span_ratio": 129.0,
+    "transfer_ns": 512.0,
+    "residence_ns": 65536.0
+  },
+  "mapping": [
+    [
+      "Logical object",
+      "KV chunk (tenant, session, chunk)",
+      "logical page / block (file/dev, offset)"
+    ],
+    [
+      "Incarnation g",
+      "generation stamped when chunk (re)enters the pool",
+      "reuse epoch stamped when the frame is (re)filled"
+    ],
+    [
+      "Extent set S",
+      "one pool slot (single-extent KV)",
+      "one cache frame (page) or a run of frames (block)"
+    ],
+    [
+      "Authoritative map",
+      "endpoint object directory: (id,g) -> slot",
+      "endpoint page table: (page,epoch) -> frame"
+    ],
+    [
+      "Descriptor d",
+      "promotion <id,g,slot,len> from a host snapshot",
+      "async prefetch/read <page,epoch,frame,len>"
+    ],
+    [
+      "Reuse event",
+      "evict chunk, bump gen, reuse slot for new chunk",
+      "evict page (LRU/ARC), bump epoch, refill frame"
+    ],
+    [
+      "OAT (admission)",
+      "atomic: validate g == MAP[id].g, pin (id,g)",
+      "atomic: validate epoch == MAP[page].epoch, pin (page,epoch)"
+    ],
+    [
+      "RPE",
+      "payload moves bytes of a reused chunk version",
+      "read/prefetch returns bytes of a reused frame's new page"
+    ],
+    [
+      "Zero-RPE guarantee",
+      "reject-before-payload; pin blocks reclaim in-flight",
+      "reject-before-read; pin blocks frame reuse in-flight"
+    ],
+    [
+      "Payload path",
+      "endpoint DMA (Mode A) / host CXL.mem pull (Mode B)",
+      "endpoint DMA to page buffer / host CXL.mem page read"
+    ]
+  ]
+}

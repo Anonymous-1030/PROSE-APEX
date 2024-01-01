@@ -1,0 +1,39 @@
+{
+  "working_set_kib": 16384,
+  "visible_budget_frac": 0.1,
+  "clock_ghz": 1.0,
+  "rows": [
+    {
+      "chunk_kib": 4,
+      "n_chunks": 4096,
+      "visible_chunks": 410,
+      "fts_rpe_kib_per_step": 14744,
+      "cefe_rpe_kib_per_step": 0,
+      "endpoint_admission_us": 4.096
+    },
+    {
+      "chunk_kib": 16,
+      "n_chunks": 1024,
+      "visible_chunks": 102,
+      "fts_rpe_kib_per_step": 14752,
+      "cefe_rpe_kib_per_step": 0,
+      "endpoint_admission_us": 1.024
+    },
+    {
+      "chunk_kib": 64,
+      "n_chunks": 256,
+      "visible_chunks": 26,
+      "fts_rpe_kib_per_step": 14720,
+      "cefe_rpe_kib_per_step": 0,
+      "endpoint_admission_us": 0.256
+    },
+    {
+      "chunk_kib": 256,
+      "n_chunks": 64,
+      "visible_chunks": 6,
+      "fts_rpe_kib_per_step": 14848,
+      "cefe_rpe_kib_per_step": 0,
+      "endpoint_admission_us": 0.064
+    }
+  ]
+}

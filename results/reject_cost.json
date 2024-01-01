@@ -1,0 +1,1909 @@
+{
+  "experiment": "reject_cost",
+  "config": {
+    "oversub": [
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "n_tenants": 16,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "admit_budget": 32,
+    "pool": 512,
+    "n_steps": 200,
+    "bound_mode": "capacity",
+    "mechanisms": [
+      "PROSE",
+      "REFCNT",
+      "REFCNT_S",
+      "2PHASE",
+      "GENONLY",
+      "RECLAIM_DEFER",
+      "PROSE_HOSTSEL"
+    ],
+    "META_B": 64,
+    "CHUNK_PAYLOAD_B": 65536,
+    "retry_rtt_ns": 250.0
+  },
+  "per_mechanism": {
+    "PROSE": {
+      "2": {
+        "mechanism": "PROSE",
+        "oversubscription": 2,
+        "n_seeds": 10,
+        "offered_descriptors": 128000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 64000,
+        "reject_rate": 0.5,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 8388608000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 4194304000.0,
+        "reject_metadata_bytes": 4096000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.5,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.5,
+          "reject_metadata_frac": 0.00048828125,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.5,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "4": {
+        "mechanism": "PROSE",
+        "oversubscription": 4,
+        "n_seeds": 10,
+        "offered_descriptors": 256000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 192000,
+        "reject_rate": 0.75,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 16777216000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 12582912000.0,
+        "reject_metadata_bytes": 12288000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.25,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.75,
+          "reject_metadata_frac": 0.000732421875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.25,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "8": {
+        "mechanism": "PROSE",
+        "oversubscription": 8,
+        "n_seeds": 10,
+        "offered_descriptors": 512000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 448000,
+        "reject_rate": 0.875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 33554432000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 29360128000.0,
+        "reject_metadata_bytes": 28672000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.875,
+          "reject_metadata_frac": 0.0008544921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.125,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "16": {
+        "mechanism": "PROSE",
+        "oversubscription": 16,
+        "n_seeds": 10,
+        "offered_descriptors": 1024000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 960000,
+        "reject_rate": 0.9375,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 67108864000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 62914560000.0,
+        "reject_metadata_bytes": 61440000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.0625,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.9375,
+          "reject_metadata_frac": 0.00091552734375,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.0625,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "32": {
+        "mechanism": "PROSE",
+        "oversubscription": 32,
+        "n_seeds": 10,
+        "offered_descriptors": 2048000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 1984000,
+        "reject_rate": 0.96875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 134217728000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 130023424000.0,
+        "reject_metadata_bytes": 126976000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.03125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.96875,
+          "reject_metadata_frac": 0.000946044921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.03125,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "64": {
+        "mechanism": "PROSE",
+        "oversubscription": 64,
+        "n_seeds": 10,
+        "offered_descriptors": 4096000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 4032000,
+        "reject_rate": 0.984375,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 268435456000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 264241152000.0,
+        "reject_metadata_bytes": 258048000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.015625,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.984375,
+          "reject_metadata_frac": 0.0009613037109375,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.015625,
+        "valid_thr_norm_to_prose": 1.0
+      }
+    },
+    "REFCNT": {
+      "2": {
+        "mechanism": "REFCNT",
+        "oversubscription": 2,
+        "n_seeds": 10,
+        "offered_descriptors": 128000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 64000,
+        "reject_rate": 0.5,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 8388608000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 4194304000.0,
+        "reject_metadata_bytes": 4096000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.5,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.5,
+          "reject_metadata_frac": 0.00048828125,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971493785632767,
+        "valid_throughput_normalization": 0.5,
+        "valid_thr_norm_to_prose": 0.9999987500015622
+      },
+      "4": {
+        "mechanism": "REFCNT",
+        "oversubscription": 4,
+        "n_seeds": 10,
+        "offered_descriptors": 256000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 192000,
+        "reject_rate": 0.75,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 16777216000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 12582912000.0,
+        "reject_metadata_bytes": 12288000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.25,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.75,
+          "reject_metadata_frac": 0.000732421875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971493785632767,
+        "valid_throughput_normalization": 0.25,
+        "valid_thr_norm_to_prose": 0.9999987500015622
+      },
+      "8": {
+        "mechanism": "REFCNT",
+        "oversubscription": 8,
+        "n_seeds": 10,
+        "offered_descriptors": 512000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 448000,
+        "reject_rate": 0.875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 33554432000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 29360128000.0,
+        "reject_metadata_bytes": 28672000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.875,
+          "reject_metadata_frac": 0.0008544921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971493785632767,
+        "valid_throughput_normalization": 0.125,
+        "valid_thr_norm_to_prose": 0.9999987500015622
+      },
+      "16": {
+        "mechanism": "REFCNT",
+        "oversubscription": 16,
+        "n_seeds": 10,
+        "offered_descriptors": 1024000,
+        "admitted_descriptors": 32000,
+        "rejected_descriptors": 992000,
+        "reject_rate": 0.96875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 32000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 67108864000.0,
+        "valid_payload_bytes": 2097152000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 65011712000.0,
+        "reject_metadata_bytes": 63488000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.03125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.96875,
+          "reject_metadata_frac": 0.000946044921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.0485746892816383,
+        "valid_throughput_normalization": 0.03125,
+        "valid_thr_norm_to_prose": 0.4999993750007811
+      },
+      "32": {
+        "mechanism": "REFCNT",
+        "oversubscription": 32,
+        "n_seeds": 10,
+        "offered_descriptors": 2048000,
+        "admitted_descriptors": 32000,
+        "rejected_descriptors": 2016000,
+        "reject_rate": 0.984375,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 32000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 134217728000.0,
+        "valid_payload_bytes": 2097152000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 132120576000.0,
+        "reject_metadata_bytes": 129024000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.015625,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.984375,
+          "reject_metadata_frac": 0.0009613037109375,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.0485746892816383,
+        "valid_throughput_normalization": 0.015625,
+        "valid_thr_norm_to_prose": 0.4999993750007811
+      },
+      "64": {
+        "mechanism": "REFCNT",
+        "oversubscription": 64,
+        "n_seeds": 10,
+        "offered_descriptors": 4096000,
+        "admitted_descriptors": 32000,
+        "rejected_descriptors": 4064000,
+        "reject_rate": 0.9921875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 32000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 268435456000.0,
+        "valid_payload_bytes": 2097152000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 266338304000.0,
+        "reject_metadata_bytes": 260096000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.0078125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.9921875,
+          "reject_metadata_frac": 0.00096893310546875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.0485746892816383,
+        "valid_throughput_normalization": 0.0078125,
+        "valid_thr_norm_to_prose": 0.4999993750007811
+      }
+    },
+    "REFCNT_S": {
+      "2": {
+        "mechanism": "REFCNT_S",
+        "oversubscription": 2,
+        "n_seeds": 10,
+        "offered_descriptors": 128000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 64000,
+        "reject_rate": 0.5,
+        "stale_admits": 11090,
+        "stale_admit_rate": 0.17328125,
+        "retry_dist": {
+          "0": 52829,
+          "1": 11171,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 0.825453125,
+          "1": 0.174546875,
+          "2+": 0.0
+        },
+        "retries": 11171,
+        "retries_per_descriptor": 0.174546875,
+        "retry_added_ns_per_descriptor": 43.63671875,
+        "offered_payload_bytes": 8388608000.0,
+        "valid_payload_bytes": 3467509760.0,
+        "stale_payload_bytes": 726794240.0,
+        "rejected_payload_bytes": 4194304000.0,
+        "reject_metadata_bytes": 4096000,
+        "retry_opportunity_bytes_equiv": 11171000.0,
+        "decomposition": {
+          "valid_frac": 0.413359375,
+          "stale_rpe_frac": 0.086640625,
+          "rejected_payload_frac": 0.5,
+          "reject_metadata_frac": 0.00048828125,
+          "retry_opportunity_frac": 0.0013316869735717773
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.733752712809109,
+        "valid_throughput_normalization": 0.413359375,
+        "valid_thr_norm_to_prose": 0.8267177166028541
+      },
+      "4": {
+        "mechanism": "REFCNT_S",
+        "oversubscription": 4,
+        "n_seeds": 10,
+        "offered_descriptors": 256000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 192000,
+        "reject_rate": 0.75,
+        "stale_admits": 11128,
+        "stale_admit_rate": 0.173875,
+        "retry_dist": {
+          "0": 52768,
+          "1": 11232,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 0.8245,
+          "1": 0.1755,
+          "2+": 0.0
+        },
+        "retries": 11232,
+        "retries_per_descriptor": 0.1755,
+        "retry_added_ns_per_descriptor": 43.875,
+        "offered_payload_bytes": 16777216000.0,
+        "valid_payload_bytes": 3465019392.0,
+        "stale_payload_bytes": 729284608.0,
+        "rejected_payload_bytes": 12582912000.0,
+        "reject_metadata_bytes": 12288000,
+        "retry_opportunity_bytes_equiv": 11232000.0,
+        "decomposition": {
+          "valid_frac": 0.20653125,
+          "stale_rpe_frac": 0.04346875,
+          "rejected_payload_frac": 0.75,
+          "reject_metadata_frac": 0.000732421875,
+          "retry_opportunity_frac": 0.0006694793701171875
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7325075303655872,
+        "valid_throughput_normalization": 0.20653125,
+        "valid_thr_norm_to_prose": 0.8261239673450408
+      },
+      "8": {
+        "mechanism": "REFCNT_S",
+        "oversubscription": 8,
+        "n_seeds": 10,
+        "offered_descriptors": 512000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 448000,
+        "reject_rate": 0.875,
+        "stale_admits": 11162,
+        "stale_admit_rate": 0.17440625,
+        "retry_dist": {
+          "0": 52783,
+          "1": 11217,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 0.824734375,
+          "1": 0.175265625,
+          "2+": 0.0
+        },
+        "retries": 11217,
+        "retries_per_descriptor": 0.175265625,
+        "retry_added_ns_per_descriptor": 43.81640625,
+        "offered_payload_bytes": 33554432000.0,
+        "valid_payload_bytes": 3462791168.0,
+        "stale_payload_bytes": 731512832.0,
+        "rejected_payload_bytes": 29360128000.0,
+        "reject_metadata_bytes": 28672000,
+        "retry_opportunity_bytes_equiv": 11217000.0,
+        "decomposition": {
+          "valid_frac": 0.10319921875,
+          "stale_rpe_frac": 0.02180078125,
+          "rejected_payload_frac": 0.875,
+          "reject_metadata_frac": 0.0008544921875,
+          "retry_opportunity_frac": 0.0003342926502227783
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7313934197582252,
+        "valid_throughput_normalization": 0.10319921875,
+        "valid_thr_norm_to_prose": 0.8255927180091023
+      },
+      "16": {
+        "mechanism": "REFCNT_S",
+        "oversubscription": 16,
+        "n_seeds": 10,
+        "offered_descriptors": 1024000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 960000,
+        "reject_rate": 0.9375,
+        "stale_admits": 11135,
+        "stale_admit_rate": 0.173984375,
+        "retry_dist": {
+          "0": 52876,
+          "1": 11124,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 0.8261875,
+          "1": 0.1738125,
+          "2+": 0.0
+        },
+        "retries": 11124,
+        "retries_per_descriptor": 0.1738125,
+        "retry_added_ns_per_descriptor": 43.453125,
+        "offered_payload_bytes": 67108864000.0,
+        "valid_payload_bytes": 3464560640.0,
+        "stale_payload_bytes": 729743360.0,
+        "rejected_payload_bytes": 62914560000.0,
+        "reject_metadata_bytes": 61440000,
+        "retry_opportunity_bytes_equiv": 11124000.0,
+        "decomposition": {
+          "valid_frac": 0.0516259765625,
+          "stale_rpe_frac": 0.0108740234375,
+          "rejected_payload_frac": 0.9375,
+          "reject_metadata_frac": 0.00091552734375,
+          "retry_opportunity_frac": 0.00016576051712036133
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7322781546523067,
+        "valid_throughput_normalization": 0.0516259765625,
+        "valid_thr_norm_to_prose": 0.8260145924817592
+      },
+      "32": {
+        "mechanism": "REFCNT_S",
+        "oversubscription": 32,
+        "n_seeds": 10,
+        "offered_descriptors": 2048000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 1984000,
+        "reject_rate": 0.96875,
+        "stale_admits": 11218,
+        "stale_admit_rate": 0.17528125,
+        "retry_dist": {
+          "0": 52979,
+          "1": 11021,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 0.827796875,
+          "1": 0.172203125,
+          "2+": 0.0
+        },
+        "retries": 11021,
+        "retries_per_descriptor": 0.172203125,
+        "retry_added_ns_per_descriptor": 43.05078125,
+        "offered_payload_bytes": 134217728000.0,
+        "valid_payload_bytes": 3459121152.0,
+        "stale_payload_bytes": 735182848.0,
+        "rejected_payload_bytes": 130023424000.0,
+        "reject_metadata_bytes": 126976000,
+        "retry_opportunity_bytes_equiv": 11021000.0,
+        "decomposition": {
+          "valid_frac": 0.0257724609375,
+          "stale_rpe_frac": 0.0054775390625,
+          "rejected_payload_frac": 0.96875,
+          "reject_metadata_frac": 0.000946044921875,
+          "retry_opportunity_frac": 8.211284875869751e-05
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7295584140519822,
+        "valid_throughput_normalization": 0.0257724609375,
+        "valid_thr_norm_to_prose": 0.8247177191028509
+      },
+      "64": {
+        "mechanism": "REFCNT_S",
+        "oversubscription": 64,
+        "n_seeds": 10,
+        "offered_descriptors": 4096000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 4032000,
+        "reject_rate": 0.984375,
+        "stale_admits": 11233,
+        "stale_admit_rate": 0.175515625,
+        "retry_dist": {
+          "0": 52839,
+          "1": 11161,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 0.825609375,
+          "1": 0.174390625,
+          "2+": 0.0
+        },
+        "retries": 11161,
+        "retries_per_descriptor": 0.174390625,
+        "retry_added_ns_per_descriptor": 43.59765625,
+        "offered_payload_bytes": 268435456000.0,
+        "valid_payload_bytes": 3458138112.0,
+        "stale_payload_bytes": 736165888.0,
+        "rejected_payload_bytes": 264241152000.0,
+        "reject_metadata_bytes": 258048000,
+        "retry_opportunity_bytes_equiv": 11161000.0,
+        "decomposition": {
+          "valid_frac": 0.012882568359375,
+          "stale_rpe_frac": 0.002742431640625,
+          "rejected_payload_frac": 0.984375,
+          "reject_metadata_frac": 0.0009613037109375,
+          "retry_opportunity_frac": 4.157796502113342e-05
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7290668946663814,
+        "valid_throughput_normalization": 0.012882568359375,
+        "valid_thr_norm_to_prose": 0.8244833443958193
+      }
+    },
+    "2PHASE": {
+      "2": {
+        "mechanism": "2PHASE",
+        "oversubscription": 2,
+        "n_seeds": 10,
+        "offered_descriptors": 128000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 64000,
+        "reject_rate": 0.5,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 8388608000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 4194304000.0,
+        "reject_metadata_bytes": 4096000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.5,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.5,
+          "reject_metadata_frac": 0.00048828125,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971153004822414,
+        "valid_throughput_normalization": 0.5,
+        "valid_thr_norm_to_prose": 0.9999825003062444
+      },
+      "4": {
+        "mechanism": "2PHASE",
+        "oversubscription": 4,
+        "n_seeds": 10,
+        "offered_descriptors": 256000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 192000,
+        "reject_rate": 0.75,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 16777216000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 12582912000.0,
+        "reject_metadata_bytes": 12288000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.25,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.75,
+          "reject_metadata_frac": 0.000732421875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971153004822414,
+        "valid_throughput_normalization": 0.25,
+        "valid_thr_norm_to_prose": 0.9999825003062444
+      },
+      "8": {
+        "mechanism": "2PHASE",
+        "oversubscription": 8,
+        "n_seeds": 10,
+        "offered_descriptors": 512000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 448000,
+        "reject_rate": 0.875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 33554432000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 29360128000.0,
+        "reject_metadata_bytes": 28672000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.875,
+          "reject_metadata_frac": 0.0008544921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971153004822414,
+        "valid_throughput_normalization": 0.125,
+        "valid_thr_norm_to_prose": 0.9999825003062444
+      },
+      "16": {
+        "mechanism": "2PHASE",
+        "oversubscription": 16,
+        "n_seeds": 10,
+        "offered_descriptors": 1024000,
+        "admitted_descriptors": 32000,
+        "rejected_descriptors": 992000,
+        "reject_rate": 0.96875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 32000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 67108864000.0,
+        "valid_payload_bytes": 2097152000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 65011712000.0,
+        "reject_metadata_bytes": 63488000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.03125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.96875,
+          "reject_metadata_frac": 0.000946044921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.0485576502411207,
+        "valid_throughput_normalization": 0.03125,
+        "valid_thr_norm_to_prose": 0.4999912501531222
+      },
+      "32": {
+        "mechanism": "2PHASE",
+        "oversubscription": 32,
+        "n_seeds": 10,
+        "offered_descriptors": 2048000,
+        "admitted_descriptors": 32000,
+        "rejected_descriptors": 2016000,
+        "reject_rate": 0.984375,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 32000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 134217728000.0,
+        "valid_payload_bytes": 2097152000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 132120576000.0,
+        "reject_metadata_bytes": 129024000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.015625,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.984375,
+          "reject_metadata_frac": 0.0009613037109375,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.0485576502411207,
+        "valid_throughput_normalization": 0.015625,
+        "valid_thr_norm_to_prose": 0.4999912501531222
+      },
+      "64": {
+        "mechanism": "2PHASE",
+        "oversubscription": 64,
+        "n_seeds": 10,
+        "offered_descriptors": 4096000,
+        "admitted_descriptors": 32000,
+        "rejected_descriptors": 4064000,
+        "reject_rate": 0.9921875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 32000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 268435456000.0,
+        "valid_payload_bytes": 2097152000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 266338304000.0,
+        "reject_metadata_bytes": 260096000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.0078125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.9921875,
+          "reject_metadata_frac": 0.00096893310546875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.0485576502411207,
+        "valid_throughput_normalization": 0.0078125,
+        "valid_thr_norm_to_prose": 0.4999912501531222
+      }
+    },
+    "GENONLY": {
+      "2": {
+        "mechanism": "GENONLY",
+        "oversubscription": 2,
+        "n_seeds": 10,
+        "offered_descriptors": 128000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 64000,
+        "reject_rate": 0.5,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 8388608000.0,
+        "valid_payload_bytes": 3458531328.0,
+        "stale_payload_bytes": 735772672.0,
+        "rejected_payload_bytes": 4194304000.0,
+        "reject_metadata_bytes": 4096000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.4122890625,
+          "stale_rpe_frac": 0.0877109375,
+          "rejected_payload_frac": 0.5,
+          "reject_metadata_frac": 0.00048828125,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7292656640000001,
+        "valid_throughput_normalization": 0.4122890625,
+        "valid_thr_norm_to_prose": 0.8245781249999999
+      },
+      "4": {
+        "mechanism": "GENONLY",
+        "oversubscription": 4,
+        "n_seeds": 10,
+        "offered_descriptors": 256000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 192000,
+        "reject_rate": 0.75,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 16777216000.0,
+        "valid_payload_bytes": 3459874816.0,
+        "stale_payload_bytes": 734429184.0,
+        "rejected_payload_bytes": 12582912000.0,
+        "reject_metadata_bytes": 12288000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.206224609375,
+          "stale_rpe_frac": 0.043775390625,
+          "rejected_payload_frac": 0.75,
+          "reject_metadata_frac": 0.000732421875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.729937408,
+        "valid_throughput_normalization": 0.206224609375,
+        "valid_thr_norm_to_prose": 0.8248984374999999
+      },
+      "8": {
+        "mechanism": "GENONLY",
+        "oversubscription": 8,
+        "n_seeds": 10,
+        "offered_descriptors": 512000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 448000,
+        "reject_rate": 0.875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 33554432000.0,
+        "valid_payload_bytes": 3462594560.0,
+        "stale_payload_bytes": 731709440.0,
+        "rejected_payload_bytes": 29360128000.0,
+        "reject_metadata_bytes": 28672000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.103193359375,
+          "stale_rpe_frac": 0.021806640625,
+          "rejected_payload_frac": 0.875,
+          "reject_metadata_frac": 0.0008544921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7312972800000002,
+        "valid_throughput_normalization": 0.103193359375,
+        "valid_thr_norm_to_prose": 0.8255468749999999
+      },
+      "16": {
+        "mechanism": "GENONLY",
+        "oversubscription": 16,
+        "n_seeds": 10,
+        "offered_descriptors": 1024000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 960000,
+        "reject_rate": 0.9375,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 67108864000.0,
+        "valid_payload_bytes": 3459809280.0,
+        "stale_payload_bytes": 734494720.0,
+        "rejected_payload_bytes": 62914560000.0,
+        "reject_metadata_bytes": 61440000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.05155517578125,
+          "stale_rpe_frac": 0.01094482421875,
+          "rejected_payload_frac": 0.9375,
+          "reject_metadata_frac": 0.00091552734375,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7299046400000002,
+        "valid_throughput_normalization": 0.05155517578125,
+        "valid_thr_norm_to_prose": 0.8248828125
+      },
+      "32": {
+        "mechanism": "GENONLY",
+        "oversubscription": 32,
+        "n_seeds": 10,
+        "offered_descriptors": 2048000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 1984000,
+        "reject_rate": 0.96875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 134217728000.0,
+        "valid_payload_bytes": 3456696320.0,
+        "stale_payload_bytes": 737607680.0,
+        "rejected_payload_bytes": 130023424000.0,
+        "reject_metadata_bytes": 126976000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.02575439453125,
+          "stale_rpe_frac": 0.00549560546875,
+          "rejected_payload_frac": 0.96875,
+          "reject_metadata_frac": 0.000946044921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.72834816,
+        "valid_throughput_normalization": 0.02575439453125,
+        "valid_thr_norm_to_prose": 0.8241406249999998
+      },
+      "64": {
+        "mechanism": "GENONLY",
+        "oversubscription": 64,
+        "n_seeds": 10,
+        "offered_descriptors": 4096000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 4032000,
+        "reject_rate": 0.984375,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 268435456000.0,
+        "valid_payload_bytes": 3453845504.0,
+        "stale_payload_bytes": 740458496.0,
+        "rejected_payload_bytes": 264241152000.0,
+        "reject_metadata_bytes": 258048000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.0128665771484375,
+          "stale_rpe_frac": 0.0027584228515625,
+          "rejected_payload_frac": 0.984375,
+          "reject_metadata_frac": 0.0009613037109375,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7269227520000001,
+        "valid_throughput_normalization": 0.0128665771484375,
+        "valid_thr_norm_to_prose": 0.8234609374999999
+      }
+    },
+    "RECLAIM_DEFER": {
+      "2": {
+        "mechanism": "RECLAIM_DEFER",
+        "oversubscription": 2,
+        "n_seeds": 10,
+        "offered_descriptors": 128000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 64000,
+        "reject_rate": 0.5,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 8388608000.0,
+        "valid_payload_bytes": 3458531328.0,
+        "stale_payload_bytes": 735772672.0,
+        "rejected_payload_bytes": 4194304000.0,
+        "reject_metadata_bytes": 4096000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.4122890625,
+          "stale_rpe_frac": 0.0877109375,
+          "rejected_payload_frac": 0.5,
+          "reject_metadata_frac": 0.00048828125,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7292656640000001,
+        "valid_throughput_normalization": 0.4122890625,
+        "valid_thr_norm_to_prose": 0.8245781249999999
+      },
+      "4": {
+        "mechanism": "RECLAIM_DEFER",
+        "oversubscription": 4,
+        "n_seeds": 10,
+        "offered_descriptors": 256000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 192000,
+        "reject_rate": 0.75,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 16777216000.0,
+        "valid_payload_bytes": 3459874816.0,
+        "stale_payload_bytes": 734429184.0,
+        "rejected_payload_bytes": 12582912000.0,
+        "reject_metadata_bytes": 12288000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.206224609375,
+          "stale_rpe_frac": 0.043775390625,
+          "rejected_payload_frac": 0.75,
+          "reject_metadata_frac": 0.000732421875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.729937408,
+        "valid_throughput_normalization": 0.206224609375,
+        "valid_thr_norm_to_prose": 0.8248984374999999
+      },
+      "8": {
+        "mechanism": "RECLAIM_DEFER",
+        "oversubscription": 8,
+        "n_seeds": 10,
+        "offered_descriptors": 512000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 448000,
+        "reject_rate": 0.875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 33554432000.0,
+        "valid_payload_bytes": 3462594560.0,
+        "stale_payload_bytes": 731709440.0,
+        "rejected_payload_bytes": 29360128000.0,
+        "reject_metadata_bytes": 28672000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.103193359375,
+          "stale_rpe_frac": 0.021806640625,
+          "rejected_payload_frac": 0.875,
+          "reject_metadata_frac": 0.0008544921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 1.7312972800000002,
+        "valid_throughput_normalization": 0.103193359375,
+        "valid_thr_norm_to_prose": 0.8255468749999999
+      },
+      "16": {
+        "mechanism": "RECLAIM_DEFER",
+        "oversubscription": 16,
+        "n_seeds": 10,
+        "offered_descriptors": 1024000,
+        "admitted_descriptors": 32000,
+        "rejected_descriptors": 992000,
+        "reject_rate": 0.96875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 32000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 67108864000.0,
+        "valid_payload_bytes": 1732608000.0,
+        "stale_payload_bytes": 364544000.0,
+        "rejected_payload_bytes": 65011712000.0,
+        "reject_metadata_bytes": 63488000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.02581787109375,
+          "stale_rpe_frac": 0.00543212890625,
+          "rejected_payload_frac": 0.96875,
+          "reject_metadata_frac": 0.000946044921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 0.8663040000000001,
+        "valid_throughput_normalization": 0.02581787109375,
+        "valid_thr_norm_to_prose": 0.41308593749999994
+      },
+      "32": {
+        "mechanism": "RECLAIM_DEFER",
+        "oversubscription": 32,
+        "n_seeds": 10,
+        "offered_descriptors": 2048000,
+        "admitted_descriptors": 32000,
+        "rejected_descriptors": 2016000,
+        "reject_rate": 0.984375,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 32000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 134217728000.0,
+        "valid_payload_bytes": 1730117632.0,
+        "stale_payload_bytes": 367034368.0,
+        "rejected_payload_bytes": 132120576000.0,
+        "reject_metadata_bytes": 129024000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.012890380859375,
+          "stale_rpe_frac": 0.002734619140625,
+          "rejected_payload_frac": 0.984375,
+          "reject_metadata_frac": 0.0009613037109375,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 0.865058816,
+        "valid_throughput_normalization": 0.012890380859375,
+        "valid_thr_norm_to_prose": 0.41249218749999994
+      },
+      "64": {
+        "mechanism": "RECLAIM_DEFER",
+        "oversubscription": 64,
+        "n_seeds": 10,
+        "offered_descriptors": 4096000,
+        "admitted_descriptors": 32000,
+        "rejected_descriptors": 4064000,
+        "reject_rate": 0.9921875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 32000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 268435456000.0,
+        "valid_payload_bytes": 1724186624.0,
+        "stale_payload_bytes": 372965376.0,
+        "rejected_payload_bytes": 266338304000.0,
+        "reject_metadata_bytes": 260096000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.006423095703125,
+          "stale_rpe_frac": 0.001389404296875,
+          "rejected_payload_frac": 0.9921875,
+          "reject_metadata_frac": 0.00096893310546875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 0.8620933120000001,
+        "valid_throughput_normalization": 0.006423095703125,
+        "valid_thr_norm_to_prose": 0.41107812499999996
+      }
+    },
+    "PROSE_HOSTSEL": {
+      "2": {
+        "mechanism": "PROSE_HOSTSEL",
+        "oversubscription": 2,
+        "n_seeds": 10,
+        "offered_descriptors": 128000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 64000,
+        "reject_rate": 0.5,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 8388608000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 4194304000.0,
+        "reject_metadata_bytes": 4096000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.5,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.5,
+          "reject_metadata_frac": 0.00048828125,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.5,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "4": {
+        "mechanism": "PROSE_HOSTSEL",
+        "oversubscription": 4,
+        "n_seeds": 10,
+        "offered_descriptors": 256000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 192000,
+        "reject_rate": 0.75,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 16777216000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 12582912000.0,
+        "reject_metadata_bytes": 12288000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.25,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.75,
+          "reject_metadata_frac": 0.000732421875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.25,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "8": {
+        "mechanism": "PROSE_HOSTSEL",
+        "oversubscription": 8,
+        "n_seeds": 10,
+        "offered_descriptors": 512000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 448000,
+        "reject_rate": 0.875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 33554432000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 29360128000.0,
+        "reject_metadata_bytes": 28672000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.875,
+          "reject_metadata_frac": 0.0008544921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.125,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "16": {
+        "mechanism": "PROSE_HOSTSEL",
+        "oversubscription": 16,
+        "n_seeds": 10,
+        "offered_descriptors": 1024000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 960000,
+        "reject_rate": 0.9375,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 67108864000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 62914560000.0,
+        "reject_metadata_bytes": 61440000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.0625,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.9375,
+          "reject_metadata_frac": 0.00091552734375,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.0625,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "32": {
+        "mechanism": "PROSE_HOSTSEL",
+        "oversubscription": 32,
+        "n_seeds": 10,
+        "offered_descriptors": 2048000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 1984000,
+        "reject_rate": 0.96875,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 134217728000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 130023424000.0,
+        "reject_metadata_bytes": 126976000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.03125,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.96875,
+          "reject_metadata_frac": 0.000946044921875,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.03125,
+        "valid_thr_norm_to_prose": 1.0
+      },
+      "64": {
+        "mechanism": "PROSE_HOSTSEL",
+        "oversubscription": 64,
+        "n_seeds": 10,
+        "offered_descriptors": 4096000,
+        "admitted_descriptors": 64000,
+        "rejected_descriptors": 4032000,
+        "reject_rate": 0.984375,
+        "stale_admits": 0,
+        "stale_admit_rate": 0.0,
+        "retry_dist": {
+          "0": 64000,
+          "1": 0,
+          "2+": 0
+        },
+        "retry_dist_frac": {
+          "0": 1.0,
+          "1": 0.0,
+          "2+": 0.0
+        },
+        "retries": 0,
+        "retries_per_descriptor": 0.0,
+        "retry_added_ns_per_descriptor": 0.0,
+        "offered_payload_bytes": 268435456000.0,
+        "valid_payload_bytes": 4194304000.0,
+        "stale_payload_bytes": 0.0,
+        "rejected_payload_bytes": 264241152000.0,
+        "reject_metadata_bytes": 258048000,
+        "retry_opportunity_bytes_equiv": 0.0,
+        "decomposition": {
+          "valid_frac": 0.015625,
+          "stale_rpe_frac": 0.0,
+          "rejected_payload_frac": 0.984375,
+          "reject_metadata_frac": 0.0009613037109375,
+          "retry_opportunity_frac": 0.0
+        },
+        "decomposition_sums_to_one": true,
+        "valid_throughput_Bpns_mean": 2.0971520000000003,
+        "valid_throughput_normalization": 0.015625,
+        "valid_thr_norm_to_prose": 1.0
+      }
+    }
+  },
+  "byte_cost_raw_logs": {
+    "source": "results/baselines/raw/*.jsonl (all workloads, all seeds)",
+    "reject_under_prose": {
+      "rejects": 2479,
+      "payload_bytes_per_reject": 0.0,
+      "control_bytes_per_reject": 128.0,
+      "note": "reject = BDB descriptor + null completion, zero payload issued; control = descriptor_bytes + completion_bytes"
+    },
+    "stale_issue_under": {
+      "GenOnly": {
+        "rpe_events": 5582,
+        "payload_bytes_per_stale_descriptor": 90332.13615191687,
+        "stale_bytes_per_stale_descriptor": 45086.689000358296
+      },
+      "NoCheck": {
+        "rpe_events": 8061,
+        "payload_bytes_per_stale_descriptor": 90828.45701525865,
+        "stale_bytes_per_stale_descriptor": 59497.34598685027
+      }
+    },
+    "byte_ratio": {
+      "measured_control_per_reject_over_payload_per_stale": 0.0014131108511207095,
+      "convention_META_B_over_CHUNK_PAYLOAD_B": 0.0009765625,
+      "META_B": 64,
+      "CHUNK_PAYLOAD_B": 65536
+    },
+    "per_method_raw": {
+      "GenOnly": {
+        "n_requests": 36000,
+        "rejects": 2479,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 317312,
+        "reject_stale_bytes": 0,
+        "rpe_events": 5582,
+        "rpe_wire_payload_bytes": 504233984,
+        "rpe_stale_payload_bytes": 251673898
+      },
+      "NoCheck": {
+        "n_requests": 36000,
+        "rejects": 0,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 0,
+        "reject_stale_bytes": 0,
+        "rpe_events": 8061,
+        "rpe_wire_payload_bytes": 732168192,
+        "rpe_stale_payload_bytes": 479608106
+      },
+      "PROSE": {
+        "n_requests": 36000,
+        "rejects": 2479,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 317312,
+        "reject_stale_bytes": 0,
+        "rpe_events": 0,
+        "rpe_wire_payload_bytes": 0,
+        "rpe_stale_payload_bytes": 0
+      },
+      "RDMAKey": {
+        "n_requests": 36000,
+        "rejects": 2479,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 317312,
+        "reject_stale_bytes": 0,
+        "rpe_events": 5582,
+        "rpe_wire_payload_bytes": 504233984,
+        "rpe_stale_payload_bytes": 251673898
+      },
+      "Segmented-16384": {
+        "n_requests": 36000,
+        "rejects": 2479,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 317312,
+        "reject_stale_bytes": 0,
+        "rpe_events": 5582,
+        "rpe_wire_payload_bytes": 298319872,
+        "rpe_stale_payload_bytes": 45759786
+      },
+      "Segmented-256": {
+        "n_requests": 36000,
+        "rejects": 2479,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 317312,
+        "reject_stale_bytes": 0,
+        "rpe_events": 5582,
+        "rpe_wire_payload_bytes": 253276160,
+        "rpe_stale_payload_bytes": 716074
+      },
+      "Segmented-4096": {
+        "n_requests": 36000,
+        "rejects": 2479,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 317312,
+        "reject_stale_bytes": 0,
+        "rpe_events": 5582,
+        "rpe_wire_payload_bytes": 263913472,
+        "rpe_stale_payload_bytes": 11353386
+      },
+      "Segmented-64": {
+        "n_requests": 36000,
+        "rejects": 2479,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 317312,
+        "reject_stale_bytes": 0,
+        "rpe_events": 5582,
+        "rpe_wire_payload_bytes": 252735488,
+        "rpe_stale_payload_bytes": 175402
+      },
+      "SharedRef": {
+        "n_requests": 36000,
+        "rejects": 0,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 0,
+        "reject_stale_bytes": 0,
+        "rpe_events": 0,
+        "rpe_wire_payload_bytes": 0,
+        "rpe_stale_payload_bytes": 0
+      },
+      "TwoPhase": {
+        "n_requests": 36000,
+        "rejects": 0,
+        "reject_payload_bytes": 0,
+        "reject_control_bytes": 0,
+        "reject_stale_bytes": 0,
+        "rpe_events": 0,
+        "rpe_wire_payload_bytes": 0,
+        "rpe_stale_payload_bytes": 0
+      }
+    }
+  }
+}

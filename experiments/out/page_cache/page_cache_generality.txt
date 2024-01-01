@@ -1,0 +1,10 @@
+Page/Block-cache instance ¡ª RPE and protection (calibrated projection)
+(4 KiB pages, 256 frames, 4096-page working set, prefetch+random)
+
+ policy  unmit_RPE%  gated_RPE%  unmit_BWeff%  gated_BWeff%  rejected
+    LRU       14.0%        0.0%         86.0%        100.0%      5501
+    ARC       14.0%        0.0%         86.0%        100.0%      5501
+  SIEVE       14.5%        0.0%         85.5%        100.0%      5692
+   FIFO       14.0%        0.0%         86.0%        100.0%      5501
+
+Protection span: PROSE 1.00x transfer, RefCnt 129.0x transfer (transfer 512 ns, queue residence 65536 ns).

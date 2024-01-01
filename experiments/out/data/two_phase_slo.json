@@ -1,0 +1,314 @@
+{
+  "config": {
+    "n_hosts": 16,
+    "per_tenant_bw_gbps": 2.0,
+    "alpha_sweep": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "budget": 32,
+    "n_steps": 256,
+    "seed": 42,
+    "token_table_capacity": 256,
+    "reserve_rtt_us": 3.5
+  },
+  "data": {
+    "PROSE_APEX": {
+      "1": {
+        "mean_us": 1056.9626666666666,
+        "p50_us": 1056.9626666666668,
+        "p99_us": 1056.9626666666668,
+        "throughput_tok_s": 15137.715365537983,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "2": {
+        "mean_us": 1058.7341866666668,
+        "p50_us": 1058.7341866666668,
+        "p99_us": 1058.7341866666668,
+        "throughput_tok_s": 15112.386283071315,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "4": {
+        "mean_us": 1059.4318933333338,
+        "p50_us": 1059.4318933333334,
+        "p99_us": 1059.4318933333334,
+        "throughput_tok_s": 15102.433767269877,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "8": {
+        "mean_us": 1063.55264,
+        "p50_us": 1063.55264,
+        "p99_us": 1063.55264,
+        "throughput_tok_s": 15043.91921776434,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "16": {
+        "mean_us": 1071.794133333333,
+        "p50_us": 1071.7941333333333,
+        "p99_us": 1071.7941333333333,
+        "throughput_tok_s": 14928.239950557672,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "32": {
+        "mean_us": 1088.2771200000004,
+        "p50_us": 1088.2771200000002,
+        "p99_us": 1088.2771200000002,
+        "throughput_tok_s": 14702.137632003138,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      }
+    },
+    "FetchThenScore": {
+      "1": {
+        "mean_us": 1055.1111466666664,
+        "p50_us": 1055.1111466666666,
+        "p99_us": 1055.1111466666666,
+        "throughput_tok_s": 15164.279185702475,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "2": {
+        "mean_us": 2110.0222933333343,
+        "p50_us": 2110.0222933333334,
+        "p99_us": 2110.0222933333334,
+        "throughput_tok_s": 7582.858271475321,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "4": {
+        "mean_us": 4219.844586666667,
+        "p50_us": 4219.844586666667,
+        "p99_us": 4219.844586666667,
+        "throughput_tok_s": 3791.608830940074,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "8": {
+        "mean_us": 8439.489173333333,
+        "p50_us": 8439.489173333333,
+        "p99_us": 8439.489173333333,
+        "throughput_tok_s": 1895.8493424644685,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "16": {
+        "mean_us": 16878.778346666662,
+        "p50_us": 16878.778346666666,
+        "p99_us": 16878.778346666666,
+        "throughput_tok_s": 947.9359033801039,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      },
+      "32": {
+        "mean_us": 33757.35669333335,
+        "p50_us": 33757.356693333335,
+        "p99_us": 33757.356693333335,
+        "throughput_tok_s": 473.9707597769288,
+        "n_samples": 4096,
+        "peak_outstanding": 0
+      }
+    },
+    "TwoPhase": {
+      "1": {
+        "mean_us": 1063.1024266666689,
+        "p50_us": 1063.1024266666645,
+        "p99_us": 1065.7421866666775,
+        "throughput_tok_s": 15050.290168340223,
+        "n_samples": 4096,
+        "peak_outstanding": 256
+      },
+      "2": {
+        "mean_us": 1072.864746666663,
+        "p50_us": 1072.8647466666616,
+        "p99_us": 1083.4953066666865,
+        "throughput_tok_s": 14913.343037611403,
+        "n_samples": 4096,
+        "peak_outstanding": 256
+      },
+      "4": {
+        "mean_us": 1090.241506666676,
+        "p50_us": 1090.2415066666704,
+        "p99_us": 1117.5511200000221,
+        "throughput_tok_s": 14675.647461743303,
+        "n_samples": 4096,
+        "peak_outstanding": 256
+      },
+      "8": {
+        "mean_us": 1156.5463400000338,
+        "p50_us": 1156.546340000018,
+        "p99_us": 1246.0400400000956,
+        "throughput_tok_s": 13834.292191006833,
+        "n_samples": 4096,
+        "peak_outstanding": 256
+      },
+      "16": {
+        "mean_us": 1226.5990333333725,
+        "p50_us": 1226.599033333369,
+        "p99_us": 1377.903933333524,
+        "throughput_tok_s": 13044.197464039109,
+        "n_samples": 4096,
+        "peak_outstanding": 512
+      },
+      "32": {
+        "mean_us": 1366.7044199999787,
+        "p50_us": 1366.7044199999934,
+        "p99_us": 1641.6317199999974,
+        "throughput_tok_s": 11706.993674609064,
+        "n_samples": 4096,
+        "peak_outstanding": 1024
+      }
+    }
+  },
+  "efficiency": {
+    "bw_sweep_gbps": [
+      2.0,
+      4.0,
+      8.0,
+      16.0,
+      32.0,
+      64.0
+    ],
+    "eta_bw": {
+      "PROSE_APEX": [
+        0.818115234375,
+        0.818115234375,
+        0.818115234375,
+        0.818115234375,
+        0.818115234375,
+        0.818115234375
+      ],
+      "FetchThenScore": [
+        0.10704549153645833,
+        0.10704549153645833,
+        0.10704549153645833,
+        0.10704549153645833,
+        0.10704549153645833,
+        0.10704549153645833
+      ]
+    },
+    "overlap": {
+      "break_even": 0.45,
+      "trace_overlap": 0.52,
+      "domains": 16,
+      "rows": [
+        {
+          "overlap": 0.0,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 1.6777216,
+          "tput_scale_nocfo": 0.5732781737091713,
+          "tput_scale_cfo": 0.5732842016102966,
+          "p99_ms_nocfo": 1.7273575122403897,
+          "p99_ms_cfo": 1.7273531809991112
+        },
+        {
+          "overlap": 0.1,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 1.5263296,
+          "tput_scale_nocfo": 0.5732816821063431,
+          "tput_scale_cfo": 0.6300240145814688,
+          "p99_ms_nocfo": 1.7273564197601572,
+          "p99_ms_cfo": 1.6414060451738879
+        },
+        {
+          "overlap": 0.2,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 1.3724416,
+          "tput_scale_nocfo": 0.5732814051592616,
+          "tput_scale_cfo": 0.7004738283532586,
+          "p99_ms_nocfo": 1.7273535547652767,
+          "p99_ms_cfo": 1.527962597442726
+        },
+        {
+          "overlap": 0.3,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 1.1919616,
+          "tput_scale_nocfo": 0.5732814051592616,
+          "tput_scale_cfo": 0.8060686091077174,
+          "p99_ms_nocfo": 1.7273535547652767,
+          "p99_ms_cfo": 1.3739381227289567
+        },
+        {
+          "overlap": 0.4,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 1.0429696000000002,
+          "tput_scale_nocfo": 0.5732814051592616,
+          "tput_scale_cfo": 0.919276004791914,
+          "p99_ms_nocfo": 1.7273535547652767,
+          "p99_ms_cfo": 1.2606250717980148
+        },
+        {
+          "overlap": 0.45,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 0.9424576,
+          "tput_scale_nocfo": 0.5732814051592616,
+          "tput_scale_cfo": 1.0,
+          "p99_ms_nocfo": 1.7273535547652767,
+          "p99_ms_cfo": 1.185651737073084
+        },
+        {
+          "overlap": 0.5,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 0.9089536,
+          "tput_scale_nocfo": 0.5732814051592616,
+          "tput_scale_cfo": 1.0,
+          "p99_ms_nocfo": 1.7273535547652767,
+          "p99_ms_cfo": 1.1609229628786382
+        },
+        {
+          "overlap": 0.6,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 0.7166656,
+          "tput_scale_nocfo": 0.5732814051592616,
+          "tput_scale_cfo": 1.0,
+          "p99_ms_nocfo": 1.7273535547652767,
+          "p99_ms_cfo": 0.9628780974344977
+        },
+        {
+          "overlap": 0.7,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 0.5841856000000001,
+          "tput_scale_nocfo": 0.5732814051592616,
+          "tput_scale_cfo": 1.0,
+          "p99_ms_nocfo": 1.7273535547652767,
+          "p99_ms_cfo": 0.8510090746624511
+        },
+        {
+          "overlap": 0.8,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 0.4200256,
+          "tput_scale_nocfo": 0.5732814651147775,
+          "tput_scale_cfo": 1.0,
+          "p99_ms_nocfo": 1.7273535547652767,
+          "p99_ms_cfo": 0.6828982200555784
+        },
+        {
+          "overlap": 0.9,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 0.2683456,
+          "tput_scale_nocfo": 0.5732814651147775,
+          "tput_scale_cfo": 1.0,
+          "p99_ms_nocfo": 1.7273535547652767,
+          "p99_ms_cfo": 0.5721737024910736
+        },
+        {
+          "overlap": 1.0,
+          "read_util_nocfo": 1.6777216,
+          "read_util_cfo": 0.1048576,
+          "tput_scale_nocfo": 0.5732781737091713,
+          "tput_scale_cfo": 1.0,
+          "p99_ms_nocfo": 1.7273575122403897,
+          "p99_ms_cfo": 0.5680531182880728
+        }
+      ]
+    }
+  }
+}

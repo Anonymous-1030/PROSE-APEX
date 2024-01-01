@@ -1,0 +1,88 @@
+{
+  "operating_point": {
+    "n_candidates": 1024,
+    "budget_per_step": 64,
+    "top_k_useful": 32,
+    "useful_fraction": 0.04,
+    "cxl_bw_gbs": 4.0,
+    "decode_compute_us": 2000.0,
+    "decode_slack_us": 400.0,
+    "n_hosts": 8
+  },
+  "n_steps": 256,
+  "seed": 42,
+  "dedup_info": {
+    "dedup_frac": 0.75406875,
+    "measured": true,
+    "overlap_mean": 0.6601075
+  },
+  "cfo_detail": {
+    "dedup_frac": 0.75406875,
+    "total_requests": 160000,
+    "coalesced": 120651,
+    "gated_steps": 0,
+    "n_steps": 400
+  },
+  "overlap_detail": {
+    "mean": 0.6601075,
+    "p5": 0.56,
+    "p50": 0.64,
+    "p95": 0.76,
+    "step_mean": 0.6601075000000001,
+    "n": 48000
+  },
+  "levels": [
+    {
+      "label": "L0 baseline\n(fetch-all)",
+      "boundary": "fts_none",
+      "scorer": "none",
+      "cfo_dedup_frac": 0.0,
+      "tok_per_s": 54.41520630763659,
+      "eta_bw_useful_pct": 0.237274169921875,
+      "recovery_at_k": 0.0,
+      "rpe_bytes": 62914560.0,
+      "committed_bytes": 4194304.0,
+      "wasted_bytes": 62914560.0,
+      "useful_bytes": 159232.0
+    },
+    {
+      "label": "L1 +RPE elim\n(endpoint gate)",
+      "boundary": "cefe",
+      "scorer": "none",
+      "cfo_dedup_frac": 0.0,
+      "tok_per_s": 375.240153698367,
+      "eta_bw_useful_pct": 3.79638671875,
+      "recovery_at_k": 0.0,
+      "rpe_bytes": 0.0,
+      "committed_bytes": 4194304.0,
+      "wasted_bytes": 0.0,
+      "useful_bytes": 159232.0
+    },
+    {
+      "label": "L2 +CFO\n(dedup reads)",
+      "boundary": "cefe",
+      "scorer": "none",
+      "cfo_dedup_frac": 0.75406875,
+      "tok_per_s": 500.0,
+      "eta_bw_useful_pct": 3.79638671875,
+      "recovery_at_k": 0.0,
+      "rpe_bytes": 0.0,
+      "committed_bytes": 4194304.0,
+      "wasted_bytes": 0.0,
+      "useful_bytes": 159232.0
+    },
+    {
+      "label": "L3 +APEX\n(selective)",
+      "boundary": "cefe",
+      "scorer": "odus_x",
+      "cfo_dedup_frac": 0.75406875,
+      "tok_per_s": 500.0,
+      "eta_bw_useful_pct": 24.127197265625,
+      "recovery_at_k": 0.3775634765625,
+      "rpe_bytes": 0.0,
+      "committed_bytes": 4194304.0,
+      "wasted_bytes": 0.0,
+      "useful_bytes": 1011968.0
+    }
+  ]
+}

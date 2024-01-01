@@ -1,0 +1,17 @@
+Optimistic Reclaim ¡ª key differences at extreme oversubscription
+(16 tenants, pool=512, budget=32, mean of 10 seeds, bound=capacity)
+
+--- 32x oversubscription ---
+ oversub mechanism  valid_thr    P99_admit  pinned_pk  reclaim%   RPE%
+     32x     PROSE      1.00x        0.0us         32     93.8%   0.0%
+     32x    REFCNT      0.50x       12.5us        512      0.0%   0.0%
+     32x    2PHASE      0.50x      175.0us        512      0.0%   0.0%
+     32x   GENONLY      0.82x        0.0us         32     93.8%  17.6%
+
+--- 64x oversubscription ---
+ oversub mechanism  valid_thr    P99_admit  pinned_pk  reclaim%   RPE%
+     64x     PROSE      1.00x        0.0us         32     93.8%   0.0%
+     64x    REFCNT      0.50x       12.5us        512      0.0%   0.0%
+     64x    2PHASE      0.50x      175.0us        512      0.0%   0.0%
+     64x   GENONLY      0.82x        0.0us         32     93.8%  17.7%
+

@@ -1,0 +1,83 @@
+{
+  "experiment": "placement_isolation_full",
+  "source": "experiments/out/data/placement_isolation.json",
+  "units": {
+    "stale": "percent of admits stale at service time",
+    "jain": "Jain fairness index (1.0 = perfectly fair)",
+    "mis_bound_bw": "MB, cumulative; mis-bound descriptors x 64 KiB"
+  },
+  "columns": [
+    "hosts",
+    "Stale(Opt)",
+    "Stale(Cred)",
+    "Stale(EP)",
+    "Jain(Opt)",
+    "Jain(Cred)",
+    "Jain(EP)",
+    "MisBW(Opt)_MB",
+    "MisBW(Cred)_MB",
+    "MisBW(EP)_MB"
+  ],
+  "rows": [
+    {
+      "hosts": 1,
+      "Stale(Opt)": 0.0,
+      "Stale(Cred)": 0.0,
+      "Stale(EP)": 0.0,
+      "Jain(Opt)": 1.0,
+      "Jain(Cred)": 1.0,
+      "Jain(EP)": 1.0,
+      "MisBW(Opt)_MB": 0.0,
+      "MisBW(Cred)_MB": 0.0,
+      "MisBW(EP)_MB": 0.0
+    },
+    {
+      "hosts": 2,
+      "Stale(Opt)": 34.2437744140625,
+      "Stale(Cred)": 7.200000000000004,
+      "Stale(EP)": 0.0,
+      "Jain(Opt)": 0.9989410689921063,
+      "Jain(Cred)": 1.0,
+      "Jain(EP)": 1.0,
+      "MisBW(Opt)_MB": 322.6875,
+      "MisBW(Cred)_MB": 73.72800000000004,
+      "MisBW(EP)_MB": 0.0
+    },
+    {
+      "hosts": 4,
+      "Stale(Opt)": 32.38677978515625,
+      "Stale(Cred)": 10.800000000000004,
+      "Stale(EP)": 0.0,
+      "Jain(Opt)": 0.991893950505782,
+      "Jain(Cred)": 1.0,
+      "Jain(EP)": 1.0,
+      "MisBW(Opt)_MB": 1745.4375,
+      "MisBW(Cred)_MB": 110.59200000000004,
+      "MisBW(EP)_MB": 0.0
+    },
+    {
+      "hosts": 8,
+      "Stale(Opt)": 29.573822021484375,
+      "Stale(Cred)": 12.599999999999994,
+      "Stale(EP)": 0.0,
+      "Jain(Opt)": 0.9635740715537134,
+      "Jain(Cred)": 1.0,
+      "Jain(EP)": 1.0,
+      "MisBW(Opt)_MB": 4745.3125,
+      "MisBW(Cred)_MB": 129.02399999999994,
+      "MisBW(EP)_MB": 0.0
+    },
+    {
+      "hosts": 16,
+      "Stale(Opt)": 38.8580322265625,
+      "Stale(Cred)": 13.5,
+      "Stale(EP)": 0.0,
+      "Jain(Opt)": 0.9200270694640416,
+      "Jain(Cred)": 1.0,
+      "Jain(EP)": 1.0,
+      "MisBW(Opt)_MB": 8993.5,
+      "MisBW(Cred)_MB": 138.24,
+      "MisBW(EP)_MB": 0.0
+    }
+  ]
+}

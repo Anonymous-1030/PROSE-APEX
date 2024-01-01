@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Baseline (FTS)",
+    "boundary": "fts_quest",
+    "throughput_tok_s": 81.86628942680498,
+    "rpe_bytes_mean": 15925248.0,
+    "rpe_rate_pct": 98.0363728054969,
+    "bandwidth_waste_pct": 98.0363728054969,
+    "admission_latency_us": 614.3999999999999,
+    "recovery_at_k": 0.11962890625
+  },
+  {
+    "label": "Mode B (Pull)",
+    "boundary": "cefe_pull",
+    "throughput_tok_s": 83.33333333333333,
+    "rpe_bytes_mean": 0.0,
+    "rpe_rate_pct": 0.0,
+    "bandwidth_waste_pct": 0.0,
+    "admission_latency_us": 23.75,
+    "recovery_at_k": 0.3775634765625
+  },
+  {
+    "label": "Mode A (Push)",
+    "boundary": "cefe",
+    "throughput_tok_s": 83.33333333333333,
+    "rpe_bytes_mean": 0.0,
+    "rpe_rate_pct": 0.0,
+    "bandwidth_waste_pct": 0.0,
+    "admission_latency_us": 21.600000000000005,
+    "recovery_at_k": 0.3775634765625
+  }
+]

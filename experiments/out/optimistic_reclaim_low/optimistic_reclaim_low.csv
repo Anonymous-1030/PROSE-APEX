@@ -1,0 +1,721 @@
+mechanism,label,oversubscription,n_tenants,bound_mode,bound,seed,valid_throughput_Bpns,admission_p99_ns,pinned_peak,reclaimable_capacity_frac,rpe_payload_frac
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,0,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,0,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,0,1.73686784,9.0,32,0.9375,0.171796875
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,1,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,1,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,1,1.73309952,9.0,32,0.9375,0.17359375
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,2,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,2,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,2,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,3,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,3,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,3,1.72146688,9.0,32,0.9375,0.179140625
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,4,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,4,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,4,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,5,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,5,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,5,1.72802048,9.0,32,0.9375,0.176015625
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,6,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,6,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,6,1.72425216,9.0,32,0.9375,0.1778125
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,7,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,7,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,7,1.7186816,9.0,32,0.9375,0.18046875
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,8,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,8,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,8,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),2,8,capacity,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,capacity,512,9,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,capacity,512,9,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,capacity,512,9,1.72670976,9.0,32,0.9375,0.176640625
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,0,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,0,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,0,1.73686784,9.0,32,0.9375,0.171796875
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,1,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,1,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,1,1.73309952,9.0,32,0.9375,0.17359375
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,2,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,2,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,2,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,3,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,3,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,3,1.72146688,9.0,32,0.9375,0.179140625
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,4,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,4,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,4,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,5,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,5,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,5,1.72802048,9.0,32,0.9375,0.176015625
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,6,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,6,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,6,1.72425216,9.0,32,0.9375,0.1778125
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,7,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,7,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,7,1.7186816,9.0,32,0.9375,0.18046875
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,8,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,8,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,8,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),2,16,capacity,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,capacity,512,9,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,capacity,512,9,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,capacity,512,9,1.72670976,9.0,32,0.9375,0.176640625
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,0,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,0,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,0,1.73686784,9.0,32,0.9375,0.171796875
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,1,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,1,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,1,1.73309952,9.0,32,0.9375,0.17359375
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,2,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,2,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,2,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,3,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,3,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,3,1.72146688,9.0,32,0.9375,0.179140625
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,4,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,4,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,4,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,5,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,5,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,5,1.72802048,9.0,32,0.9375,0.176015625
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,6,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,6,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,6,1.72425216,9.0,32,0.9375,0.1778125
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,7,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,7,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,7,1.7186816,9.0,32,0.9375,0.18046875
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,8,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,8,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,8,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),2,32,capacity,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,capacity,512,9,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,capacity,512,9,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,capacity,512,9,1.72670976,9.0,32,0.9375,0.176640625
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,0,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,0,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,0,1.72965888,9.0,32,0.9375,0.175234375
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,1,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,1,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,1,1.7178624,9.0,32,0.9375,0.180859375
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,2,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,2,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,2,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,3,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,3,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,3,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,4,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,4,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,4,1.73768704,9.0,32,0.9375,0.17140625
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,5,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,5,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,5,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,6,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,6,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,6,1.72916736,9.0,32,0.9375,0.17546875
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,7,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,7,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,7,1.73457408,9.0,32,0.9375,0.172890625
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,8,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,8,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,8,1.7227776,9.0,32,0.9375,0.178515625
+PROSE,PROSE (transfer-scoped pin),4,8,capacity,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,capacity,512,9,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,capacity,512,9,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,capacity,512,9,1.72834816,9.0,32,0.9375,0.175859375
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,0,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,0,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,0,1.72965888,9.0,32,0.9375,0.175234375
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,1,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,1,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,1,1.7178624,9.0,32,0.9375,0.180859375
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,2,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,2,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,2,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,3,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,3,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,3,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,4,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,4,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,4,1.73768704,9.0,32,0.9375,0.17140625
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,5,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,5,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,5,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,6,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,6,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,6,1.72916736,9.0,32,0.9375,0.17546875
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,7,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,7,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,7,1.73457408,9.0,32,0.9375,0.172890625
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,8,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,8,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,8,1.7227776,9.0,32,0.9375,0.178515625
+PROSE,PROSE (transfer-scoped pin),4,16,capacity,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,capacity,512,9,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,capacity,512,9,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,capacity,512,9,1.72834816,9.0,32,0.9375,0.175859375
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,0,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,0,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,0,1.72965888,9.0,32,0.9375,0.175234375
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,1,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,1,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,1,1.7178624,9.0,32,0.9375,0.180859375
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,2,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,2,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,2,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,3,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,3,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,3,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,4,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,4,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,4,1.73768704,9.0,32,0.9375,0.17140625
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,5,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,5,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,5,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,6,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,6,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,6,1.72916736,9.0,32,0.9375,0.17546875
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,7,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,7,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,7,1.73457408,9.0,32,0.9375,0.172890625
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,8,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,8,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,8,1.7227776,9.0,32,0.9375,0.178515625
+PROSE,PROSE (transfer-scoped pin),4,32,capacity,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,capacity,512,9,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,capacity,512,9,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,capacity,512,9,1.72834816,9.0,32,0.9375,0.175859375
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,0,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,0,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,0,1.71999232,9.0,32,0.9375,0.17984375
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,1,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,1,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,1,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,2,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,2,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,2,1.72539904,9.0,32,0.9375,0.177265625
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,3,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,3,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,3,1.74276608,9.0,32,0.9375,0.168984375
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,4,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,4,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,4,1.73932544,9.0,32,0.9375,0.170625
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,5,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,5,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,5,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,6,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,6,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,6,1.73719552,9.0,32,0.9375,0.171640625
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,7,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,7,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,7,1.72867584,9.0,32,0.9375,0.175703125
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,8,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,8,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,8,1.72818432,9.0,32,0.9375,0.1759375
+PROSE,PROSE (transfer-scoped pin),8,8,capacity,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,capacity,512,9,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,capacity,512,9,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,capacity,512,9,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,0,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,0,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,0,1.71999232,9.0,32,0.9375,0.17984375
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,1,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,1,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,1,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,2,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,2,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,2,1.72539904,9.0,32,0.9375,0.177265625
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,3,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,3,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,3,1.74276608,9.0,32,0.9375,0.168984375
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,4,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,4,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,4,1.73932544,9.0,32,0.9375,0.170625
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,5,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,5,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,5,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,6,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,6,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,6,1.73719552,9.0,32,0.9375,0.171640625
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,7,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,7,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,7,1.72867584,9.0,32,0.9375,0.175703125
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,8,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,8,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,8,1.72818432,9.0,32,0.9375,0.1759375
+PROSE,PROSE (transfer-scoped pin),8,16,capacity,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,capacity,512,9,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,capacity,512,9,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,capacity,512,9,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,0,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,0,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,0,1.71999232,9.0,32,0.9375,0.17984375
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,1,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,1,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,1,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,2,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,2,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,2,1.72539904,9.0,32,0.9375,0.177265625
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,3,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,3,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,3,1.74276608,9.0,32,0.9375,0.168984375
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,4,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,4,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,4,1.73932544,9.0,32,0.9375,0.170625
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,5,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,5,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,5,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,6,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,6,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,6,1.73719552,9.0,32,0.9375,0.171640625
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,7,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,7,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,7,1.72867584,9.0,32,0.9375,0.175703125
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,8,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,8,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,8,1.72818432,9.0,32,0.9375,0.1759375
+PROSE,PROSE (transfer-scoped pin),8,32,capacity,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,capacity,512,9,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,capacity,512,9,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,capacity,512,9,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,0,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,0,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,0,1.73686784,9.0,32,0.9375,0.171796875
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,1,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,1,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,1,1.73309952,9.0,32,0.9375,0.17359375
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,2,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,2,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,2,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,3,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,3,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,3,1.72146688,9.0,32,0.9375,0.179140625
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,4,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,4,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,4,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,5,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,5,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,5,1.72802048,9.0,32,0.9375,0.176015625
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,6,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,6,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,6,1.72425216,9.0,32,0.9375,0.1778125
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,7,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,7,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,7,1.7186816,9.0,32,0.9375,0.18046875
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,8,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,8,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,8,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),2,8,token_table,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,8,token_table,512,9,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,8,token_table,512,9,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,8,token_table,512,9,1.72670976,9.0,32,0.9375,0.176640625
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,0,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,0,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,0,1.73686784,9.0,32,0.9375,0.171796875
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,1,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,1,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,1,1.73309952,9.0,32,0.9375,0.17359375
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,2,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,2,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,2,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,3,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,3,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,3,1.72146688,9.0,32,0.9375,0.179140625
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,4,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,4,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,4,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,5,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,5,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,5,1.72802048,9.0,32,0.9375,0.176015625
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,6,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,6,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,6,1.72425216,9.0,32,0.9375,0.1778125
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,7,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,7,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,7,1.7186816,9.0,32,0.9375,0.18046875
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,8,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,8,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,8,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),2,16,token_table,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,16,token_table,512,9,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,16,token_table,512,9,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,16,token_table,512,9,1.72670976,9.0,32,0.9375,0.176640625
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,0,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,0,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,0,1.73686784,9.0,32,0.9375,0.171796875
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,1,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,1,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,1,1.73309952,9.0,32,0.9375,0.17359375
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,2,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,2,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,2,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,3,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,3,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,3,1.72146688,9.0,32,0.9375,0.179140625
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,4,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,4,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,4,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,5,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,5,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,5,1.72802048,9.0,32,0.9375,0.176015625
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,6,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,6,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,6,1.72425216,9.0,32,0.9375,0.1778125
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,7,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,7,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,7,1.7186816,9.0,32,0.9375,0.18046875
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,8,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,8,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,8,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),2,32,token_table,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),2,32,token_table,512,9,2.0971493785632767,294.7142857142857,64,0.875,0.0
+2PHASE,2Phase (reserve + request),2,32,token_table,512,9,2.0971153004822414,4009.0,64,0.875,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",2,32,token_table,512,9,1.72670976,9.0,32,0.9375,0.176640625
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,0,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,0,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,0,1.72965888,9.0,32,0.9375,0.175234375
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,1,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,1,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,1,1.7178624,9.0,32,0.9375,0.180859375
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,2,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,2,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,2,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,3,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,3,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,3,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,4,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,4,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,4,1.73768704,9.0,32,0.9375,0.17140625
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,5,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,5,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,5,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,6,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,6,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,6,1.72916736,9.0,32,0.9375,0.17546875
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,7,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,7,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,7,1.73457408,9.0,32,0.9375,0.172890625
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,8,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,8,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,8,1.7227776,9.0,32,0.9375,0.178515625
+PROSE,PROSE (transfer-scoped pin),4,8,token_table,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,8,token_table,512,9,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,8,token_table,512,9,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,8,token_table,512,9,1.72834816,9.0,32,0.9375,0.175859375
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,0,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,0,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,0,1.72965888,9.0,32,0.9375,0.175234375
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,1,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,1,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,1,1.7178624,9.0,32,0.9375,0.180859375
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,2,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,2,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,2,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,3,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,3,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,3,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,4,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,4,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,4,1.73768704,9.0,32,0.9375,0.17140625
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,5,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,5,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,5,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,6,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,6,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,6,1.72916736,9.0,32,0.9375,0.17546875
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,7,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,7,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,7,1.73457408,9.0,32,0.9375,0.172890625
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,8,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,8,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,8,1.7227776,9.0,32,0.9375,0.178515625
+PROSE,PROSE (transfer-scoped pin),4,16,token_table,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,16,token_table,512,9,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,16,token_table,512,9,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,16,token_table,512,9,1.72834816,9.0,32,0.9375,0.175859375
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,0,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,0,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,0,1.72965888,9.0,32,0.9375,0.175234375
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,1,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,1,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,1,1.7178624,9.0,32,0.9375,0.180859375
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,2,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,2,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,2,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,3,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,3,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,3,1.73228032,9.0,32,0.9375,0.173984375
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,4,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,4,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,4,1.73768704,9.0,32,0.9375,0.17140625
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,5,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,5,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,5,1.73473792,9.0,32,0.9375,0.1728125
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,6,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,6,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,6,1.72916736,9.0,32,0.9375,0.17546875
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,7,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,7,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,7,1.73457408,9.0,32,0.9375,0.172890625
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,8,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,8,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,8,1.7227776,9.0,32,0.9375,0.178515625
+PROSE,PROSE (transfer-scoped pin),4,32,token_table,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),4,32,token_table,512,9,2.0971493785632767,342.3333333333333,128,0.75,0.0
+2PHASE,2Phase (reserve + request),4,32,token_table,512,9,2.0971153004822414,4675.666666666666,128,0.75,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",4,32,token_table,512,9,1.72834816,9.0,32,0.9375,0.175859375
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,0,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,0,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,0,1.71999232,9.0,32,0.9375,0.17984375
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,1,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,1,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,1,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,2,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,2,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,2,1.72539904,9.0,32,0.9375,0.177265625
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,3,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,3,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,3,1.74276608,9.0,32,0.9375,0.168984375
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,4,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,4,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,4,1.73932544,9.0,32,0.9375,0.170625
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,5,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,5,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,5,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,6,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,6,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,6,1.73719552,9.0,32,0.9375,0.171640625
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,7,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,7,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,7,1.72867584,9.0,32,0.9375,0.175703125
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,8,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,8,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,8,1.72818432,9.0,32,0.9375,0.1759375
+PROSE,PROSE (transfer-scoped pin),8,8,token_table,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,8,token_table,512,9,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,8,token_table,512,9,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,8,token_table,512,9,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,0,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,0,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,0,1.71999232,9.0,32,0.9375,0.17984375
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,1,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,1,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,1,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,2,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,2,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,2,1.72539904,9.0,32,0.9375,0.177265625
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,3,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,3,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,3,1.74276608,9.0,32,0.9375,0.168984375
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,4,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,4,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,4,1.73932544,9.0,32,0.9375,0.170625
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,5,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,5,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,5,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,6,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,6,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,6,1.73719552,9.0,32,0.9375,0.171640625
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,7,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,7,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,7,1.72867584,9.0,32,0.9375,0.175703125
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,8,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,8,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,8,1.72818432,9.0,32,0.9375,0.1759375
+PROSE,PROSE (transfer-scoped pin),8,16,token_table,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,16,token_table,512,9,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,16,token_table,512,9,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,16,token_table,512,9,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,0,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,0,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,0,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,0,1.71999232,9.0,32,0.9375,0.17984375
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,1,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,1,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,1,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,1,1.728512,9.0,32,0.9375,0.17578125
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,2,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,2,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,2,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,2,1.72539904,9.0,32,0.9375,0.177265625
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,3,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,3,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,3,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,3,1.74276608,9.0,32,0.9375,0.168984375
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,4,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,4,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,4,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,4,1.73932544,9.0,32,0.9375,0.170625
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,5,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,5,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,5,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,5,1.73441024,9.0,32,0.9375,0.17296875
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,6,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,6,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,6,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,6,1.73719552,9.0,32,0.9375,0.171640625
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,7,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,7,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,7,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,7,1.72867584,9.0,32,0.9375,0.175703125
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,8,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,8,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,8,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,8,1.72818432,9.0,32,0.9375,0.1759375
+PROSE,PROSE (transfer-scoped pin),8,32,token_table,512,9,2.097152,9.0,32,0.9375,0.0
+REFCNT,RefCnt (protect before enqueue),8,32,token_table,512,9,2.0971493785632767,509.0,256,0.5,0.0
+2PHASE,2Phase (reserve + request),8,32,token_table,512,9,2.0971153004822414,7009.0,256,0.5,0.0
+GENONLY,"GenOnly (one-shot check, no pin)",8,32,token_table,512,9,1.728512,9.0,32,0.9375,0.17578125

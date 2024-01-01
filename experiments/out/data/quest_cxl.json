@@ -1,0 +1,86 @@
+{
+  "quest_cxl": {
+    "config": {
+      "n_pages": 80,
+      "k_select": 25,
+      "d_head": 128,
+      "query_correlation_alpha": 0.85,
+      "cxl_read_latency_ns": 300.0,
+      "decode_step_ns": 120.0,
+      "cxl_step_lag": 3,
+      "num_steps": 2000
+    },
+    "results": {
+      "mean_recovery_at_k": 0.31262894341512276,
+      "std_recovery_at_k": 0.07756012108105857,
+      "median_recovery_at_k": 0.32,
+      "p10_recovery_at_k": 0.2,
+      "p90_recovery_at_k": 0.4,
+      "random_baseline": 0.3125,
+      "excess_over_random": 0.00012894341512276197
+    },
+    "conclusion": "Quest-CXL Recovery@K = 0.3126 \u2248 random baseline 0.3125 (lag=3 steps). Query decorrelation renders surrogate scoring no better than random page selection."
+  },
+  "infinigen_cxl": {
+    "method": "InfiniGen-CXL",
+    "mean_recovery_at_k": 0.3147721582373561,
+    "std_recovery_at_k": 0.08649122362207894,
+    "random_baseline": 0.3125
+  },
+  "latency_sweep": [
+    {
+      "cxl_latency_ns": 0.0,
+      "cxl_step_lag": 1,
+      "mean_recovery_at_k": 0.3176188094047024,
+      "random_baseline": 0.3125
+    },
+    {
+      "cxl_latency_ns": 50.0,
+      "cxl_step_lag": 1,
+      "mean_recovery_at_k": 0.3176188094047024,
+      "random_baseline": 0.3125
+    },
+    {
+      "cxl_latency_ns": 100.0,
+      "cxl_step_lag": 1,
+      "mean_recovery_at_k": 0.3176188094047024,
+      "random_baseline": 0.3125
+    },
+    {
+      "cxl_latency_ns": 150.0,
+      "cxl_step_lag": 2,
+      "mean_recovery_at_k": 0.31087087087087095,
+      "random_baseline": 0.3125
+    },
+    {
+      "cxl_latency_ns": 200.0,
+      "cxl_step_lag": 2,
+      "mean_recovery_at_k": 0.31087087087087095,
+      "random_baseline": 0.3125
+    },
+    {
+      "cxl_latency_ns": 300.0,
+      "cxl_step_lag": 3,
+      "mean_recovery_at_k": 0.31262894341512276,
+      "random_baseline": 0.3125
+    },
+    {
+      "cxl_latency_ns": 400.0,
+      "cxl_step_lag": 4,
+      "mean_recovery_at_k": 0.311623246492986,
+      "random_baseline": 0.3125
+    },
+    {
+      "cxl_latency_ns": 600.0,
+      "cxl_step_lag": 5,
+      "mean_recovery_at_k": 0.3115187969924812,
+      "random_baseline": 0.3125
+    },
+    {
+      "cxl_latency_ns": 1000.0,
+      "cxl_step_lag": 9,
+      "mean_recovery_at_k": 0.3114414866901056,
+      "random_baseline": 0.3125
+    }
+  ]
+}

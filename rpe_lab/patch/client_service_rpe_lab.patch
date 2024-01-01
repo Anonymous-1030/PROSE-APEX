@@ -1,0 +1,60 @@
+diff --git a/mooncake-store/src/client_service.cpp b/mooncake-store/src/client_service.cpp
+--- a/mooncake-store/src/client_service.cpp
++++ b/mooncake-store/src/client_service.cpp
+@@ -31,6 +31,7 @@
+ #include "transfer_engine.h"
+ #include "topology.h"
+ #include "transfer_task.h"
++#include "rpe_lab_probe.h"  // rpe-lab: passive instrumentation, no behavior change.
+ #include "transport/transport.h"
+ #include "config.h"
+ #include "ha/leadership/leader_coordinator_factory.h"
+@@ -1156,10 +1156,13 @@
+     if (ShouldAdmitToHotCache(object_key, cache_used)) {
+         ProcessSlicesAsync(object_key, slices, replica);
+     }
+ 
+     if (query_result.IsLeaseExpired()) {
+         LOG(WARNING) << "lease_expired_before_data_transfer_completed key="
+                      << object_key;
++        // rpe-lab: passive instrumentation, no behavior change.
++        rpe_lab::LogGetDiscard(object_key, slices, query_result.lease_timeout,
++                               us_get);
+         return tl::unexpected(ErrorCode::LEASE_EXPIRED);
+     }
+     // Log cache hit statistics
+@@ -1201,11 +1203,14 @@
+     if (err != ErrorCode::OK) {
+         LOG(ERROR) << "transfer_read_range_failed key=" << object_key;
+         return tl::unexpected(err);
+     }
+     if (query_result.IsLeaseExpired()) {
+         LOG(WARNING) << "lease_expired_before_data_transfer_completed key="
+                      << object_key;
++        // rpe-lab: passive instrumentation, no behavior change.
++        rpe_lab::LogGetDiscard(object_key, slices, query_result.lease_timeout,
++                               us_get);
+         return tl::unexpected(ErrorCode::LEASE_EXPIRED);
+     }
+     return {};
+ }
+@@ -1479,9 +1483,19 @@
+     std::chrono::steady_clock::time_point now =
+         std::chrono::steady_clock::now();
+     for (size_t i = 0; i < object_keys.size(); ++i) {
+         if (results[i].has_value() && query_results[i].IsLeaseExpired(now)) {
+             LOG(WARNING) << "lease_expired_before_data_transfer_completed key="
+                          << object_keys[i];
++            // rpe-lab: passive instrumentation, no behavior change.
++            auto rpe_lab_it = slices.find(object_keys[i]);
++            if (rpe_lab_it != slices.end()) {
++                rpe_lab::LogGetDiscard(
++                    object_keys[i], rpe_lab_it->second,
++                    query_results[i].lease_timeout,
++                    std::chrono::duration_cast<std::chrono::microseconds>(
++                        now - t0_batch_get)
++                        .count());
++            }
+             results[i] = tl::unexpected(ErrorCode::LEASE_EXPIRED);
+         }
+     }

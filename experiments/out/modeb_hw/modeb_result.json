@@ -1,0 +1,27 @@
+{
+  "substrate": "emulated-anon",
+  "real_cxl": false,
+  "chunk_bytes": 65536,
+  "candidates_per_step": 256,
+  "budget": 32,
+  "steps": 300,
+  "mode_b": {
+    "admitted_pulls": 9418,
+    "token_refused": 182,
+    "bytes_read": 617218048,
+    "admitted_bytes": 617218048,
+    "rpe_bytes": 0,
+    "promo_us_p50": 3.4419,
+    "promo_us_p99": 6.8937,
+    "promo_us_mean": 3.6512,
+    "est_pull_gbps": 17.9494
+  },
+  "fts_baseline": {
+    "admitted": 9600,
+    "rejected": 67200,
+    "bytes_read": 5033164800,
+    "rpe_bytes": 4404019200,
+    "read_us_p50": 28.7719,
+    "read_us_mean": 29.3479
+  }
+}

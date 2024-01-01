@@ -1,0 +1,47 @@
+==============================================================================
+ Report : area
+ Design : APEX_PIPELINE
+ Library: asap7sc7p5t_28 RVT TT NLDM (from Liberty characterization)
+ Method : RTL structural decomposition mapped to ASAP7 cell areas
+ Date   : 2026-06-28
+==============================================================================
+
+Library(s) Used:
+  asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib
+  asap7sc7p5t_AO_RVT_TT_nldm_211120.lib
+  asap7sc7p5t_OA_RVT_TT_nldm_211120.lib
+  asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib
+  asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib
+
+NOTE: This is a structural estimate, not post-synthesis netlist data.
+      Actual synthesis with Genus/DC may differ by +/-30% due to
+      optimization, sharing, and technology mapping decisions.
+
+  Module                    Seq(bits)  Comb     Area(um2)         %
+  -----------------------------------------------------------------
+  APEX_MAC_ARRAY            26         2487     410.7186       2.2%
+  APEX_TOPK_HEAP            700        980      367.9992       2.0%
+  APEX_EXPERT_BANK_x7       57344      4718     17193.0276    91.6%
+  APEX_PCM                  541        54       165.8621       0.9%
+  APEX_WEIGHT_UPDATE        726        532      290.0837       1.5%
+  APEX_LOSS_COMPUTE         106        107      49.8928        0.3%
+  APEX_SEA                  555        41       166.3578       0.9%
+  APEX_PIPELINE_CTRL        104        136      54.0043        0.3%
+  APEX_PIPELINE_TOP         170        100      62.9856        0.3%
+  ICG                       1          2        0.4666         0.0%
+  -----------------------------------------------------------------
+  TOTAL                                         18761.3982   100.0%
+
+  Total cell area:     18761.3982 um2
+  With routing (1.3x): 24389.8177 um2
+  In mm2:              0.024390 mm2
+
+  NOTE: Expert banks dominate area (register-file based).
+        With SRAM macros: subtract ~95% of bank area,
+        yielding ~0.003156 mm2 logic + SRAM overhead.
+
+  Key cell areas (from Liberty):
+    DFF (DFFHQNx1): 0.29160 um2
+    NAND2x1:       0.08748 um2
+    FA:            0.20412 um2
+    INV:           0.04374 um2

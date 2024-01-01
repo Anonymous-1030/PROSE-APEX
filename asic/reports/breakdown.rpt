@@ -1,0 +1,40 @@
+==============================================================================
+ Report : correctness-core vs optional-scorer breakdown
+ Method : structural estimate, ASAP7 Liberty cells (as area.rpt); state = RTL-declared bits
+ NOTE   : structural estimate (+/-30%), NOT a split of the projected 1.069 mm^2 full endpoint;
+          the projection additionally budgets SRAM macros + 16-host staging not synthesized here.
+==============================================================================
+
+  Group / module                      Area(mm2)  Power(mW)  State(KiB)
+  --------------------------------------------------------------------
+  Correctness core (OAT / pin / directory / arbitration):
+    APEX_PCM                             0.0002     0.1487        0.07
+    cefe_pin_table                       0.0058     5.6022        1.47
+    cefe_vc_wrr                          0.0251    18.2798        8.06
+    cefe_cfo_cam                         0.0011     0.7456        0.32
+    cefe_bdb_parser                      0.0001     0.0790        0.04
+    -- subtotal --                       0.0323    24.8554        9.95
+
+  Optional policy (scorer / top-K / weight / SEA):
+    APEX_MAC_ARRAY                       0.0005     0.6911        0.00
+    APEX_TOPK_HEAP                       0.0005     0.3780        0.09
+    APEX_EXPERT_BANK_x7                  0.0224    11.1712        7.00
+    APEX_WEIGHT_UPDATE                   0.0004     0.2013        0.09
+    APEX_LOSS_COMPUTE                    0.0001     0.0426        0.01
+    APEX_SEA                             0.0002     0.1043        0.07
+    -- subtotal --                       0.0240    12.5884        7.26
+
+  Pipeline glue:
+    APEX_PIPELINE_CTRL                   0.0001     0.0720        0.01
+    APEX_PIPELINE_TOP                    0.0001     0.0675        0.02
+    ICG                                  0.0000     0.0005        0.00
+    -- subtotal --                       0.0002     0.1400        0.03
+  --------------------------------------------------------------------
+    SYNTHESIZED TOTAL (register-file banks)     0.0565    37.5838       17.24
+
+  Reconciliation with the paper's figures:
+   * Scorer pipeline alone      : 0.024 mm^2  (area.rpt; matches paper).
+   * Full endpoint (projected)  : 1.069 mm^2 / 78 mW / ~216 KiB  (SRAM-macro + 16-host,
+     projection, not this structural netlist; see README / RESULT_ALIGNMENT.md).
+   * This table isolates the correctness-core LOGIC + STATE at the SAME structural
+     fidelity as the scorer, so the OAT/pin cost is reported, not inferred by ratio.

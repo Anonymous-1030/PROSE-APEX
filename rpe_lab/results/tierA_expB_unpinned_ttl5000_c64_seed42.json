@@ -1,0 +1,58 @@
+{
+  "run_id": "expB_unpinned_ttl5000_c64_seed42",
+  "tier": "A",
+  "constructed": false,
+  "concurrency": 64,
+  "seed": 42,
+  "tc": "800mbit",
+  "trace": {
+    "path": "$RPE_LAB/trace/BurstGPT_1.csv",
+    "start": 1154000,
+    "start_b": 90000,
+    "speedup": 10.0
+  },
+  "commit": "f20b7061097e4e2fda825f4106f215c71f13274a",
+  "master_flags": {
+    "eviction_high_watermark_ratio": 0.5,
+    "eviction_ratio": 0.1,
+    "default_kv_lease_ttl": 5000,
+    "allow_evict_soft_pinned_objects": true
+  },
+  "duration_s": 1801,
+  "gets_total": 18262,
+  "gets_ok": 16886,
+  "guard_fires": 0,
+  "guard_fires_events": 0,
+  "rpe_events": 0,
+  "rpe_payload_bytes": 0,
+  "torn_events": 0,
+  "torn_payload_bytes": 0,
+  "payload_bytes_total": 61971890176,
+  "rpe_payload_rate_pct": 0.0,
+  "misbw_bytes": 0,
+  "success_mismatch": 0,
+  "no_magic_discards": 0,
+  "not_found": 1376,
+  "burst_share_pct": null,
+  "throughput_mbps": 34.41,
+  "put_failures_pool_full": 0,
+  "reclaimable_pct": null,
+  "master_metrics": {
+    "start": {
+      "master_put_start_alloc_failures_total": 0.0,
+      "master_successful_evictions_total": 0.0,
+      "master_attempted_evictions_total": 0.0
+    },
+    "end": {
+      "master_put_start_alloc_failures_total": 0.0,
+      "master_successful_evictions_total": 538.0,
+      "master_attempted_evictions_total": 538.0
+    },
+    "evictions_delta": {
+      "master_put_start_alloc_failures_total": 0.0,
+      "master_successful_evictions_total": 538.0,
+      "master_attempted_evictions_total": 538.0
+    }
+  },
+  "notes": "Phase 5 unpinned twin (stock protection, TTL=5000)."
+}

@@ -1,0 +1,26 @@
+PROSE cross-tenant byte-leak PoC  (MECHANISTIC SIMULATION — synthetic
+per-tenant tag payloads on the artifact's RPE binding model; no real
+hardware, CXL link, or tenant data).
+
+Pool: 2 frames, LRU, autonomous reclaim, descriptor queue.
+
+Race window 0 (of 1000):
+  t0  tenant A admitted 'tenantA/chunk-0000' -> slot 0, gen 1;
+      descriptor d = (chunk, gen, slot) queued from this snapshot.
+  t1  tenant B admissions evict A's chunk; slot 0 reused for
+      'tenantB/chunk-0000-loot' at gen 2.
+  t2  d issues and pulls the slot's CURRENT bytes into A's GPU buffer.
+
+  What A expected (first 64 bytes):
+    50 52 53 45 50 4f 43 31 00 00 00 01 74 65 6e 61 6e 74 41 2f 63 68 75 6e 6b 2d 30 30 30 30 00 00 00 00 00 00 00 00 00 00 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0 a0
+    ASCII: 'PRSEPOC1....tenantA/chunk-0000..................................'
+  What A actually received, gate OFF (first 64 bytes):
+    50 52 53 45 50 4f 43 31 00 00 00 02 74 65 6e 61 6e 74 42 2f 63 68 75 6e 6b 2d 30 30 30 30 2d 6c 6f 6f 74 00 00 00 00 00 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0 b0
+    ASCII: 'PRSEPOC1....tenantB/chunk-0000-loot.............................'
+  -> received == tenant B's payload (0xb0 fill + B's chunk header);
+     received != tenant A's payload. The wrong logical object's bytes moved.
+
+Totals over 1000 race windows:
+  gate OFF: cross-tenant bytes delivered to A = 65,536,000 (1000/1000 windows x 65,536 bytes)
+  gate ON : (frame, gen) re-validated at issue -> stale binding rejected;
+            descriptor null-completed metadata-only; payload bytes moved = 0; cross-tenant bytes = 0

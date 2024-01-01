@@ -1,0 +1,37 @@
+{
+  "experiment": "Phase 5 pin cliff (REFCNT row, Table III reproduction)",
+  "duration_s_each": 1800,
+  "ttl_ms": 5000,
+  "concurrency": 64,
+  "tc": "800mbit",
+  "commit": "f20b7061097e4e2fda825f4106f215c71f13274a",
+  "unpinned": {
+    "throughput_mbps": 34.41,
+    "gets_ok": 16886,
+    "hot_keys_evicted": 1376,
+    "reseeds": 1376,
+    "eviction_success": 538,
+    "eviction_attempts": 538,
+    "eviction_success_rate": 1.0,
+    "soft_pinned_keys_final": 0,
+    "non_reclaimable_pct": 0.0
+  },
+  "pinned": {
+    "throughput_mbps": 36.76,
+    "gets_ok": 18041,
+    "hot_keys_evicted": 221,
+    "reseeds": 221,
+    "eviction_success": 505,
+    "eviction_attempts": 41273,
+    "eviction_success_rate": 0.0122,
+    "soft_pinned_keys_final": 428,
+    "non_reclaimable_pct": 39.3
+  },
+  "ratios": {
+    "throughput_pinned_over_unpinned": 1.0683,
+    "eviction_attempts_pinned_over_unpinned": 76.7,
+    "hot_key_evictions_pinned_over_unpinned": 0.161
+  },
+  "guard_fires_both_arms": 0,
+  "notes": "TTL=5000 + tc 800mbit: transfer ~1s < TTL -> no fires (window formula). Pin cost = eviction thrash (83x attempts, 1.2% success) + 39.3% pool non-reclaimable; pin benefit = +6.8% throughput, -84% hot-key loss."
+}

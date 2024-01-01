@@ -1,0 +1,93 @@
+{
+  "config": {
+    "domains": 16,
+    "chunk_bytes": 65536,
+    "chunks_per_domain": 64,
+    "read_bw_gbs": 40.0,
+    "egress_bw_gbs": 128.0,
+    "break_even_overlap": 0.45,
+    "n_steps": 128
+  },
+  "rows": [
+    {
+      "overlap": 0.0,
+      "cfo": false,
+      "source_read_mb_per_step": 67.108864,
+      "device_read_util": 1.6777216,
+      "throughput_scale": 0.5732781737091713,
+      "p99_latency_ms": 1.7273575122403897
+    },
+    {
+      "overlap": 0.0,
+      "cfo": true,
+      "source_read_mb_per_step": 67.108864,
+      "device_read_util": 1.6777216,
+      "throughput_scale": 0.5732842016102966,
+      "p99_latency_ms": 1.7273531809991112
+    },
+    {
+      "overlap": 0.25,
+      "cfo": false,
+      "source_read_mb_per_step": 67.108864,
+      "device_read_util": 1.6777216,
+      "throughput_scale": 0.5732814051592616,
+      "p99_latency_ms": 1.7273535547652767
+    },
+    {
+      "overlap": 0.25,
+      "cfo": true,
+      "source_read_mb_per_step": 51.802624,
+      "device_read_util": 1.2950656,
+      "throughput_scale": 0.7422934066277516,
+      "p99_latency_ms": 1.4783128680289912
+    },
+    {
+      "overlap": 0.5,
+      "cfo": false,
+      "source_read_mb_per_step": 67.108864,
+      "device_read_util": 1.6777216,
+      "throughput_scale": 0.5732814051592616,
+      "p99_latency_ms": 1.7273535547652767
+    },
+    {
+      "overlap": 0.5,
+      "cfo": true,
+      "source_read_mb_per_step": 36.358143999999996,
+      "device_read_util": 0.9089536,
+      "throughput_scale": 1.0,
+      "p99_latency_ms": 1.1609229628786382
+    },
+    {
+      "overlap": 0.75,
+      "cfo": false,
+      "source_read_mb_per_step": 67.108864,
+      "device_read_util": 1.6777216,
+      "throughput_scale": 0.5732814651147775,
+      "p99_latency_ms": 1.7273535547652767
+    },
+    {
+      "overlap": 0.75,
+      "cfo": true,
+      "source_read_mb_per_step": 19.696384000000002,
+      "device_read_util": 0.4924096,
+      "throughput_scale": 1.0,
+      "p99_latency_ms": 0.7452402953783229
+    },
+    {
+      "overlap": 1.0,
+      "cfo": false,
+      "source_read_mb_per_step": 67.108864,
+      "device_read_util": 1.6777216,
+      "throughput_scale": 0.5732781737091713,
+      "p99_latency_ms": 1.7273575122403897
+    },
+    {
+      "overlap": 1.0,
+      "cfo": true,
+      "source_read_mb_per_step": 4.194304,
+      "device_read_util": 0.1048576,
+      "throughput_scale": 1.0,
+      "p99_latency_ms": 0.5680531182880728
+    }
+  ]
+}

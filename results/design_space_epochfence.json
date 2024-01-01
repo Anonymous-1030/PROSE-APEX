@@ -1,0 +1,293 @@
+{
+  "experiment": "design_space_epochfence",
+  "config": {
+    "oversub": [
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "n_tenants": 16,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "admit_budget": 32,
+    "pool": 512,
+    "n_steps": 200,
+    "bound_mode": "capacity",
+    "mechanisms": [
+      "PROSE",
+      "GENONLY",
+      "GENONLY_EF"
+    ]
+  },
+  "grace_period": {
+    "semantics": "Tigon-style EBR: unlink (generation bump) visible to admission checks immediately == GENONLY; slot overwrite deferred by one grace period, so a raced transfer stays valid for grace_ns beyond the reclaim request",
+    "value_ns": 500.0,
+    "source": "BaselineConfig.eviction_interval_ns (allocator reuse epoch)",
+    "transfer_service_ns": 16584.0,
+    "stale_tail_frac_per_raced_transfer": 0.46985045827303423
+  },
+  "grid_capacity": {
+    "PROSE": {
+      "2": {
+        "valid_throughput_Bpns": 2.097152,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.0,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 0.0,
+        "evict_blocked": 2245.4,
+        "throughput_std": 0.0
+      },
+      "4": {
+        "valid_throughput_Bpns": 2.097152,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.0,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 0.0,
+        "evict_blocked": 2241.3,
+        "throughput_std": 0.0
+      },
+      "8": {
+        "valid_throughput_Bpns": 2.097152,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.0,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 0.0,
+        "evict_blocked": 2233.0,
+        "throughput_std": 0.0
+      },
+      "16": {
+        "valid_throughput_Bpns": 2.097152,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.0,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 0.0,
+        "evict_blocked": 2241.5,
+        "throughput_std": 0.0
+      },
+      "32": {
+        "valid_throughput_Bpns": 2.097152,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.0,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 0.0,
+        "evict_blocked": 2251.0,
+        "throughput_std": 0.0
+      },
+      "64": {
+        "valid_throughput_Bpns": 2.097152,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.0,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 0.0,
+        "evict_blocked": 2259.7,
+        "throughput_std": 0.0
+      }
+    },
+    "GENONLY": {
+      "2": {
+        "valid_throughput_Bpns": 1.729265664,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.175421875,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2245.4,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.006011923447422124
+      },
+      "4": {
+        "valid_throughput_Bpns": 1.729937408,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.1751015625,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2241.3,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.00561999859327528
+      },
+      "8": {
+        "valid_throughput_Bpns": 1.73129728,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.174453125,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2233.0,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.006596467798572191
+      },
+      "16": {
+        "valid_throughput_Bpns": 1.72990464,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.1751171875,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2241.5,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.005959926317933807
+      },
+      "32": {
+        "valid_throughput_Bpns": 1.72834816,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.175859375,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2251.0,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.004975991002950097
+      },
+      "64": {
+        "valid_throughput_Bpns": 1.7269227520000001,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.1765390625,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2259.7,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.005380366902962626
+      }
+    },
+    "GENONLY_EF": {
+      "2": {
+        "valid_throughput_Bpns": 1.7514488728760251,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.16484409671972985,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2245.4,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.005649409973747407
+      },
+      "4": {
+        "valid_throughput_Bpns": 1.7520801113285094,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.1645430987698987,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2241.3,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.005281117829088392
+      },
+      "8": {
+        "valid_throughput_Bpns": 1.7533579842932947,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.16393376145682584,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2233.0,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.006198706836284901
+      },
+      "16": {
+        "valid_throughput_Bpns": 1.752049319208876,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.16455778159671974,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2241.5,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.005600548223509415
+      },
+      "32": {
+        "valid_throughput_Bpns": 1.7505866935262904,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.16525521587071876,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2251.0,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.0046759433061970695
+      },
+      "64": {
+        "valid_throughput_Bpns": 1.7492472363222384,
+        "admission_p99_ns": 9.0,
+        "pinned_peak": 32.0,
+        "reclaimable_capacity_frac": 0.9375,
+        "rpe_payload_frac": 0.16589391883743365,
+        "stale_admit_rate": 0.0,
+        "retries_per_descriptor": 0.0,
+        "evict_fired": 2259.7,
+        "evict_blocked": 0.0,
+        "throughput_std": 0.00505593571006816
+      }
+    }
+  },
+  "valid_thr_norm_to_prose_capacity": {
+    "PROSE": {
+      "2": 1.0,
+      "4": 1.0,
+      "8": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0
+    },
+    "GENONLY": {
+      "2": 0.824578125,
+      "4": 0.8248984375,
+      "8": 0.825546875,
+      "16": 0.8248828125000001,
+      "32": 0.824140625,
+      "64": 0.8234609375
+    },
+    "GENONLY_EF": {
+      "2": 0.8351559032802702,
+      "4": 0.8354569012301013,
+      "8": 0.8360662385431742,
+      "16": 0.8354422184032803,
+      "32": 0.8347447841292812,
+      "64": 0.8341060811625665
+    }
+  },
+  "reproduction_mismatches_vs_design_space_json": 0
+}

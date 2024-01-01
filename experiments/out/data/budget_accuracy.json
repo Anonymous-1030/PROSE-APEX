@@ -1,0 +1,78 @@
+{
+  "experiment": "budget_accuracy_w3",
+  "description": "Visible-KV budget sweep for production-acceptable accuracy",
+  "config": {
+    "n_candidates": 1024,
+    "useful_fraction": 0.04,
+    "scorer": "odus_x",
+    "boundary": "cefe",
+    "n_steps": 512,
+    "threshold": 0.8
+  },
+  "results": [
+    {
+      "budget_fraction": 0.1,
+      "budget_chunks": 102,
+      "recovery_at_k": 0.48577880859375,
+      "oracle_recovery": 1.0,
+      "normalized_accuracy": 0.48577880859375
+    },
+    {
+      "budget_fraction": 0.15,
+      "budget_chunks": 153,
+      "recovery_at_k": 0.59149169921875,
+      "oracle_recovery": 1.0,
+      "normalized_accuracy": 0.59149169921875
+    },
+    {
+      "budget_fraction": 0.2,
+      "budget_chunks": 204,
+      "recovery_at_k": 0.66436767578125,
+      "oracle_recovery": 1.0,
+      "normalized_accuracy": 0.66436767578125
+    },
+    {
+      "budget_fraction": 0.25,
+      "budget_chunks": 256,
+      "recovery_at_k": 0.724609375,
+      "oracle_recovery": 1.0,
+      "normalized_accuracy": 0.724609375
+    },
+    {
+      "budget_fraction": 0.3,
+      "budget_chunks": 307,
+      "recovery_at_k": 0.7742919921875,
+      "oracle_recovery": 1.0,
+      "normalized_accuracy": 0.7742919921875
+    },
+    {
+      "budget_fraction": 0.35,
+      "budget_chunks": 358,
+      "recovery_at_k": 0.8192138671875,
+      "oracle_recovery": 1.0,
+      "normalized_accuracy": 0.8192138671875
+    },
+    {
+      "budget_fraction": 0.4,
+      "budget_chunks": 409,
+      "recovery_at_k": 0.84405517578125,
+      "oracle_recovery": 1.0,
+      "normalized_accuracy": 0.84405517578125
+    },
+    {
+      "budget_fraction": 0.5,
+      "budget_chunks": 512,
+      "recovery_at_k": 0.90374755859375,
+      "oracle_recovery": 1.0,
+      "normalized_accuracy": 0.90374755859375
+    },
+    {
+      "budget_fraction": 0.6,
+      "budget_chunks": 614,
+      "recovery_at_k": 0.94073486328125,
+      "oracle_recovery": 1.0,
+      "normalized_accuracy": 0.94073486328125
+    }
+  ],
+  "crossing_budget_pct": 35.0
+}

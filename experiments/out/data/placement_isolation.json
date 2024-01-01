@@ -1,0 +1,125 @@
+{
+  "experiment": "placement_isolation_w1",
+  "description": "Host-Side-Core2-MultiHost vs CXL-3.1-Host-Credit vs Endpoint-Core2: same scorer, different placement",
+  "credit_model": {
+    "mechanism": "CXL 3.1 host-credit, per-VC reservation, no endpoint residency check",
+    "stale_frac_formula": "(passive_evict_race_frac + passive_epoch_roll_frac) * (1 - 1/H)",
+    "passive_evict_race_frac": 0.111,
+    "passive_epoch_roll_frac": 0.033,
+    "source": "calibrated Mode-C decomposition (simcxl_ext/cxl_admission_sim.py, cefe_passive)"
+  },
+  "host_counts": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "results": [
+    {
+      "n_hosts": 1,
+      "host_side": {
+        "stale_admission_rate": 0.0,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 0.0,
+        "recovery_at_k": 0.3753662109375
+      },
+      "credit": {
+        "stale_admission_rate": 0.0,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 0.0,
+        "recovery_at_k": 0.3753662109375
+      },
+      "endpoint": {
+        "stale_admission_rate": 0.0,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 0.0,
+        "recovery_at_k": 0.3753662109375
+      }
+    },
+    {
+      "n_hosts": 2,
+      "host_side": {
+        "stale_admission_rate": 0.342437744140625,
+        "jain_fairness": 0.9989410689921063,
+        "mis_bound_bw_MB": 322.6875,
+        "recovery_at_k": 0.3782958984375
+      },
+      "credit": {
+        "stale_admission_rate": 0.07200000000000004,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 73.72800000000004,
+        "recovery_at_k": 0.3782958984375
+      },
+      "endpoint": {
+        "stale_admission_rate": 0.0,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 0.0,
+        "recovery_at_k": 0.3782958984375
+      }
+    },
+    {
+      "n_hosts": 4,
+      "host_side": {
+        "stale_admission_rate": 0.3238677978515625,
+        "jain_fairness": 0.991893950505782,
+        "mis_bound_bw_MB": 1745.4375,
+        "recovery_at_k": 0.374755859375
+      },
+      "credit": {
+        "stale_admission_rate": 0.10800000000000004,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 110.59200000000004,
+        "recovery_at_k": 0.374755859375
+      },
+      "endpoint": {
+        "stale_admission_rate": 0.0,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 0.0,
+        "recovery_at_k": 0.374755859375
+      }
+    },
+    {
+      "n_hosts": 8,
+      "host_side": {
+        "stale_admission_rate": 0.29573822021484375,
+        "jain_fairness": 0.9635740715537134,
+        "mis_bound_bw_MB": 4745.3125,
+        "recovery_at_k": 0.37890625
+      },
+      "credit": {
+        "stale_admission_rate": 0.12599999999999995,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 129.02399999999994,
+        "recovery_at_k": 0.37890625
+      },
+      "endpoint": {
+        "stale_admission_rate": 0.0,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 0.0,
+        "recovery_at_k": 0.37890625
+      }
+    },
+    {
+      "n_hosts": 16,
+      "host_side": {
+        "stale_admission_rate": 0.388580322265625,
+        "jain_fairness": 0.9200270694640416,
+        "mis_bound_bw_MB": 8993.5,
+        "recovery_at_k": 0.3822021484375
+      },
+      "credit": {
+        "stale_admission_rate": 0.135,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 138.24,
+        "recovery_at_k": 0.3822021484375
+      },
+      "endpoint": {
+        "stale_admission_rate": 0.0,
+        "jain_fairness": 1.0,
+        "mis_bound_bw_MB": 0.0,
+        "recovery_at_k": 0.3822021484375
+      }
+    }
+  ]
+}

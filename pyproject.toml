@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simcxl-ext-proseapex"
+version = "1.0.0"
+description = "SimCXL extension and CEFE/PPU-APEX RTL for causal endpoint admission (artifact under review)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+# Author information withheld for double-blind review.
+authors = [
+    {name = "PROSE-APEX Authors"},
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Topic :: System :: Hardware",
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "matplotlib>=3.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+real-trace = [
+    "torch>=2.1.0",
+    "transformers>=4.36.0",
+    "accelerate>=0.25.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["simcxl_ext*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]

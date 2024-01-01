@@ -1,0 +1,67 @@
+{
+  "source": "experiments/run_simcxl_multihost.py",
+  "reproduce": "python experiments/run_simcxl_multihost.py",
+  "metrics": {
+    "p99_ns": "P99 endpoint admission latency incl. queueing (ns)",
+    "jain": "Jain fairness index across hosts within each host count (per-host admitted descriptors, mean over trials)",
+    "n_steps": "descriptor steps simulated per host count (n_hosts * descs_per_host * n_trials; no reduction was needed at any host count)"
+  },
+  "results": [
+    {
+      "n_hosts": 1,
+      "p99_ns": 18.666666666666664,
+      "jain": 1.0,
+      "n_steps": 1280,
+      "measured": true
+    },
+    {
+      "n_hosts": 2,
+      "p99_ns": 296.0,
+      "jain": 0.996276651411933,
+      "n_steps": 2560,
+      "measured": true
+    },
+    {
+      "n_hosts": 3,
+      "p99_ns": 297.3333333333333,
+      "jain": 0.9944945600133248,
+      "n_steps": 3840,
+      "measured": true
+    },
+    {
+      "n_hosts": 4,
+      "p99_ns": 297.3333333333333,
+      "jain": 0.9956231324151388,
+      "n_steps": 5120,
+      "measured": true
+    },
+    {
+      "n_hosts": 6,
+      "p99_ns": 293.3333333333333,
+      "jain": 0.9925638069833636,
+      "n_steps": 7680,
+      "measured": true
+    },
+    {
+      "n_hosts": 8,
+      "p99_ns": 290.66666666666663,
+      "jain": 0.9875607054785489,
+      "n_steps": 10240,
+      "measured": true
+    },
+    {
+      "n_hosts": 16,
+      "p99_ns": 292.0,
+      "jain": 0.9792469805041236,
+      "n_steps": 20480,
+      "measured": true
+    },
+    {
+      "n_hosts": 32,
+      "p99_ns": 292.0,
+      "jain": 0.9811356268359684,
+      "n_steps": 40960,
+      "measured": true
+    }
+  ]
+}

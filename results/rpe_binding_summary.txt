@@ -1,0 +1,14 @@
+RPE binding-model sweep ¡ª operating point
+  (16 tenants, mean queue residence = 64 admit-ticks)
+
+trace            buf%  RPEpayload  stale_desc  evictions
+BurstGPT           50       13.7%       11789      85134
+BurstGPT          100        1.9%        1613      84878
+Azure-Conv         50       13.6%       17112     125623
+Azure-Conv        100        1.9%        2343     125367
+trie-Agentic       50       15.1%       38679      17024
+trie-Agentic      100        2.0%        5133      16768
+trie-Office        50       14.9%       38100       6624
+trie-Office       100        1.9%        4888       6368
+
+Gated (endpoint OAT): RPEpayload = 0 on every configuration (asserted by construction ¡ª the gate rejects stale descriptors before any payload issues).

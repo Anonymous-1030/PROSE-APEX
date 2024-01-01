@@ -1,0 +1,14 @@
+Low-oversubscription optimistic-reclaim sweep (16 tenants, capacity mode)
+ Oversub     Mech   ValidThr    P99 admit  Peak pin  Recl frac  RPE payload
+       2    PROSE      2.097          9.0        32      93.8%         0.0%
+       2   REFCNT      2.097        294.7        64      87.5%         0.0%
+       2   2PHASE      2.097       4009.0        64      87.5%         0.0%
+       2  GENONLY      1.729          9.0        32      93.8%        17.5%
+       4    PROSE      2.097          9.0        32      93.8%         0.0%
+       4   REFCNT      2.097        342.3       128      75.0%         0.0%
+       4   2PHASE      2.097       4675.7       128      75.0%         0.0%
+       4  GENONLY      1.730          9.0        32      93.8%        17.5%
+       8    PROSE      2.097          9.0        32      93.8%         0.0%
+       8   REFCNT      2.097        509.0       256      50.0%         0.0%
+       8   2PHASE      2.097       7009.0       256      50.0%         0.0%
+       8  GENONLY      1.731          9.0        32      93.8%        17.4%

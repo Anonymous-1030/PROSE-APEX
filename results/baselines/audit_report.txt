@@ -1,0 +1,99 @@
+BASELINE FAIRNESS / MEASUREMENT AUDIT
+(re-derived from raw JSONL + summary_by_run.csv; nothing hand-entered)
+======================================================================
+
+Paired samples (workload x seed): 30 (3 workloads x 10 seeds)
+Mechanisms per pair: 10
+
+1. OFFERED REQUEST TRACE identical across mechanisms
+2. EVICTION-ATTEMPT TRACE identical across mechanisms
+   (mechanisms may accept / defer / reject the same attempts;
+    only the fired-vs-blocked split is allowed to differ)
+   PASS: offered trajectory identical in all 30 pairs.
+   PASS: total eviction-attempt count identical in all 30 pairs.
+   Representative pair ('large_object', '1000'): attempts -> fired / blocked
+     Unsafe   attempts= 120  fired= 120  blocked=   0
+     RefCnt   attempts= 120  fired=   0  blocked= 120
+     2Phase   attempts= 120  fired=   0  blocked= 120
+     GenOnly  attempts= 120  fired= 120  blocked=   0
+     RKey     attempts= 120  fired= 120  blocked=   0
+     S64      attempts= 120  fired= 120  blocked=   0
+     S256     attempts= 120  fired= 120  blocked=   0
+     S4K      attempts= 120  fired= 120  blocked=   0
+     S16K     attempts= 120  fired= 120  blocked=   0
+     PROSE    attempts= 120  fired=  42  blocked=  78
+
+3. STALE bytes excluded from valid throughput
+   PASS: valid_throughput uses valid bytes only; valid+stale <= requested in every run.
+
+4. BLOCKED-EVICTION / BACKPRESSURE time included in makespan
+   The serialized acquire fills the pipeline once; per-request pins
+   extend the protected interval (Pin/xfer > 1). Median makespan:
+     Unsafe   median makespan =   23.203 ms   (serialized_acquire_ns charged: 0.0)
+     RefCnt   median makespan =   23.203 ms   (serialized_acquire_ns charged: 250.0)
+     2Phase   median makespan =   23.206 ms   (serialized_acquire_ns charged: 3500.0)
+     GenOnly  median makespan =   23.195 ms   (serialized_acquire_ns charged: 0.0)
+     RKey     median makespan =   23.195 ms   (serialized_acquire_ns charged: 0.0)
+     S64      median makespan =   23.813 ms   (serialized_acquire_ns charged: 0.0)
+     S256     median makespan =   23.205 ms   (serialized_acquire_ns charged: 0.0)
+     S4K      median makespan =   23.182 ms   (serialized_acquire_ns charged: 0.0)
+     S16K     median makespan =   23.182 ms   (serialized_acquire_ns charged: 0.0)
+     PROSE    median makespan =   23.195 ms   (serialized_acquire_ns charged: 0.0)
+   NOTE: RefCnt/2Phase makespan reflects the added acquire and the
+   held pins; their throughput edge comes from RETAINING objects
+   (blocked evictions) so more requests transfer valid bytes, NOT
+   from a shorter clock or from counting stale bytes as valid.
+
+5. NO baseline-specific termination condition
+   PASS: every run processes the same fixed offered-request count (n_requests=1200). The run ends on offered count,
+   not on 'N valid completions', so a mechanism cannot win by
+   terminating early after fewer valid transfers.
+
+6. NORMALIZATION paired within (workload, seed) to Unsafe
+   PASS: an Unsafe (NoCheck) run exists in all 30 pairs;
+   each mechanism's ratio uses ITS OWN pair's Unsafe denominator
+   (numerator and denominator are never bootstrapped separately).
+
+7. RefCnt SYNCHRONIZATION semantics and throughput explanation
+   RefCnt acquire = non-coherent shared-metadata increment. The
+   endpoint only honors the eviction veto after the increment is
+   flushed and made visible, i.e. ONE serialized host<->endpoint
+   exchange. Modeled as extra_rtt=1 at refcount_op_latency_ns
+   (250 ns), NOT zero. Coherence assumption: a hardware-coherent
+   metadata region could drop this to 0; we do NOT assume that.
+
+   Why RefCnt / 2Phase normalized valid throughput > 1.0 and > PROSE:
+     * Unsafe wastes link bandwidth transmitting STALE payload, so
+       its valid goodput is depressed; a correct mechanism that
+       transmits only valid bytes can exceed 1.0. (Expected.)
+     * RefCnt/2Phase hold a pin from ENQUEUE, so queue-time eviction
+       attempts are BLOCKED and the object stays transferable: more
+       requests deliver a full valid object. PROSE deliberately
+       ALLOWS queue-time reclamation (queue_reclaim=Y) and rejects
+       the now-stale descriptor at admission — a correctness-safe
+       loss of a few would-be-valid transfers, i.e. a lower valid
+       count, hence slightly lower valid throughput.
+     * This is a real retention trade-off, not a measurement bias:
+       the SAME eviction attempts are offered to all; RefCnt/2Phase
+       pay for the higher throughput with a wide pin span (Pin/xfer
+       ~2.8-3.0) and by forbidding queue-time reclaim.
+
+   Normalized valid throughput (from summary_aggregate.csv):
+     Unsafe    1.000  [1.000, 1.000]
+     RefCnt    1.185  [1.121, 1.257]
+     2Phase    1.185  [1.121, 1.255]
+     GenOnly   1.003  [1.001, 1.005]
+     RKey      1.003  [1.001, 1.005]
+     S64       0.994  [0.988, 0.999]
+     S256      1.003  [1.001, 1.006]
+     S4K       1.004  [1.002, 1.006]
+     S16K      1.004  [1.002, 1.006]
+     PROSE     1.105  [1.068, 1.145]
+
+   CI note: RefCnt and PROSE confidence intervals OVERLAP, so
+   the text must not claim one is faster than the other; they
+   occupy a similar throughput band. The defensible claims are
+   the qualitative properties in panel (b).
+
+======================================================================
+AUDIT RESULT: ALL CHECKS PASS

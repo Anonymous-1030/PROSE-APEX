@@ -1,0 +1,11 @@
+{
+  "trace_path": "analysis\\rpe_events_burstgpt_cap16.jsonl",
+  "capacity": 16,
+  "total_descriptors": 20121,
+  "total_rpe_events": 17896,
+  "rpe_in_burst_count": 17819,
+  "rpe_in_burst_pct": 99.57,
+  "burst_threshold": 64,
+  "max_concurrency": 160,
+  "mean_concurrency": 127.15156040017918
+}

@@ -1,0 +1,57 @@
+{
+  "n_steps": 256,
+  "seed": 0,
+  "degradation": {
+    "credit_floor_frac": 0.6,
+    "credit_duty": 0.5,
+    "credit_oversub_threshold": 32.0,
+    "flit_error_rate": 0.001,
+    "retransmit_penalty_ns": 200.0
+  },
+  "runs": [
+    {
+      "oversub": 16,
+      "adversarial": false,
+      "cefe_tok_s": 83.33333333333333,
+      "fts_tok_s": 26.628015569507223,
+      "ratio": 3.129535999999999
+    },
+    {
+      "oversub": 16,
+      "adversarial": true,
+      "cefe_tok_s": 83.33333333333333,
+      "fts_tok_s": 26.59089269158035,
+      "ratio": 3.1339050666666677
+    },
+    {
+      "oversub": 32,
+      "adversarial": false,
+      "cefe_tok_s": 83.33333333333333,
+      "fts_tok_s": 14.062944389042691,
+      "ratio": 5.925738666666668
+    },
+    {
+      "oversub": 32,
+      "adversarial": true,
+      "cefe_tok_s": 83.33333333333333,
+      "fts_tok_s": 11.364806732096921,
+      "ratio": 7.332578133333332
+    }
+  ],
+  "summary": {
+    "oversub_16": {
+      "nominal_ratio": 3.129535999999999,
+      "adversarial_ratio": 3.1339050666666677,
+      "delta": 0.004369066666668697,
+      "delta_pct": 0.13960749026912292,
+      "advantage_widened": false
+    },
+    "oversub_32": {
+      "nominal_ratio": 5.925738666666668,
+      "adversarial_ratio": 7.332578133333332,
+      "delta": 1.4068394666666642,
+      "delta_pct": 23.741166220852534,
+      "advantage_widened": true
+    }
+  }
+}

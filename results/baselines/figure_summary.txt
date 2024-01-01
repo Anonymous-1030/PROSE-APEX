@@ -1,0 +1,58 @@
+BASELINE COMPARISON — AUTO-GENERATED SUMMARY
+(all values read from summary_aggregate.csv; none hand-filled)
+==================================================================
+
+1. Zero stale-payload / zero-RPE mechanisms:
+   SharedRef, TwoPhase, PROSE
+
+2. Normalized valid throughput (geomean, paired to Unsafe):
+   NoCheck           1.000  [95% CI 1.000, 1.000]  (n=30)
+   SharedRef         1.185  [95% CI 1.121, 1.257]  (n=30)
+   TwoPhase          1.185  [95% CI 1.121, 1.255]  (n=30)
+   GenOnly           1.003  [95% CI 1.001, 1.005]  (n=30)
+   RDMAKey           1.003  [95% CI 1.001, 1.005]  (n=30)
+   Segmented-64      0.994  [95% CI 0.988, 0.999]  (n=30)
+   Segmented-256     1.003  [95% CI 1.001, 1.006]  (n=30)
+   Segmented-4096    1.004  [95% CI 1.002, 1.006]  (n=30)
+   Segmented-16384   1.004  [95% CI 1.002, 1.006]  (n=30)
+   PROSE             1.105  [95% CI 1.068, 1.145]  (n=30)
+
+3. Additional serialized host-endpoint round trips (+RTT):
+   RefCnt   = 1 (non-coherent shared-metadata atomic: flush+atomic+visibility;
+              NOT zero unless the metadata region is hw-coherent).
+   2Phase   = 1 (reserve token exchange).
+   GenOnly/RKey/Segmented/PROSE = 0 (validation is endpoint-local).
+
+4. Protection span (Pin/xfer = protected interval / payload interval):
+   SharedRef        median=2.96 p95=31.79
+   TwoPhase         median=2.78 p95=31.79
+
+5. PROSE protection span: median=1.00 p95=1.00 (transfer-only: admission -> completion).
+
+6. Cancelable-DMA segment sweep (throughput / stale / overhead):
+      segment  norm_tp stale MiB/GiB  ctl+hdr %
+           64    0.994         0.038      37.61
+          256    1.003         0.155       9.48
+         4096    1.004         2.464       0.69
+        16384    1.004         9.931       0.25
+
+7. Non-dominated set in the (throughput, stale) projection:
+   (higher throughput AND lower stale is better; this is a 2-D
+    PROJECTION only — it ignores +RTT, Pin/xfer, and queue-reclaim)
+   RefCnt
+   NOTE: PROSE is DOMINATED here by RefCnt/2Phase, which retain
+   more objects by pinning at enqueue (blocking queue-time
+   eviction attempts that PROSE deliberately allows). PROSE's
+   advantage is on the OTHER axes (panel b), not this projection.
+   Do NOT claim PROSE achieves the best throughput-stale frontier.
+
+7b. Throughput-ordering confidence (paired-bootstrap CIs):
+   RefCnt and PROSE CIs OVERLAP -> the data supports only that
+   they lie in a similar throughput band; it does NOT support
+   'RefCnt is faster than PROSE'. Avoid discussing few-percent
+   throughput gaps in prose.
+
+8. Consistency with mechanism-level expectation:
+   All results consistent with expectation.
+
+KEY FINDING: PROSE is the only evaluated mechanism combining zero stale payload, zero additional RTT, transfer-only protection (Pin/xfer≈1), and queue-time autonomous reclamation.

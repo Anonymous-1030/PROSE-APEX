@@ -1,0 +1,53 @@
+{
+  "experiment": "unprotected baseline (Tier-U), guard bypass vs guard on, constructed delay=2000ms=2xTTL",
+  "commit": "f20b7061097e4e2fda825f4106f215c71f13274a",
+  "guard_on_twin": {
+    "run_id": "tierB_d2000_ttl1000_c64_seed42",
+    "completed_transfers": 75,
+    "wire_wrong_events": 5,
+    "wire_wrong_bytes": 18350080,
+    "wire_wrong_share_pct": 6.67,
+    "delivered_wrong_bytes": 0,
+    "note": "guard discarded all 75; wire-level wrong share = wrong/completed"
+  },
+  "guard_off_baseline": {
+    "run_id": "tierU_B_d2000_bypass_ttl1000_c64_seed42 (rerun half of probe log)",
+    "iterations": 7201,
+    "query_misses": 7131,
+    "replica_not_ready": 5,
+    "delivered": 65,
+    "delivered_wrong_events": 4,
+    "delivered_wrong_bytes": 14680064,
+    "delivered_total_bytes": 238551040,
+    "unprotected_wrong_per_delivered_pct": 6.15,
+    "events": [
+      {
+        "key": "hot/0089",
+        "foreign_tenant": 2,
+        "head_tail": "coherent"
+      },
+      {
+        "key": "hot/0294",
+        "foreign_tenant": 2,
+        "head_tail": "coherent"
+      },
+      {
+        "key": "hot/0016",
+        "foreign_tenant": 2,
+        "head_tail": "coherent"
+      },
+      {
+        "key": "hot/0054",
+        "foreign_tenant": 2,
+        "head_tail": "coherent"
+      }
+    ]
+  },
+  "weld": {
+    "wire_wrong_share_guard_on_pct": 6.67,
+    "delivered_wrong_share_guard_off_pct": 6.15,
+    "guard_block_rate": "100% (detect-and-discard converts wrong deliveries into failures)",
+    "delta_vs_protected_exposure": "0.0073% (protected, delivered-normalized) vs 6.15% (unprotected baseline) \u2014 ~3 orders of magnitude; the gap IS the guard's filtering effect, now measured on the real system"
+  },
+  "ethics": "count-and-quarantine: bypass delivered wrong bytes only to the checker buffer; master untouched; switch defaults OFF (stock behavior)"
+}

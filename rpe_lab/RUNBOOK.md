@@ -1,49 +1,40 @@
-# RPE-lab Runbook (RUNBOOK)
+# RPE-lab 运行手册（RUNBOOK）
 
-All commands run inside WSL Ubuntu (default distribution, enter with `wsl`).
-Working directory: `RPE_LAB=<path to this rpe_lab/ directory>` (exported; the
-helper scripts in `wsl/` and `probe/` self-locate it from their own path when
-unset). `MOONCAKE_REPO` defaults to `$HOME/mooncake`, `MOONCAKE_BUILD` to
-`$MOONCAKE_REPO/build`.
+所有命令在 WSL Ubuntu（默认发行版，`wsl` 进入）中执行。
+工作目录：导出 `RPE_LAB` 指向本 `rpe_lab/` 目录（`wsl/` 与 `probe/` 下的辅助脚本在未设置时会按自身路径自动定位）。下文示例简写 `RPE=$RPE_LAB`。
 
-## 0. Prerequisites (one-time)
+## 0. 前置（已完成，勿重复）
 
-- Repo `$MOONCAKE_REPO` (`rpe-lab` branch; import commit = upstream `f20b706`,
-  instrumentation commit on top — see `git log`)
-- Build: `bash $RPE_LAB/wsl/build_wsl.sh`
-  (incremental rebuild: `cd $MOONCAKE_BUILD && make -j12 store && sudo make install`)
-- Trace: `$RPE_LAB/trace/BurstGPT_1.csv` (SHA256 recorded in manifest.md; already
-  checked in)
+- 仓库 `~/mooncake`（rpe-lab 分支；import commit = 上游 f20b706，插桩 commit 见 `git log`）
+- 构建：`bash $RPE/wsl/build_wsl.sh`（已完成；增量重建 `cd ~/mooncake/build && make -j12 store && sudo make install`）
+- trace：`$RPE/trace/BurstGPT_1.csv`（SHA256 见 manifest.md）
 
-## 1. Long runs (surviving session disconnects)
+## 1. 长跑的正确姿势（防会话断开）
 
 ```bash
 tmux new -s rpe
-# run the matrix commands below inside tmux; Ctrl+b d to detach,
-# tmux a -t rpe to reattach
+# 在 tmux 里执行下面的矩阵命令；Ctrl+b d 脱离，tmux a -t rpe 重连
 ```
 
-Do not use `wsl.exe -e nohup`: WSL session reclamation kills the process tree.
+不要用 `wsl.exe -e nohup`——WSL 会话回收会杀掉进程树（实测教训）。
 
-## 2. Phase 4 Tier-A full matrix (54 cells x 2h each)
+## 2. Phase 4 Tier-A 全矩阵（54 格 × 2h ≈ 4.5 天）
 
 ```bash
-cd $RPE_LAB
+cd $RPE
 ls configs/tierA_*.yaml | xargs -n1 basename | tr '\n' ' ' > /tmp/cells.txt
 bash wsl/run_matrix.sh $(cat /tmp/cells.txt)
-# single cell:  python3 driver.py run --config configs/tierA_evictaggr_ttl5000_c64_seed42.yaml
-# aggregation:  python3 analysis/aggregate.py
+# 单格：python3 driver.py run --config configs/tierA_evictaggr_ttl5000_c64_seed42.yaml
+# 聚合：python3 analysis/aggregate.py
 ```
 
-Each finished cell writes `results/tierA_<run_id>.json` + `events_<run_id>.jsonl`
-+ master log. If a cell reports `guard_fires=0`, adjust the tc rate for that TTL
-(`TC_BY_TTL` in `configs/gen_configs.py`) per the window formula in
-results/NOTES.md, then regenerate the configs with `python3 configs/gen_configs.py`.
+每格跑完自动写 `results/tierA_<run_id>.json` + `events_<run_id>.jsonl` + master 日志。
+若某格 guard_fires=0：按 NOTES.md 的窗口公式调整该 TTL 的 tc 档（configs/gen_configs.py 里 TC_BY_TTL）。
 
-## 3. 24h default-TTL cell (plan Phase 6 DoD target)
+## 3. 24h 默认档（计划 Phase 6 DoD 主目标）
 
 ```bash
-# create a 24h config (duration_s=86400):
+# 先造一个 24h 配置（duration_s=86400），可用：
 python3 - << 'EOF'
 import json
 c = json.load(open('configs/tierA_evictaggr_ttl5000_c64_seed42.yaml'))
@@ -54,33 +45,29 @@ EOF
 bash wsl/run_matrix.sh tierA_evictaggr_ttl5000_c64_seed42_24h.yaml
 ```
 
-## 4. Tier-B (constructed delay, probe binary)
+## 4. Tier-B（构造延迟，probe 二进制）
 
 ```bash
-# build rpe_probe (if not yet built):
+# rpe_probe 构建（若尚未构建）：
 bash probe/build_probe.sh
-# start master + the two tenants (any tierA-style config; the probe attaches):
-python3 driver.py run --config configs/tierB_d2000_ttl1000_c64_seed42.yaml &
-# the probe reads the same ledger and injects the delay:
+# 启动 master + 两个 tenant（用任意 tierA 配置的 run，只是附加 probe）：
+python3 driver.py run --config configs/tierB_d2000_ttl1000_c64.yaml &
+# probe 读取同一 ledger，注入 delay：
 ./probe/rpe_probe --master=127.0.0.1:50051 \
-  --ledger=results/ledger_tierB_d2000_ttl1000_c64_seed42.json \
+  --ledger=results/ledger_tierB_d2000_ttl1000_c64.json \
   --delay_ms=2000 --duration_s=7200 --rate=2 \
-  --out=results/probe_tierB_d2000_ttl1000_c64_seed42_p0.jsonl
-# aggregation: python3 analysis/tierb_aggregate.py tierB_d2000_ttl1000_c64_seed42
-# delay sweep: X in {TTL/2, TTL, 2*TTL} (e.g. TTL=1000 -> 500/1000/2000ms)
+  --out=results/probe_tierB_d2000_ttl1000_c64_p0.jsonl
+# 聚合：python3 analysis/tierb_aggregate.py tierB_d2000_ttl1000_c64
+# delay 扫描：X ∈ {TTL/2, TTL, 2×TTL}（例：TTL=1000 → 500/1000/2000ms）
 ```
 
-(`wsl/run_tierb.sh <driver_config.yaml> <delay_ms> [probe_rate]` automates the
-driver + probe pairing.)
-
-## 5. Phase 5 pin cliff (re-run longer once a 30-min pair exists)
+## 5. Phase 5 pin 悬崖（已有一组 30min 结果时可复跑加长）
 
 ```bash
 bash wsl/run_matrix.sh expB_unpinned_ttl5000_c64.yaml expB_pinned_ttl5000_c64.yaml
 ```
 
-## 6. Red line
+## 6. 红线
 
-If any run reports `success_mismatch > 0`, stop the matrix immediately, preserve
-all of `results/` plus the master binary and logs, and follow responsible
-disclosure.
+任何 run 结果里 `success_mismatch > 0` → 立即停止矩阵，保留
+results/ 全部日志与 master 二进制现场，走 responsible disclosure。

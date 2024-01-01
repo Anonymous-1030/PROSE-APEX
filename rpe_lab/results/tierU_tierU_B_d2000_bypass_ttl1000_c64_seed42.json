@@ -1,0 +1,51 @@
+{
+  "run_id": "tierU_B_d2000_bypass_ttl1000_c64_seed42",
+  "tier": "U",
+  "constructed": true,
+  "guard_bypass": true,
+  "concurrency": 64,
+  "seed": 42,
+  "tc": "800mbit",
+  "trace": {
+    "path": "$RPE_LAB/trace/BurstGPT_1.csv",
+    "start": 1154000,
+    "start_b": 90000,
+    "speedup": 10.0
+  },
+  "commit": "f20b7061097e4e2fda825f4106f215c71f13274a",
+  "master_flags": {
+    "eviction_high_watermark_ratio": 0.5,
+    "eviction_ratio": 0.5,
+    "default_kv_lease_ttl": 1000,
+    "allow_evict_soft_pinned_objects": true
+  },
+  "duration_s": 1801,
+  "gets_total": 18262,
+  "gets_ok": 1261,
+  "guard_fires": 0,
+  "guard_fires_events": 3324,
+  "rpe_events": 0,
+  "rpe_payload_bytes": 0,
+  "torn_events": 0,
+  "torn_payload_bytes": 0,
+  "gen_skew_events": 3,
+  "gen_skew_payload_bytes": 11010048,
+  "payload_bytes_total": 4627890176,
+  "rpe_payload_rate_pct": 0.0,
+  "misbw_bytes": 12199133184,
+  "success_mismatch": 0,
+  "delivered_wrong_events": 0,
+  "delivered_wrong_bytes": 0,
+  "no_magic_discards": 0,
+  "not_found": 16974,
+  "burst_share_pct": null,
+  "throughput_mbps": 2.57,
+  "put_failures_pool_full": 0,
+  "reclaimable_pct": null,
+  "master_metrics": {
+    "start": {},
+    "end": {},
+    "evictions_delta": {}
+  },
+  "notes": "Tier-U probe baseline: rpe_probe with guard bypassed (delay=2000). Wrong bytes delivered to probe buffer (count-and-quarantine)."
+}

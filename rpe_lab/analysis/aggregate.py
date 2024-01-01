@@ -113,6 +113,14 @@ def main():
     print("\\McPinThr / \\McPinRecl: see Phase 5 (expB_*.json)")
     sm = sum(r.get("success_mismatch", 0) for r in rows)
     print(f"success_mismatch total: {sm} {'(must be 0)' if sm == 0 else '*** RED LINE ***'}")
+    # Experiment 2 framing: absolute wire-level wrong-byte rates per run
+    print("\n== wire-level wrong bytes (absolute rates) ==")
+    for r in rows:
+        wb = r.get("rpe_payload_bytes", 0) + r.get("torn_payload_bytes", 0) or 0
+        dur = r.get("duration_s") or 0
+        if dur:
+            print(f"  {r['run_id']}: {wb / 1e6 / dur * 3600:.2f} MB/h on wire "
+                  f"({r.get('rpe_events', 0)}+{r.get('torn_events', 0)} events)")
 
 
 if __name__ == "__main__":

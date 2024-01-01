@@ -1,0 +1,36 @@
+diff --git a/mooncake-store/src/master_service.cpp b/mooncake-store/src/master_service.cpp
+--- a/mooncake-store/src/master_service.cpp
++++ b/mooncake-store/src/master_service.cpp
+@@ -25,5 +25,6 @@
+ #include "master_metric_manager.h"
+ #include "common.h"
+ #include "segment.h"
++#include "rpe_lab_probe.h"  // rpe-lab: passive instrumentation, no behavior change.
+ #ifdef USE_HTTP
+ #include "transfer_metadata_plugin.h"
+@@ -6495,12 +6495,16 @@
+         if (!metadata.IsGrouped()) {
+             uint64_t freed = try_evict_or_offload(
+                 tenant_id, key, metadata, tenant_state, deferred_replicas);
++            // rpe-lab: passive eviction census, no behavior change.
++            if (freed > 0) rpe_lab::LogEvict(tenant_id, key, freed);
+             return {.freed_bytes = freed, .evicted_objects = freed > 0 ? 1 : 0};
+         }
+ 
+         auto group_it = tenant_state.group_members.find(metadata.group_id);
+         if (group_it == tenant_state.group_members.end()) {
+             uint64_t freed = try_evict_or_offload(
+                 tenant_id, key, metadata, tenant_state, deferred_replicas);
++            // rpe-lab: passive eviction census, no behavior change.
++            if (freed > 0) rpe_lab::LogEvict(tenant_id, key, freed);
+             return {.freed_bytes = freed, .evicted_objects = freed > 0 ? 1 : 0};
+         }
+@@ -6539,6 +6543,8 @@
+             uint64_t freed =
+                 try_evict_or_offload(tenant_id, member_key, member_metadata,
+                                      tenant_state, deferred_replicas);
++            // rpe-lab: passive eviction census, no behavior change.
++            if (freed > 0) rpe_lab::LogEvict(tenant_id, member_key, freed);
+             result.freed_bytes += freed;
+             if (freed > 0) {
+                 result.evicted_objects++;

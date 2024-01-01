@@ -59,15 +59,18 @@ def classify(found_ok, identity_ok):
 
 def main():
     run_id = sys.argv[1]
-    rdir = sys.argv[2] if len(sys.argv) > 2 else os.path.join(
+    rdir = sys.argv[2] if len(sys.argv) > 2 and sys.argv[2] else os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "..", "results")
+    bypass = len(sys.argv) > 3 and sys.argv[3] == "bypass"
     tl = gen_timeline(os.path.join(rdir, f"req_victim_{run_id}.jsonl"))
 
-    stats = {"run_id": run_id, "tier": "B", "constructed": True,
+    stats = {"run_id": run_id, "tier": "U" if bypass else "B",
+             "constructed": True, "guard_bypass": bypass,
              "iterations": 0, "gets_ok": 0, "guard_fires": 0, "not_found": 0,
              "other_err": 0, "rpe_events": 0, "rpe_payload_bytes": 0,
              "torn_events": 0, "torn_payload_bytes": 0,
              "gen_skew_events": 0,
+             "delivered_wrong_events": 0, "delivered_wrong_bytes": 0,
              "no_magic_discards": 0, "success_mismatch": 0,
              "mismatch_detail": [], "payload_bytes_total": 0}
     for path in sorted(glob.glob(os.path.join(rdir, f"probe_{run_id}_*.jsonl"))):
@@ -95,7 +98,13 @@ def main():
                 stats["gets_ok"] += 1
                 stats["payload_bytes_total"] += plen
                 if not coherent_ok():
-                    stats["success_mismatch"] += 1
+                    if bypass:
+                        # Tier-U: wrong bytes "delivered" to the checker
+                        # (count-and-quarantine) -- the baseline metric
+                        stats["delivered_wrong_events"] += 1
+                        stats["delivered_wrong_bytes"] += plen
+                    else:
+                        stats["success_mismatch"] += 1
                     stats["mismatch_detail"].append(e)
             elif rc == LEASE_EXPIRED:
                 stats["guard_fires"] += 1
@@ -119,7 +128,7 @@ def main():
             else:
                 stats["other_err"] += 1
 
-    out = os.path.join(rdir, f"tierB_{run_id}.json")
+    out = os.path.join(rdir, f"tier{stats['tier']}_probe_{run_id}.json")
     with open(out, "w") as f:
         json.dump(stats, f, indent=2)
     print(json.dumps({k: v for k, v in stats.items() if k != "mismatch_detail"},

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the D: snapshot tree == upstream commit tree, completely.
+"""Verify the local source snapshot tree == upstream commit tree, completely.
 
 Fetches the full recursive git tree of the tested commit from the GitHub API
 (one request, includes every blob SHA), then recomputes git-blob SHA-1 for

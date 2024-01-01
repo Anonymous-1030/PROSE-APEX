@@ -1,0 +1,8 @@
+{
+  "puts_total": 67340,
+  "puts_ok": 8636,
+  "put_failures_pool_full": 0,
+  "other_err": 58704,
+  "bytes_put": 31694258176,
+  "duration_s": 600.112003845
+}

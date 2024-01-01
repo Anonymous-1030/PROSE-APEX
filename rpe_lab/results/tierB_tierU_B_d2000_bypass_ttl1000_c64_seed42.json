@@ -1,0 +1,22 @@
+{
+  "run_id": "tierU_B_d2000_bypass_ttl1000_c64_seed42",
+  "tier": "B",
+  "constructed": true,
+  "guard_bypass": false,
+  "iterations": 7200,
+  "gets_ok": 0,
+  "guard_fires": 90,
+  "not_found": 7106,
+  "other_err": 4,
+  "rpe_events": 7,
+  "rpe_payload_bytes": 25690112,
+  "torn_events": 1,
+  "torn_payload_bytes": 3670016,
+  "gen_skew_events": 5,
+  "delivered_wrong_events": 0,
+  "delivered_wrong_bytes": 0,
+  "no_magic_discards": 0,
+  "success_mismatch": 0,
+  "mismatch_detail": [],
+  "payload_bytes_total": 0
+}

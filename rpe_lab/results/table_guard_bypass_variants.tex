@@ -1,0 +1,53 @@
+% Variant 1: zero-count with 95% CI upper bound (recommended)
+\begin{table}[t]
+\centering
+\caption{Guarded versus bypassed replay under paired seeds and load. The guard converts exposure into discards rather than preventing it. For the natural regime, zero wrong bytes were observed in 24.3\,GB delivered; we report the 95\%~CI upper bound (rule of three), which is consistent with the guarded wire-level rate.}
+\label{tab:guard_bypass}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{2.6cm}X@{}}
+\toprule
+Regime & Guarded wire level & Bypassed delivered & Consumer wrong bytes \\
+\midrule
+Constructed burst & 6.67\% & 6.15\% & 0 vs 14.68\,MB \\
+Natural & 0.0141\% & $<0.05\%$ (95\%~CI; 0\,B in 24.3\,GB) & 0 vs 0 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% Variant 2: raw count phrasing, CI moved into the caption
+\begin{table}[t]
+\centering
+\caption{Guarded versus bypassed replay under paired seeds and load. The guard converts exposure into discards rather than preventing it. In the natural regime the bypass arm delivered 0 wrong bytes out of 24.3\,GB (6{,}620 objects), a 95\%~CI upper bound of 0.05\%, statistically consistent with the guarded wire-level rate of 0.0141\% ($\approx$1 expected event).}
+\label{tab:guard_bypass}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{2.2cm}X@{}}
+\toprule
+Regime & Guarded wire level & Bypassed delivered & Consumer wrong bytes \\
+\midrule
+Constructed burst & 6.67\% & 6.15\% & 0 vs 14.68\,MB \\
+Natural & 0.0141\% & 0\,B / 24.3\,GB & 0 vs 0 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% Variant 3: expectation-based (wire level as the bypass estimate)
+\begin{table}[t]
+\centering
+\caption{Guarded versus bypassed replay under paired seeds and load. The guard converts exposure into discards rather than preventing it. $\dagger$~No wrong bytes observed in 24.3\,GB delivered; point estimate taken from the paired guarded run, since the bypass forwards what is already on the wire.}
+\label{tab:guard_bypass}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{2.2cm}X@{}}
+\toprule
+Regime & Guarded wire level & Bypassed delivered & Consumer wrong bytes \\
+\midrule
+Constructed burst & 6.67\% & 6.15\% & 0 vs 14.68\,MB \\
+Natural & 0.0141\% & $\approx$0.0141\%$^\dagger$ & 0 vs 0 \\
+\bottomrule
+\end{tabularx}
+\end{table}

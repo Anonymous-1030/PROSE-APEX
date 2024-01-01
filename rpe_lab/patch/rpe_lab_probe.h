@@ -41,6 +41,43 @@ inline const char* RunId() {
 
 inline bool Enabled() { return EventsPath() != nullptr; }
 
+// Measurement-only guard bypass (Tier-U runs): when RPE_LAB_BYPASS_GUARD is
+// set, the lease-expiry branches in client_service.cpp log-and-deliver
+// instead of discarding. Wrong bytes only ever reach the driver's checker
+// buffer (count-and-quarantine), never a real consumer. Master untouched.
+inline bool BypassGuard() {
+    const char* p = std::getenv("RPE_LAB_BYPASS_GUARD");
+    return p && *p;
+}
+
+// Master-side passive eviction log (Experiment 1: race-window census).
+// Writes one JSONL record per evicted object to $RPE_LAB_EVENTS_EVICT.
+// Log-only; no control-flow effect; default off.
+inline const char* EvictEventsPath() {
+    const char* p = std::getenv("RPE_LAB_EVENTS_EVICT");
+    return (p && *p) ? p : nullptr;
+}
+
+inline void LogEvict(const std::string& tenant, const std::string& key,
+                     uint64_t freed_bytes) {
+    const char* path = EvictEventsPath();
+    if (!path) return;
+    static std::mutex mu;
+    uint64_t ts_ns = static_cast<uint64_t>(
+        std::chrono::duration_cast<std::chrono::nanoseconds>(
+            std::chrono::system_clock::now().time_since_epoch())
+            .count());
+    std::lock_guard<std::mutex> lk(mu);
+    FILE* f = std::fopen(path, "a");
+    if (!f) return;
+    std::fprintf(f,
+                 "{\"ts_ns\":%llu,\"type\":\"evict\",\"run_id\":\"%s\","
+                 "\"tenant\":\"%s\",\"key\":\"%s\",\"freed_bytes\":%llu}\n",
+                 (unsigned long long)ts_ns, RunId(), tenant.c_str(),
+                 key.c_str(), (unsigned long long)freed_bytes);
+    std::fclose(f);
+}
+
 inline uint64_t Fnv1a64(const char* data, size_t n) {
     uint64_t h = 14695981039346656037ull;
     for (size_t i = 0; i < n; ++i) {
@@ -81,7 +118,7 @@ inline void WriteEvent(const std::string& key,
                        const void* head, size_t head_len,
                        const void* tail, size_t tail_len,
                        size_t payload_len, long long expired_by_us,
-                       long long transfer_us) {
+                       long long transfer_us, bool delivered = false) {
     static std::mutex mu;
     ParsedMarker h = ParseMarkerAt(head, head_len);
     ParsedMarker t = ParseMarkerAt(tail, tail_len);
@@ -101,14 +138,16 @@ inline void WriteEvent(const std::string& key,
         "\"found_gen\":%llu,"
         "\"tail_magic\":%s,\"tail_tenant\":%llu,\"tail_key_hash\":%llu,"
         "\"tail_gen\":%llu,"
-        "\"payload_len\":%zu,\"expired_by_us\":%lld,\"transfer_us\":%lld}\n",
+        "\"payload_len\":%zu,\"expired_by_us\":%lld,\"transfer_us\":%lld,"
+        "\"delivered\":%s}\n",
         (unsigned long long)ts_ns, RunId(), key.c_str(),
         (unsigned long long)expected_key_hash,
         h.magic ? "true" : "false", (unsigned long long)h.tenant,
         (unsigned long long)h.key_hash, (unsigned long long)h.gen,
         t.magic ? "true" : "false", (unsigned long long)t.tenant,
         (unsigned long long)t.key_hash, (unsigned long long)t.gen,
-        payload_len, expired_by_us, transfer_us);
+        payload_len, expired_by_us, transfer_us,
+        delivered ? "true" : "false");
     std::fclose(f);
 }
 
@@ -116,7 +155,8 @@ inline void WriteEvent(const std::string& key,
 template <typename SliceRange>
 inline void LogGetDiscard(
     const std::string& key, const SliceRange& slices,
-    std::chrono::steady_clock::time_point lease_timeout, long long transfer_us) {
+    std::chrono::steady_clock::time_point lease_timeout, long long transfer_us,
+    bool delivered = false) {
     if (!Enabled()) return;
     const void* head = nullptr;
     const unsigned char* tail = nullptr;
@@ -137,7 +177,7 @@ inline void LogGetDiscard(
             std::chrono::steady_clock::now() - lease_timeout)
             .count();
     WriteEvent(key, head, head_len, tail, tail_len, payload_len,
-               expired_by_us, transfer_us);
+               expired_by_us, transfer_us, delivered);
 }
 
 }  // namespace rpe_lab

@@ -1,0 +1,57 @@
+diff --git a/mooncake-store/src/client_service.cpp b/mooncake-store/src/client_service.cpp
+--- a/mooncake-store/src/client_service.cpp
++++ b/mooncake-store/src/client_service.cpp
+@@ -1156,9 +1156,13 @@
+     if (query_result.IsLeaseExpired()) {
+         LOG(WARNING) << "lease_expired_before_data_transfer_completed key="
+                      << object_key;
+         // rpe-lab: passive instrumentation, no behavior change.
+         rpe_lab::LogGetDiscard(object_key, slices, query_result.lease_timeout,
+-                               us_get);
+-        return tl::unexpected(ErrorCode::LEASE_EXPIRED);
++                               us_get, rpe_lab::BypassGuard());
++        // rpe-lab: guard bypass is measurement-only (count-and-quarantine);
++        // bytes are only ever inspected by the driver's checker buffer.
++        if (!rpe_lab::BypassGuard()) {
++            return tl::unexpected(ErrorCode::LEASE_EXPIRED);
++        }
+     }
+     // Log cache hit statistics
+@@ -1206,10 +1209,12 @@
+     if (query_result.IsLeaseExpired()) {
+         LOG(WARNING) << "lease_expired_before_data_transfer_completed key="
+                      << object_key;
+         // rpe-lab: passive instrumentation, no behavior change.
+         rpe_lab::LogGetDiscard(object_key, slices, query_result.lease_timeout,
+-                               us_get);
+-        return tl::unexpected(ErrorCode::LEASE_EXPIRED);
++                               us_get, rpe_lab::BypassGuard());
++        if (!rpe_lab::BypassGuard()) {
++            return tl::unexpected(ErrorCode::LEASE_EXPIRED);
++        }
+     }
+     return {};
+ }
+@@ -1488,17 +1492,20 @@
+     for (size_t i = 0; i < object_keys.size(); ++i) {
+         if (results[i].has_value() && query_results[i].IsLeaseExpired(now)) {
+             LOG(WARNING) << "lease_expired_before_data_transfer_completed key="
+                          << object_keys[i];
+             // rpe-lab: passive instrumentation, no behavior change.
+             auto rpe_lab_it = slices.find(object_keys[i]);
+             if (rpe_lab_it != slices.end()) {
+                 rpe_lab::LogGetDiscard(
+                     object_keys[i], rpe_lab_it->second,
+                     query_results[i].lease_timeout,
+                     std::chrono::duration_cast<std::chrono::microseconds>(
+                         now - t0_batch_get)
+-                        .count());
++                        .count(),
++                    rpe_lab::BypassGuard());
++            }
++            if (!rpe_lab::BypassGuard()) {
++                results[i] = tl::unexpected(ErrorCode::LEASE_EXPIRED);
+             }
+-            results[i] = tl::unexpected(ErrorCode::LEASE_EXPIRED);
+         }
+     }

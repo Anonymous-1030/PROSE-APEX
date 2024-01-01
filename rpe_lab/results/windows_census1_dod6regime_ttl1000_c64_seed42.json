@@ -1,0 +1,21 @@
+{
+  "run_id": "census1_dod6regime_ttl1000_c64_seed42",
+  "duration_s": 1672.9,
+  "evictions": 41722,
+  "reads_total": 18262,
+  "transfers_completed": 5918,
+  "race_windows": 36,
+  "race_windows_per_hour": 77.5,
+  "race_windows_per_1k_transfers": 6.08,
+  "windows_by_read_rc": {
+    "-704": 9,
+    "-707": 27
+  },
+  "evict_after_lookup_ms": {
+    "p50": 1681.3,
+    "p90": 3217.0,
+    "p99": 4162.7,
+    "max": 4162.7
+  },
+  "note": "race window = master eviction of K during an in-flight Get of K; necessary condition for RPE. Conversion to wrong bytes measured separately (client probe rpe/torn events)."
+}

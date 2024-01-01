@@ -1,0 +1,30 @@
+{
+  "trace": "BurstGPT_1.csv",
+  "requests": 1429737,
+  "span_days": 61.0,
+  "mean_rate_per_s": 0.271,
+  "per_second_rate": {
+    "p50": 1,
+    "p90": 3,
+    "p99": 11,
+    "max": 91
+  },
+  "burst_share": {
+    "gt_4x_mean": {
+      "threshold_per_s": 1.09,
+      "time_share_pct": 34.97,
+      "request_share_pct": 64.64
+    },
+    "gt_16x_mean": {
+      "threshold_per_s": 4.34,
+      "time_share_pct": 5.69,
+      "request_share_pct": 26.28
+    }
+  },
+  "densest_10k_window": {
+    "start_row": 1154000,
+    "span_s": 577.0,
+    "mean_rate_per_s": 17.3,
+    "vs_trace_mean": 63.9
+  }
+}

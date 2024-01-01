@@ -203,6 +203,7 @@ def cmd_victim(args):
     reseed_q = queue.Queue()
     stats = {"gets_total": 0, "gets_ok": 0, "guard_fires": 0,
              "not_found": 0, "other_err": 0, "success_mismatch": 0,
+             "delivered_wrong_events": 0, "delivered_wrong_bytes": 0,
              "bytes_ok": 0, "reseeds": 0, "reseed_failures": 0,
              "mismatch_detail": []}
     stats_lock = threading.Lock()
@@ -287,11 +288,17 @@ def cmd_victim(args):
                         and chk["found_gen"] == chk["tail_gen"]
                         and chk["found_gen"] in (exp_gen, cur_gen))
                 if not good:
-                    bump(success_mismatch=1)
+                    if cfg.get("guard_bypass"):
+                        # Tier-U: expected baseline -- wrong bytes "delivered"
+                        # to the checker (count-and-quarantine), not a defect
+                        bump(delivered_wrong_events=1, delivered_wrong_bytes=rc)
+                    else:
+                        bump(success_mismatch=1)
                     with stats_lock:
                         stats["mismatch_detail"].append(
                             {"key": key, "cur_gen": cur_gen, **chk})
-                    rec["success_mismatch"] = True
+                    rec["delivered_wrong" if cfg.get("guard_bypass")
+                        else "success_mismatch"] = True
                     rec.update({k: chk[k] for k in ("found_magic", "found_tenant",
                                                     "found_key_hash", "found_gen",
                                                     "tail_magic", "tail_tenant",
@@ -543,8 +550,16 @@ def cmd_run(args):
     env = dict(os.environ)
     env["RPE_LAB_EVENTS"] = os.path.join(rdir, f"events_{run_id}.jsonl")
     env["RPE_LAB_RUN_ID"] = run_id
+    if cfg.get("guard_bypass"):
+        # Tier-U: measurement-only guard bypass (count-and-quarantine).
+        # Wrong bytes reach only the driver's checker buffer, never a real
+        # consumer. Master untouched; stock behavior when env is unset.
+        env["RPE_LAB_BYPASS_GUARD"] = "1"
 
     master_log = os.path.join(rdir, f"master_{run_id}.log")
+    master_env = dict(env)
+    # master-side passive eviction census (Experiment 1): per-key evict events
+    master_env["RPE_LAB_EVENTS_EVICT"] = os.path.join(rdir, f"evict_{run_id}.jsonl")
     master = subprocess.Popen(
         [cfg["master_bin"],
          f"--rpc_port={cfg.get('rpc_port', 50051)}",
@@ -552,7 +567,7 @@ def cmd_run(args):
          f"--eviction_ratio={cfg.get('eviction_ratio', 0.1)}",
          f"--default_kv_lease_ttl={cfg['ttl_ms']}",
          f"--allow_evict_soft_pinned_objects={1 if cfg.get('allow_evict_soft_pinned', True) else 0}"],
-        stdout=open(master_log, "w"), stderr=subprocess.STDOUT, env=env)
+        stdout=open(master_log, "w"), stderr=subprocess.STDOUT, env=master_env)
     log(f"master pid={master.pid} log={master_log}")
     time.sleep(cfg.get("master_warmup_s", 3))
     cfg["_metrics_start"] = scrape_master_metrics(cfg)
@@ -711,7 +726,8 @@ def aggregate(cfg, rdir):
     res = {
         "run_id": run_id,
         "tier": cfg.get("tier", "A"),
-        "constructed": cfg.get("tier", "A") == "B",
+        "constructed": cfg.get("tier", "A") in ("B", "U"),
+        "guard_bypass": bool(cfg.get("guard_bypass")),
         "concurrency": cfg.get("concurrency"),
         "seed": cfg.get("seed"),
         "tc": cfg.get("tc"),
@@ -738,6 +754,8 @@ def aggregate(cfg, rdir):
         "rpe_payload_rate_pct": round(100.0 * rpe_bytes / vs["bytes_ok"], 6) if vs.get("bytes_ok") else 0.0,
         "misbw_bytes": misbw,
         "success_mismatch": vs.get("success_mismatch", 0),
+        "delivered_wrong_events": vs.get("delivered_wrong_events", 0),
+        "delivered_wrong_bytes": vs.get("delivered_wrong_bytes", 0),
         "no_magic_discards": no_magic,
         "not_found": vs.get("not_found", 0),
         "burst_share_pct": None,

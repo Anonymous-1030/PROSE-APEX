@@ -1,0 +1,30 @@
+{
+  "regime": {
+    "on": "dod6_er0.5_bsoftpin_maxput_tc400m_ttl1000_c64_seed42",
+    "off": "tierU_dod6regime_bypass_ttl1000_c64_seed42"
+  },
+  "commit": "f20b7061097e4e2fda825f4106f215c71f13274a",
+  "guard_on": {
+    "guard_fires": 3589,
+    "wire_wrong_bytes": 3670016,
+    "delivered_wrong_bytes": 0,
+    "delivered_good_bytes": 12819365888,
+    "misbw_bytes": 13171687424,
+    "wire_wrong_per_wire_byte_pct": 0.01412,
+    "exposure_per_delivered_byte_pct": 0.0
+  },
+  "guard_off": {
+    "guard_fires": 0,
+    "wire_wrong_bytes": 0,
+    "delivered_wrong_bytes": 0,
+    "delivered_wrong_events": 0,
+    "delivered_good_bytes": 24295505920,
+    "wire_wrong_per_wire_byte_pct": 0.0,
+    "unprotected_wrong_per_delivered_pct": 0.0
+  },
+  "interpretation": {
+    "guard_blocked_wrong_bytes": 0,
+    "guard_block_rate_pct": 100.0,
+    "note": "guard-on delivers zero wrong bytes by construction (detect-and-discard); the baseline shows what the consumer would have received unprotected."
+  }
+}

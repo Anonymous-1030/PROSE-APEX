@@ -1,0 +1,15 @@
+{
+  "gets_total": 18262,
+  "gets_ok": 1261,
+  "guard_fires": 0,
+  "not_found": 16974,
+  "other_err": 27,
+  "success_mismatch": 0,
+  "delivered_wrong_events": 0,
+  "delivered_wrong_bytes": 0,
+  "bytes_ok": 4627890176,
+  "reseeds": 4235,
+  "reseed_failures": 0,
+  "mismatch_detail": [],
+  "duration_s": 1801.2297647540004
+}

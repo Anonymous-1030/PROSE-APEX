@@ -11,6 +11,21 @@ ladder maps onto the Mode A/B/C paths used below (see *Deployment Modes*).
 
 ---
 
+## Anonymity Statement
+
+All materials in this repository — source code, scripts, documentation, raw
+experiment outputs, and version-control metadata — contain no author names,
+affiliations, email addresses, usernames, local filesystem paths, or machine
+identifiers, in compliance with the double-blind review requirements of the
+venue. Commit authorship is normalized to a neutral identity at a neutral
+timestamp, and machine-specific configuration references portable
+placeholders (`$MOONCAKE_BUILD`, `$RPE_LAB`) rather than any real directory.
+This document is also self-contained: it restates, in paraphrase, the paper
+context each component needs, so the artifact can be evaluated end to end
+without consulting any non-anonymous source.
+
+---
+
 ## Motivation
 
 Shared CXL memory pools reuse the same physical slot for different objects over
@@ -42,31 +57,57 @@ coordination.
 
 ## Artifact Overview
 
-This release provides four levels of implementation fidelity:
+This release provides five levels of implementation fidelity, plus a
+claim-verification suite. Each component exists to close a specific
+credibility gap; the gap it closes is stated inline, so a reviewer can see
+why each part is here without flipping back to the paper.
 
 1. **Synthesizable RTL** (`rtl/`) — full SystemVerilog design targeting ASAP7
    7nm at 1 GHz, verified with Icarus Verilog. Cross-checked per-descriptor
    against the model by a **trace-driven RTL testbench** (`APEX_XCHECK_TB.sv`).
+   *Why included:* the admit/reject latency and area claims only matter if the
+   gate physically fits on the descriptor issue path — this layer lets a
+   reviewer check that with an open-source simulator, no EDA license required.
 2. **SimCXL extension** (`simcxl_ext/`) — cycle-level Python model calibrated
    against CXL silicon timing, cross-checked with RTL to within one cycle on
    latency and PCM-reject behavior. Now models all three **deployment modes**
    (A/B/C; see below).
+   *Why included:* multi-host contention numbers (up to 16 hosts) cannot be
+   produced on any purchasable fabric today; a calibrated model that is
+   hard-gated against the RTL is the honest way to produce them, and the
+   cross-check is what makes the modeled numbers admissible as evidence.
 3. **FPGA prototype** (`fpga/`) — Alveo U280 implementation at 250 MHz with
    SLR-aware placement and timing closure.
+   *Why included:* shows the RTL survives a physical toolchain — clock-domain
+   crossings, CSR access, multi-die placement — rather than being
+   simulator-friendly only.
 4. **Host software** (`host_sw/`) — C++/CUDA driver for BDB submission, MMIO
    doorbell, and GPU-side attention feedback writeback. Includes a
    **single-host Mode B end-to-end benchmark on commodity CXL Type-3 hardware**
    (`bench_modeb_e2e.cpp`), which measures RPE=0 and promotion latency on real
    CXL.mem traffic with no custom endpoint silicon.
+   *Why included:* answers the "all simulation, no real hardware" objection —
+   Mode B runs on a CXL device available today, and its RPE=0 result ships
+   with a falsifiable control (the FTS baseline must leak through the same
+   byte counter, or the run fails).
 5. **Mooncake Store RPE harness** (`rpe_lab/`) — the deployed-evidence layer:
    a code audit and two-tenant replay measurement of RPE in the production
    Mooncake Store KV pool at commit `f20b706`, including the six exposure
    events and the guard-fire / discard accounting used in the paper (§IV-I).
+   *Why included:* demonstrates that RPE is an observed failure in a deployed
+   system, not a constructed threat model. Raw per-request logs and run
+   configs are checked in so every macro number can be recomputed, and the
+   Tier-U guard-bypass runs supply the unprotected control: the same
+   constructed race with the check disabled, so the wrong-object bytes the
+   guard discards are instead counted as delivered to the consumer.
 
 In addition, a suite of **reviewer-rebuttal experiments** (`experiments/`)
 decomposes the throughput gain by mechanism, adds a strong host-preScore
 baseline, and reports the residual-RPE / overlap figures as measured
-distributions across public traces rather than single points.
+distributions across public traces rather than single points. *Why
+included:* each driver answers one specific attack on the paper's claims and
+is written to report whatever falls out — including outcomes that confirm
+the paper's Conclusion rather than its headline multiplier.
 
 ---
 
@@ -227,9 +268,9 @@ python formal/check_oat_model.py --break   # must find a stale-payload counterex
 # 3d. Mooncake Store RPE harness (needs a Mooncake build at commit f20b706;
 #     full guide in rpe_lab/README.md). Re-aggregate the checked-in tier-A runs:
 python rpe_lab/analysis/aggregate.py       # tier-A macros (fires, discards, MisBW)
-# NOTE: tier-B re-aggregation (analysis/tierb_aggregate.py) requires the raw
-# victim request log, excluded from the release for size; regenerate it via
-# the rpe_lab runbook. The checked-in tierB json is the authoritative artifact.
+# Tier-B re-aggregation also runs entirely from the checked-in raw logs
+# (victim request log + probe log) and reproduces the checked-in tierB json:
+cd rpe_lab && python analysis/tierb_aggregate.py tierB_d2000_ttl1000_c64_seed42
 
 # 4. RTL simulation (requires Icarus Verilog >= 11)
 cd rtl && make sim              # full pipeline (includes Invariant-1 pin test)
@@ -290,7 +331,8 @@ present), and module sanity checks.
 | `rtl/ (make sim)` | §III-D, §IV-A | 9-cycle admit / 4-cycle reject (RTL=model+1; datapath measures 8/4 from S1-accept) | 8/8 testbench checks pass |
 | `run_rtl_xcheck.py` | §IV-A | Model-RTL per-descriptor verdict agreement (latency, PCM reject, heap admit, chunk order) | Exact match across 3020-descriptor trace |
 | `rpe_lab/analysis/aggregate.py` | §IV-I | Mooncake tier-A: guard fires 32,908 vs 81,649 successful reads; discards 32,983; MisBW 120.8 GB | Recomputed from checked-in tier*.json |
-| `rpe_lab/analysis/tierb_aggregate.py` | §IV-I | Six exposure events, 22.0 MB wrong-object bytes = 0.0073% of payload bytes | 1 natural + 5 constructed (6.7% of 75) |
+| `rpe_lab/analysis/tierb_aggregate.py` | §IV-I | Six exposure events, 22.0 MB wrong-object bytes = 0.0073% of payload bytes | 1 natural + 5 constructed (6.7% of 75); reproduces field-for-field from checked-in raw logs |
+| `rpe_lab` Tier-U (guard bypass) | §IV-I | Unprotected control: with the check disabled, 4 wrong-object deliveries (14.7 MB) reach the consumer out of 65 completed; the guarded twin delivers 0 | unprotected_tierU_B_d2000_bypass.json |
 | `rpe_lab` hard-pin (expB) | §IV-I | Hard pins trade exposure for capacity: 39.3% non-reclaimable, eviction success 1.2%, throughput 1.07x | expB_pin_cliff.json |
 | `run_design_space_epochfence.py` | §II-E | GenOnly + epoch fence still exposes 16.4-16.6% stale (GenOnly 17.4-17.6%); fence is no substitute for the hold | design_space_epochfence.json |
 

@@ -1,6 +1,13 @@
-# Artifact: Endpoint-Bound Admission Control for KV-Cache Promotion over Disaggregated CXL Memory
+# Artifact: PROSE — A Commit-Time Object Contract for Reusable CXL Memory Pools
 
 Under double-blind review at a top-tier computer architecture venue (2027).
+
+This is the evaluation artifact for **PROSE**, a commit-time object contract
+that eliminates Reclaimed-Payload Exposure (RPE) in reusable CXL memory pools,
+and **PROSE-APEX**, its endpoint realization (the optional APEX scorer is a
+policy layer, not a contribution). The implementation carries the historical
+name CEFE/PPU-APEX in module and file names; the paper's L1/L0 deployment
+ladder maps onto the Mode A/B/C paths used below (see *Deployment Modes*).
 
 ---
 
@@ -51,6 +58,10 @@ This release provides four levels of implementation fidelity:
    **single-host Mode B end-to-end benchmark on commodity CXL Type-3 hardware**
    (`bench_modeb_e2e.cpp`), which measures RPE=0 and promotion latency on real
    CXL.mem traffic with no custom endpoint silicon.
+5. **Mooncake Store RPE harness** (`rpe_lab/`) — the deployed-evidence layer:
+   a code audit and two-tenant replay measurement of RPE in the production
+   Mooncake Store KV pool at commit `f20b706`, including the six exposure
+   events and the guard-fire / discard accounting used in the paper (§IV-I).
 
 In addition, a suite of **reviewer-rebuttal experiments** (`experiments/`)
 decomposes the throughput gain by mechanism, adds a strong host-preScore
@@ -85,7 +96,7 @@ distributions across public traces rather than single points.
 │   ├── APEX_XCHECK_TB.sv            Trace-driven TB emitting real per-descriptor latency
 │   ├── Makefile                     sim / synth / cefe_check / xcheck targets
 │   └── synth/
-│       ├── APEX_PIPELINE.sdc          SDC (1 GHz, MAC path 0.60 ns, S6-S4 multicycle)
+│       ├── APEX_PIPELINE.sdc          SDC (1 GHz, MAC path 0.96 ns, S6-S4 multicycle)
 │       └── synthesize_apex.tcl        Genus / Design Compiler flow
 ├── fpga/                          Alveo U280 prototyping (250 MHz)
 │   ├── u280_top.sv                  Top wrapper (MMCM, AXI-Lite CSR, reset sync)
@@ -149,7 +160,7 @@ distributions across public traces rather than single points.
 │   ├── unified_adapter.py           BurstGPT / trie / Azure -> unified tenant CSVs
 │   ├── run_rpe_binding_sweep.py     Honest RPE binding-model sweep
 │   └── cfo_analysis.py              CFO overlap analysis + hybrid validator figures
-├── rpe_lab/                         Mooncake Store RPE audit + measurement harness (§IV-H)
+├── rpe_lab/                         Mooncake Store RPE audit + measurement harness (§IV-I)
 │   ├── driver.py                    Two-tenant BurstGPT replay driver (ledger-checked)
 │   ├── patch/                       Probe patch into the client lease-expiry discard path
 │   ├── probe/                       Constructed-race probe (two-phase Query, delay, Get)
@@ -271,16 +282,16 @@ present), and module sanity checks.
 
 | Experiment | Section | Claim | Result |
 | --- | --- | --- | --- |
-| `run_rpe_ordering.py` | §IV-C | OAT gate RPE = 0; FTS wastes 14,748-14,848 KiB/step | RPE = 0; FTS 14,720-14,848 KiB/step |
-| `run_simcxl_multihost.py` | §IV-D | Per-VC arbitration holds P99 below 1% decode step | P99: 18.7 ns (1H) to 290.7 ns (8H) |
-| `run_cfo_overlap.py` | §IV-D | CFO break-even at ~45% overlap | Read load 1.68x to 0.11x at 100% overlap |
-| `quest_cxl_baseline.py` | §IV-E | Quest-CXL Recovery@K degrades to random over CXL | Recovery@K = 0.3126 (random = 0.3125) |
+| `run_rpe_ordering.py` | §IV-F | OAT gate RPE = 0; FTS wastes 14,748-14,848 KiB/step | RPE = 0; FTS 14,720-14,848 KiB/step |
+| `run_simcxl_multihost.py` | §IV-F | Per-VC arbitration holds P99 below 1% decode step | P99: 18.7 ns (1H) to 290.7 ns (8H) |
+| `run_cfo_overlap.py` | S9 | CFO break-even at ~45% overlap | Read load 1.68x to 0.11x at 100% overlap |
+| `quest_cxl_baseline.py` | §IV-G, S9 | Quest-CXL Recovery@K degrades to random over CXL | Recovery@K = 0.3126 (random = 0.3125) |
 | `gen_causal_trace.py` | §IV-A | Trace Jaccard ~ 0.65 (overlap is a measured output, not a target) | Jaccard = 0.645, overlap = 0.66 |
-| `rtl/ (make sim)` | §III-C, §IV-A | 9-cycle admit / 4-cycle reject (RTL=model+1; datapath measures 8/4 from S1-accept) | 8/8 testbench checks pass |
+| `rtl/ (make sim)` | §III-D, §IV-A | 9-cycle admit / 4-cycle reject (RTL=model+1; datapath measures 8/4 from S1-accept) | 8/8 testbench checks pass |
 | `run_rtl_xcheck.py` | §IV-A | Model-RTL per-descriptor verdict agreement (latency, PCM reject, heap admit, chunk order) | Exact match across 3020-descriptor trace |
-| `rpe_lab/analysis/aggregate.py` | §IV-H | Mooncake tier-A: guard fires 32,908 vs 81,649 successful reads; discards 32,983; MisBW 120.8 GB | Recomputed from checked-in tier*.json |
-| `rpe_lab/analysis/tierb_aggregate.py` | §IV-H | Six exposure events, 22.0 MB wrong-object bytes = 0.0073% of payload bytes | 1 natural + 5 constructed (6.7% of 75) |
-| `rpe_lab` hard-pin (expB) | §IV-H | Hard pins trade exposure for capacity: 39.3% non-reclaimable, eviction success 1.2%, throughput 1.07x | expB_pin_cliff.json |
+| `rpe_lab/analysis/aggregate.py` | §IV-I | Mooncake tier-A: guard fires 32,908 vs 81,649 successful reads; discards 32,983; MisBW 120.8 GB | Recomputed from checked-in tier*.json |
+| `rpe_lab/analysis/tierb_aggregate.py` | §IV-I | Six exposure events, 22.0 MB wrong-object bytes = 0.0073% of payload bytes | 1 natural + 5 constructed (6.7% of 75) |
+| `rpe_lab` hard-pin (expB) | §IV-I | Hard pins trade exposure for capacity: 39.3% non-reclaimable, eviction success 1.2%, throughput 1.07x | expB_pin_cliff.json |
 | `run_design_space_epochfence.py` | §II-E | GenOnly + epoch fence still exposes 16.4-16.6% stale (GenOnly 17.4-17.6%); fence is no substitute for the hold | design_space_epochfence.json |
 
 ### Supplementary Material Experiments
@@ -317,6 +328,13 @@ The endpoint admission gate is deployable at three fidelity levels. The
 closed-form model (`simcxl_ext/cxl_admission_sim.py`) implements all three, and
 `experiments/run_mode_boundary.py` draws their performance and correctness
 boundaries.
+
+**Mapping to the paper's deployability ladder (§II-D, §III-E).** Mode A (push,
+endpoint DMA) is the **L1** atomic check-and-hold path in endpoint silicon;
+Mode B (pull) is the **L0** gated-pull path over commodity CXL.mem, which
+guarantees zero stale payload *consumed* rather than L1's zero issued bytes;
+Mode C (passive device, host-decides) is the single-host operating point of
+§IV-F, where the race cannot form and no endpoint gate is needed.
 
 | Mode | Mechanism | RPE | Requires | Role |
 | --- | --- | --- | --- | --- |
@@ -382,9 +400,9 @@ both CMake modes and requires no CUDA.
 ```text
 S1: Descriptor dequeue                          [1 cycle]
 S2: PCM validation (epoch + namespace + residency)  [2 cycles: S2a read, S2b compare]
-      |--- reject bypass (5 cycles total) -------> null-complete
+      |--- reject bypass (4 cycles total) -------> null-complete
 S3: Expert bank read (7 parallel banks)         [1 cycle]
-S4: MAC accumulation (Wallace-tree weighted sum) [1 cycle, 0.60 ns critical path]
+S4: MAC accumulation (Wallace-tree weighted sum) [1 cycle, 0.96 ns critical path]
 S5: Dual-zone exact top-K                       [2 cycles: S5a classify, S5b sift]
 S6: Weight update (overlapped, off critical path) [1 cycle]
 S7: DMA issue / null-complete                   [1 cycle]
@@ -514,7 +532,7 @@ python asic/synth_estimate.py
 | Metric | Value | Basis |
 | --- | --- | --- |
 | Scoring pipeline area | 0.024 mm² | Structural estimate (DFF-dominated), see asic/reports/area.rpt |
-| Scoring pipeline power | ~15 mW | Activity-based estimate |
+| Scoring pipeline power | 13.6 mW | Activity-based estimate, see asic/reports/power.rpt |
 | Full endpoint area (16-host) | 1.069 mm² | Projected: includes SRAM + CEFE + VC-WRR (not yet in asic/reports/) |
 | Full endpoint power (16-host) | 78 mW | Projected worst-case sustained load (not yet in asic/reports/) |
 | MAC critical path | 0.96 ns | Liberty-verified (MET at 1 GHz) |
@@ -523,7 +541,7 @@ python asic/synth_estimate.py
 
 SDC constraints enforce:
 
-- `set_max_delay 0.60` on the MAC datapath (multiply + 4-stage CSA + CPA)
+- `set_max_delay 0.95` on the MAC datapath (multiply + 4-stage CSA + CPA)
 - 2-cycle multicycle path from S6 (weight update) to S4 (MAC weights), since
   weights are quasi-static within a decode step (~1000 cycles)
 - Per-expert-bank independent clock gating
@@ -554,7 +572,8 @@ implementation. The script enforces WNS >= 0 before bitstream generation.
 ## Baseline: Query Decorrelation over CXL
 
 `scripts/quest_cxl_baseline.py` demonstrates the fundamental limitation of
-query-based KV-cache scoring over CXL (§IV-E, same-contract scoring):
+query-based KV-cache scoring over CXL (§IV-G and supplementary S9, same-contract
+scoring):
 
 - Quest and InfiniGen use q_{t-1} as a surrogate for q_t to pre-score pages
 - Over CXL round-trip latency (~300 ns, lag >= 3 decode steps), the query
@@ -637,7 +656,7 @@ this within a single 1 GHz cycle at negligible area cost (0.003 mm2).
 The multiplicative-weights framework adapts to non-stationary workloads without
 hyperparameter tuning. Seven experts provide sufficient diversity for the
 persistence and momentum features while staying within the MAC array's
-single-cycle timing budget (0.60 ns for 7 multiply-accumulate operations in a
+single-cycle timing budget (0.96 ns for 7 multiply-accumulate operations in a
 Wallace tree).
 
 ---
@@ -646,7 +665,11 @@ Wallace tree).
 
 | Acronym | Expansion |
 | --- | --- |
-| CEFE | Causal Endpoint Front-End |
+| PROSE | The commit-time object contract (paper's name for the contract) |
+| PROSE-APEX | The evaluated endpoint system (contract core + optional policy) |
+| OAT | Object Admission Transaction (the atomic admission step) |
+| L1 / L0 | The paper's deployability ladder: endpoint check-and-hold / host gated-pull |
+| CEFE | Causal Endpoint Front-End (historical code name) |
 | PCM | Payload Commitment Mechanism |
 | CFO | Coalesced Fan-Out |
 | BDB | Batch Descriptor Block |

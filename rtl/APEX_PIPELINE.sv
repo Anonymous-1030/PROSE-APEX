@@ -12,16 +12,18 @@
 //       Case 2 (cross-zone) asserts a 1-cycle stall so the next descriptor is
 //       not classified against a stale safe_min (paper §5.3, restored).
 //   S6: Weight update (overlapped, off critical path)
-//   OAT pin: at the S2b validation edge, the Object Admission Transaction
-//       atomically acquires a transfer-lifetime pin on (chunk, generation) via
-//       cefe_pin_table (paper §III-B, Invariant 1). While pinned, the object
-//       directory's reclaim probe (reclaim_allowed) returns 0, so a slot cannot
-//       be reused under an in-flight transfer. A validated descriptor that
-//       cannot acquire a pin rejects on the 4-cycle bypass (no payload). The
-//       pin releases at the heap verdict (RELEASE(d)). This is the hardware
-//       realization the earlier release only sketched; it does not change the
-//       9/4-cycle latency (the pin ports are off the admission-critical path and
-//       the trace-driven cross-check still reports 0 mismatches).
+//   OAT pin: the Object Admission Transaction is consult, then CAS (paper
+//       Section IV-B). The S2 validation cycles only collect advisory
+//       information. The final commit stage re-reads the directory entry in
+//       one indivisible compare-and-swap (cefe_directory): MAP[chunk] must
+//       still equal <descriptor generation, resident> with no pending
+//       reclaim, and only then is the pin count of the entry incremented.
+//       That edge is the linearization point of the transaction. The old pin
+//       table survives as the per-transfer in-flight index, written only on a
+//       successful CAS. A validated descriptor whose CAS fails rejects with
+//       zero payload. Placement updates share the directory write port with
+//       the CAS (one write per cycle), so all writes to an entry form a
+//       physical total order.
 //   S7: DMA issue (1 cycle)
 //   S8: MMIO completion register (admit-only 9th stage) — registers the
 //       admitted completion one extra cycle so the admit path is exactly
@@ -165,6 +167,7 @@ module APEX_PIPELINE (
     // PCM outputs
     logic        pcm_pass, pcm_reject, pcm_valid;
     logic [8:0]  pcm_chunk_id;
+    logic [15:0] pcm_epoch;
 
     // Expert bank read outputs
     logic [15:0] expert_pred [0:NUM_EXPERTS-1];
@@ -174,6 +177,7 @@ module APEX_PIPELINE (
     // MAC outputs
     logic [15:0] mac_score;
     logic [8:0]  mac_chunk_id;
+    logic [15:0] mac_epoch;
     logic        mac_valid;
 
     // Heap outputs
@@ -283,6 +287,7 @@ module APEX_PIPELINE (
         .pcm_reject          (pcm_reject),
         .pcm_valid           (pcm_valid),
         .pcm_chunk_id_out    (pcm_chunk_id),
+        .pcm_epoch_out       (pcm_epoch),
         .res_set_id          (res_set_id),
         .res_set_valid       (res_set_valid),
         .res_clear_id        (res_clear_id),
@@ -290,67 +295,109 @@ module APEX_PIPELINE (
     );
 
     //=========================================================================
-    // OAT pin acquisition (paper §III-B, Invariant 1 / Theorem 1)
+    // OAT consult-then-CAS (paper Section IV-B)
     //
-    // The PCM pass at S2b is the OAT linearization point: in the SAME cycle it
-    // validates the generation (epoch) and residency, we atomically install a
-    // transfer-lifetime pin on (chunk, generation). The pin holds until the
-    // completion at S8 issues RELEASE(d). While pinned, the object directory's
-    // reclaim probe returns reclaim_allowed=0, so a slot cannot be reused under
-    // an in-flight transfer — this is the hardware form of Invariant 1.
+    // Advisory result: the PCM pass only carries information. The descriptor
+    // proceeds into scoring on pcm_pass alone; pin availability at S2 is an
+    // advisory early-out, and the binding decision is made by the directory
+    // CAS at the commit stage (S7).
     //
-    // If the pin table is full (no free entry for this tenant's batch), alloc_ok
-    // is low and the descriptor is rejected WITHOUT issuing payload: the pin
-    // reject folds into the same 4-cycle bypass as a PCM reject, so a resource
-    // exhaustion can never expose stale bytes.
+    // The CAS (cefe_directory) re-reads the entry in the commit cycle and
+    // checks MAP[chunk] == <descriptor epoch, resident> with no pending
+    // reclaim and a free in-flight index entry. On a full match it increments
+    // the entry's pin count and, in the same edge, updates the in-flight
+    // index (cefe_pin_table). A failed CAS retires the descriptor through the
+    // heap-reject completion with zero payload.
     //=========================================================================
     localparam int PIN_ENTRIES = 400;
 
     logic                 pin_alloc_ok;
-    logic                 pin_reject;       // PCM passed but no pin available
-    logic                 oat_pass;         // PCM pass AND pin acquired
+    logic                 pin_reject;       // advisory: validated, no free index entry
+    logic                 oat_pass;         // advisory pass into scoring
     logic [$clog2(PIN_ENTRIES+1)-1:0] pin_count_w;
     logic                 pin_tab_full;
 
     // Tenant id proxy: the namespace field carries the tenant/VC id.
     wire [3:0] pcm_tenant = cfg_current_namespace[3:0];
 
-    // Allocation fires as the descriptor advances S2->S3 (pcm_pass & ~pipe_stall,
-    // matching the expert_rd_valid latch below). Gating by ~pipe_stall is
-    // essential: the PCM freezes pcm_pass high during a stall, so an ungated
-    // alloc would install a duplicate pin every stalled cycle. alloc_ok reports
-    // (combinationally) whether a free entry exists; the write commits this edge
-    // (single linearization point with the generation check that produced
-    // pcm_pass).
-    wire pin_alloc_fire = pcm_pass & ~pipe_stall;
+    // The commit-stage CAS event and its verdict.
+    wire s7_commit    = heap_admitted_valid & heap_admitted & ~drain_stall;
+    wire dir_cas_ok;
+
+    // Allocation fires only on a successful CAS (the linearization point).
+    // The in-flight index carries no authority; it tracks the transfer.
+    wire pin_alloc_fire = dir_cas_ok;
 
     cefe_pin_table #(.NUM_ENTRIES(PIN_ENTRIES)) u_pin_table (
         .clk            (gated_clk),
         .rst_n          (rst_n),
         .alloc_valid    (pin_alloc_fire),
         .alloc_tenant   (pcm_tenant),
-        .alloc_chunk    (pcm_chunk_id),
-        .alloc_gen      (cfg_current_epoch),
+        .alloc_chunk    (mac_chunk_id),
+        .alloc_gen      (mac_epoch),
         .alloc_ok       (pin_alloc_ok),
         .alloc_index    (),
-        // RELEASE(d) at completion (S8): decrement the pin for the completed
-        // (chunk, generation). Both admits and heap-rejects that acquired a pin
-        // release here; a PCM/pin reject never acquired one.
+        // RELEASE(d) one cycle after the CAS, matching the evaluated
+        // short-transfer case (drain-scoped release is the cefe_dma_engine
+        // extension, see that module and LIMITATIONS). Fires only on a
+        // CAS-installed pin, so alloc and release stay 1:1 per descriptor.
         .release_valid  (pin_release_valid),
         .release_chunk  (pin_release_chunk),
         .release_gen    (pin_release_gen),
-        // Object-directory reclaim probe (Invariant 1 enforcement point).
+        // Advisory probe port retained for the fabric manager; the
+        // authoritative answer comes from the directory below.
         .reclaim_chunk  (reclaim_chunk_id),
         .reclaim_gen    (reclaim_generation),
-        .reclaim_allowed(reclaim_allowed),
+        .reclaim_allowed(),
         .pin_count      (pin_count_w),
         .table_full     (pin_tab_full)
     );
 
-    // OAT verdict: a descriptor only proceeds past S2 into scoring/DMA if it
-    // both passed PCM validation AND acquired a pin.
-    assign oat_pass   = pcm_pass & pin_alloc_ok;
-    assign pin_reject = pcm_pass & ~pin_alloc_ok;   // validated but no pin -> reject
+    //=========================================================================
+    // Object directory (authoritative mapping, consult-then-CAS).
+    //   Update port: placement writes and reclaims share the bank write port
+    //   with the CAS, one write per cycle per entry.
+    //=========================================================================
+    logic [2:0] dir_adv_pins;
+    logic       dir_adv_pend;
+
+    wire        upd_valid_w    = res_set_valid | res_clear_valid;
+    wire [8:0]  upd_chunk_w    = res_clear_valid ? res_clear_id : res_set_id;
+    wire [15:0] upd_gen_w      = cfg_current_epoch;
+    wire        upd_resident_w = res_set_valid;
+
+    cefe_directory #(.NUM_CHUNKS(NUM_CHUNKS)) u_directory (
+        .clk            (gated_clk),
+        .rst_n          (rst_n),
+        .adv_chunk      (reclaim_chunk_id),
+        .adv_gen        (),
+        .adv_resident   (),
+        .adv_pending    (dir_adv_pend),
+        .adv_pin_count  (dir_adv_pins),
+        .cas_valid      (s7_commit),
+        .cas_chunk      (mac_chunk_id),
+        .cas_gen        (mac_epoch),
+        .cas_pin_free   (pin_alloc_ok),
+        .cas_ok         (dir_cas_ok),
+        .upd_valid      (upd_valid_w),
+        .upd_chunk      (upd_chunk_w),
+        .upd_gen        (upd_gen_w),
+        .upd_resident   (upd_resident_w),
+        .upd_committed  (),
+        .upd_pended     (),
+        .rel_valid      (pin_release_valid),
+        .rel_chunk      (pin_release_chunk),
+        .any_pending    ()
+    );
+
+    // The fabric manager's reclaim probe reads the authoritative entry: an
+    // update may commit only at zero pin count with no pending reclaim.
+    assign reclaim_allowed = (dir_adv_pins == '0) & ~dir_adv_pend;
+
+    // OAT advisory verdict: a descriptor proceeds past S2 into scoring on the
+    // PCM pass alone. The final commit is the directory CAS at S7.
+    assign oat_pass   = pcm_pass;
+    assign pin_reject = pcm_pass & ~pin_alloc_ok;   // advisory resource early-out
     assign stat_pin_count = 10'(pin_count_w);
 
     // RELEASE wiring is declared here, driven from the S8 completion logic below.
@@ -412,12 +459,14 @@ module APEX_PIPELINE (
     endgenerate
 
     // S3 output register (expert read has 1-cycle latency built into bank)
+    logic [15:0] s3_epoch;
     always_ff @(posedge s34_clk or negedge rst_n) begin
         if (!rst_n) begin
             expert_rd_valid <= 1'b0;
         end else if (!pipe_stall) begin
             expert_rd_valid <= oat_pass & pcm_valid;
             s3_chunk_id     <= pcm_chunk_id;
+            s3_epoch        <= pcm_epoch;
         end
     end
 
@@ -444,8 +493,10 @@ module APEX_PIPELINE (
         .weight_5     (expert_weights[5]),
         .weight_6     (expert_weights[6]),
         .chunk_id_in  (s3_chunk_id),
+        .epoch_in     (s3_epoch),
         .score_out    (mac_score),
         .chunk_id_out (mac_chunk_id),
+        .epoch_out    (mac_epoch),
         .score_valid  (mac_valid)
     );
 
@@ -575,13 +626,14 @@ module APEX_PIPELINE (
     // S7: DMA Issue + admit-completion staging (1 cycle)
     //=========================================================================
 
-    // DMA output (admitted path). Gated by drain_stall (backpressure) only, not
-    // by case2_stall — a committing Case 2 descriptor must still issue.
+    // DMA output (admitted path). The payload gate opens only on a successful
+    // directory CAS at the commit stage; a failed CAS never issues a beat.
+    // Gated by drain_stall (backpressure) only, not by case2_stall.
     always_ff @(posedge gated_clk or negedge rst_n) begin
         if (!rst_n) begin
             dma_valid <= 1'b0;
         end else begin
-            dma_valid    <= heap_admitted_valid & heap_admitted & ~drain_stall;
+            dma_valid    <= heap_admitted_valid & heap_admitted & dir_cas_ok & ~drain_stall;
             dma_chunk_id <= mac_chunk_id;
             dma_score    <= mac_score;
         end
@@ -602,7 +654,7 @@ module APEX_PIPELINE (
         end else begin
             s7_cpl_valid    <= heap_admitted_valid & ~drain_stall;
             s7_cpl_chunk_id <= mac_chunk_id;
-            s7_cpl_status   <= heap_admitted ? 2'b01 : 2'b10;
+            s7_cpl_status   <= (heap_admitted & dir_cas_ok) ? 2'b01 : 2'b10;
         end
     end
 
@@ -634,23 +686,16 @@ module APEX_PIPELINE (
     end
 
     //=========================================================================
-    // RELEASE(d) — pin release at the transfer's resolution (paper §III-B).
+    // RELEASE(d) — one cycle after the directory CAS installs the pin.
     //
-    // Every descriptor that acquired a pin (reached S3+ via oat_pass) is scored
-    // by the heap exactly once, emitting one heap_admitted_valid pulse (admit or
-    // reject verdict). We release on that pulse so allocation and release are
-    // 1:1 by construction, independent of downstream (DMA/completion-ring)
-    // backpressure. Coupling release to the drain-gated S7 completion instead
-    // would leak a pin whenever drain_stall suppressed the completion cycle.
-    //
-    // For an admitted descriptor the transfer is short relative to the reclaim
-    // horizon in the evaluated single-extent KV case, so releasing at the heap
-    // verdict (rather than at DMA-drain) keeps the pin live across the admission
-    // decision — the window in which the reuse race is real. A DMA-drain-scoped
-    // release for long transfers is the cefe_dma_engine extension (see that
-    // module and LIMITATIONS §5). Within a decode step cfg_current_epoch is
-    // quasi-static, so the completing descriptor's generation equals the epoch
-    // it was pinned under.
+    // The CAS at the commit stage (S7) installs the pin, and the release fires
+    // on the following edge, so allocation and release stay 1:1 by
+    // construction and independent of downstream backpressure. This models the
+    // evaluated short-transfer case; a DMA-drain-scoped release for long
+    // transfers is the cefe_dma_engine extension (see that module and
+    // LIMITATIONS). The release drives both the in-flight index and the
+    // authoritative directory entry, and it fires only on a CAS success, so a
+    // rejected descriptor never frees another transfer's pin.
     //=========================================================================
     always_ff @(posedge gated_clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -658,9 +703,9 @@ module APEX_PIPELINE (
             pin_release_chunk <= '0;
             pin_release_gen   <= '0;
         end else begin
-            pin_release_valid <= heap_admitted_valid & ~pipe_stall;
+            pin_release_valid <= dir_cas_ok & ~pipe_stall;
             pin_release_chunk <= mac_chunk_id;
-            pin_release_gen   <= cfg_current_epoch;
+            pin_release_gen   <= mac_epoch;
         end
     end
 

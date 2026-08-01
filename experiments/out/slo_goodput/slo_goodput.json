@@ -1,0 +1,466 @@
+{
+  "experiment": "slo_goodput",
+  "engine": "simcxl_ext.cxl_admission_sim (unmodified)",
+  "operating_point": {
+    "cxl_bw_gbs": 2.0,
+    "n_hosts": 16,
+    "n_candidates": 1024,
+    "budget_per_step": 64
+  },
+  "n_steps": 256,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "attainment_threshold": 0.9,
+  "tau_grid_ms": [
+    5.000000000000001,
+    5.507299738235727,
+    6.06607008135426,
+    6.681533234232377,
+    7.359441246380254,
+    8.106129769950236,
+    8.928577272030351,
+    9.834470254614043,
+    10.832275091784592,
+    11.931317155496533,
+    13.14186796945469,
+    14.47524120562126,
+    15.943898420523393,
+    17.561565519561093,
+    19.343361037777683,
+    21.305937435990426,
+    23.46763673281937,
+    25.848661927133445,
+    28.471265813009147,
+    31.35995895184503,
+    34.54173874531584,
+    38.04634175005695,
+    41.90652159218313,
+    46.158355078999975,
+    50.84157936879368,
+    55.999963349849644,
+    61.68171669956741,
+    67.93994044669161,
+    74.83312324756307,
+    82.42568801453324,
+    90.78859400526767,
+    100.0
+  ],
+  "ttft_note": "Closed-loop model has no cross-request queue; first-token completion equals the same per-step service time reported as TPOT. Queueing under multi-tenant load is outside this model.",
+  "arms": {
+    "fetch_then_score": {
+      "boundary": "fts_none",
+      "scorer": "none",
+      "cfo_dedup_frac": 0.0,
+      "seeds": [
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        },
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        },
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        },
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        },
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        },
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        },
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        },
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        },
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        },
+        {
+          "tok_per_s_mean": 26.628015569507223,
+          "tok_per_s_p50": 26.628015569507216,
+          "tok_per_s_p5": 26.628015569507216,
+          "tpot_mean_ms": 37.55443199999999,
+          "tpot_p50_ms": 37.554432,
+          "tpot_p95_ms": 37.554432,
+          "wasted_bytes_mean": 62914560.0
+        }
+      ],
+      "tok_per_s_mean": 26.62801556950722,
+      "tpot_mean_ms": 37.554432,
+      "tpot_max_ms": 37.554432
+    },
+    "prose_full": {
+      "boundary": "cefe",
+      "scorer": "odus_x",
+      "cfo_dedup_frac": 0.75406875,
+      "seeds": [
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        },
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        },
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        },
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        },
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        },
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        },
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        },
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        },
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        },
+        {
+          "tok_per_s_mean": 83.33333333333333,
+          "tok_per_s_p50": 83.33333333333333,
+          "tok_per_s_p5": 83.33333333333333,
+          "tpot_mean_ms": 12.0,
+          "tpot_p50_ms": 12.0,
+          "tpot_p95_ms": 12.0,
+          "wasted_bytes_mean": 0.0
+        }
+      ],
+      "tok_per_s_mean": 83.33333333333334,
+      "tpot_mean_ms": 12.0,
+      "tpot_max_ms": 12.0
+    }
+  },
+  "ratio_curve": [
+    {
+      "tau_ms": 5.000000000000001,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 5.507299738235727,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 6.06607008135426,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 6.681533234232377,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 7.359441246380254,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 8.106129769950236,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 8.928577272030351,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 9.834470254614043,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 10.832275091784592,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 11.931317155496533,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 0.0,
+      "ratio": NaN
+    },
+    {
+      "tau_ms": 13.14186796945469,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 14.47524120562126,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 15.943898420523393,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 17.561565519561093,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 19.343361037777683,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 21.305937435990426,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 23.46763673281937,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 25.848661927133445,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 28.471265813009147,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 31.35995895184503,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 34.54173874531584,
+      "baseline_goodput_tok_s": 0.0,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": "unbounded"
+    },
+    {
+      "tau_ms": 38.04634175005695,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 41.90652159218313,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 46.158355078999975,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 50.84157936879368,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 55.999963349849644,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 61.68171669956741,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 67.93994044669161,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 74.83312324756307,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 82.42568801453324,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 90.78859400526767,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    },
+    {
+      "tau_ms": 100.0,
+      "baseline_goodput_tok_s": 26.62801556950722,
+      "prose_goodput_tok_s": 83.33333333333334,
+      "ratio": 3.129536
+    }
+  ],
+  "findings": {
+    "baseline_tpot_ms": 37.554432,
+    "prose_tpot_ms": 12.0,
+    "loose_bound_ratio_min": 3.129536,
+    "loose_bound_ratio_max": 3.129536,
+    "tight_bound_regime_ms": [
+      12.0,
+      37.554432
+    ],
+    "statement": "For any TPOT bound >= baseline TPOT the SLO-attaining rate ratio equals the valid-throughput ratio; for any bound in [PROSE TPOT, baseline TPOT) the baseline attains no SLO-compliant rate. The valid-throughput ratio is therefore the floor of the SLO-attaining gap."
+  }
+}

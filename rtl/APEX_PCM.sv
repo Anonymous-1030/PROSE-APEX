@@ -5,6 +5,11 @@
 //   Cycle 1 (S2a): Read stored epoch + residency bit for chunk_id
 //   Cycle 2 (S2b): Compare epoch/namespace, check residency -> pass/reject
 //
+// Consult role in the consult-then-CAS Object Admission Transaction (paper
+// Section IV-B): these two cycles only COLLECT advisory information (epoch,
+// namespace, residency). They declare no authoritative state. The binding
+// decision happens later, at the directory CAS stage.
+//
 // A descriptor that fails epoch, namespace, or residency checks retires via a
 // null completion (no payload moves); only validated chunks become visible.
 //
@@ -39,6 +44,7 @@ module APEX_PCM (
     output logic        pcm_reject,
     output logic        pcm_valid,
     output logic [8:0]  pcm_chunk_id_out,
+    output logic [15:0] pcm_epoch_out,
 
     // Residency update interface (from DMA completion / eviction)
     input  logic [8:0]  res_set_id,
@@ -109,6 +115,7 @@ module APEX_PCM (
             pcm_pass         <= s1_valid & all_pass;
             pcm_reject       <= s1_valid & ~all_pass;
             pcm_chunk_id_out <= s1_chunk_id;
+            pcm_epoch_out    <= s1_epoch;
         end
     end
 

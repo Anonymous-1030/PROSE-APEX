@@ -56,10 +56,13 @@ module APEX_MAC_ARRAY (
 
     // Chunk ID passthrough
     input  logic [8:0]  chunk_id_in,
+    // Descriptor epoch passthrough (rides with chunk_id to the directory CAS)
+    input  logic [15:0] epoch_in,
 
     // Output (registered)
     output logic [15:0] score_out,
     output logic [8:0]  chunk_id_out,
+    output logic [15:0] epoch_out,
     output logic        score_valid
 );
 
@@ -186,10 +189,12 @@ module APEX_MAC_ARRAY (
         if (!rst_n) begin
             score_out    <= '0;
             chunk_id_out <= '0;
+            epoch_out    <= '0;
             score_valid  <= 1'b0;
         end else if (!stall) begin
             score_out    <= score_comb;
             chunk_id_out <= chunk_id_in;
+            epoch_out    <= epoch_in;
             score_valid  <= pred_valid;
         end
     end

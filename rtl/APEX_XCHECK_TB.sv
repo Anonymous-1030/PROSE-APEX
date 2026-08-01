@@ -134,6 +134,13 @@ module APEX_XCHECK_TB;
         repeat(5) @(posedge clk);
         rst_n = 1;
         repeat(2) @(posedge clk);
+        // Pre-place every pool entry at GOOD_EPOCH so the directory CAS
+        // admits descriptors that pass PCM validation. The pokes stand in
+        // for the placement process of the evaluated pool.
+        for (int c = 0; c < 512; c++) begin
+            dut.u_directory.e_gen[c]      = GOOD_EPOCH;
+            dut.u_directory.e_resident[c] = 1'b1;
+        end
     endtask
 
     // Write the 7 expert predictions for a chunk into the internal expert banks

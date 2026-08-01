@@ -24,6 +24,7 @@ RTL_CORE = \
 	APEX_EXPERT_BANK.sv \
 	APEX_PCM.sv \
 	cefe_pin_table.sv \
+	cefe_directory.sv \
 	APEX_MAC_ARRAY.sv \
 	APEX_TOPK_HEAP.sv \
 	APEX_WEIGHT_UPDATE.sv \
